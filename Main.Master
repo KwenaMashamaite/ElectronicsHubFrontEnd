@@ -51,7 +51,7 @@
                                 <i class="icon-bars"></i>
                             </button>
                         
-                            <a href="Default.aspx" class="logo">
+                            <a href="Index.aspx" class="logo">
                                 <img src="assets/images/logo.png" alt="ElectronicsHub Logo" width="105" height="25">
                             </a>
                         </div><!-- End .header-left -->
@@ -91,7 +91,7 @@
 
                                                 <span class="cart-product-info">
                                                     <span class="cart-product-qty">1</span>
-                                                    x $84.00
+                                                    x R84.00
                                                 </span>
                                             </div><!-- End .product-cart-details -->
 
@@ -111,7 +111,7 @@
 
                                                 <span class="cart-product-info">
                                                     <span class="cart-product-qty">1</span>
-                                                    x $76.00
+                                                    x R76.00
                                                 </span>
                                             </div><!-- End .product-cart-details -->
 
@@ -127,7 +127,7 @@
                                     <div class="dropdown-cart-total">
                                         <span>Total</span>
 
-                                        <span class="cart-total-price">$160.00</span>
+                                        <span class="cart-total-price">R160.00</span>
                                     </div><!-- End .dropdown-cart-total -->
 
                                     <div class="dropdown-cart-action">
@@ -171,7 +171,7 @@
                             <nav class="main-nav">
                                 <ul class="menu sf-arrows">
                                     <li class="megamenu-container active">
-                                        <a href="Default.aspx">Home</a>
+                                        <a href="Index.aspx">Home</a>
                                     </li>
                                     <li>
                                         <a href="category.html">Shop</a>
