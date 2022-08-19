@@ -17,59 +17,57 @@
                                 </ul>
                                 <div class="tab-content" id="tab-content-5">
                                     <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                        <form runat="server" action="#">
-                                            <div class="form-group">
-                                                <label for="firstname">First Name *</label>
-                                                <asp:TextBox runat="server" type="text" class="form-control" id="firstname" maxlength="255" 
-                                                    pattern="[A-Za-z]+" title="Text only, numeric and special characters not allowed" 
-                                                    required="required">
-                                                </asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="FirstName">First Name *</label>
+                                            <asp:TextBox runat="server" type="text" class="form-control" id="FirstName" maxlength="255" 
+                                                pattern="[A-Za-z]+" title="Text only, numeric and special characters not allowed" 
+                                                required="required">
+                                            </asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-group">
-                                                <label for="surname">Last Name *</label>
-                                                <asp:TextBox runat="server" type="text" class="form-control" id="surname" maxlength="255" 
-                                                    pattern="[A-Za-z]+" title="Text only, numeric and special characters not allowed" required="required">
-                                                </asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="Surname">Last Name *</label>
+                                            <asp:TextBox runat="server" type="text" class="form-control" id="Surname" maxlength="255" 
+                                                pattern="[A-Za-z]+" title="Text only, numeric and special characters not allowed" required="required">
+                                            </asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-group">
-                                                <label for="email">Email *</label>
-                                                <asp:TextBox runat="server" type="email" class="form-control" id="email" maxlength="255" required="required">
-                                                </asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="Email">Email *</label>
+                                            <asp:TextBox runat="server" type="email" class="form-control" id="Email" maxlength="255" required="required">
+                                            </asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-group">
-                                                <label for="phone">Phone *</label>
-                                                <asp:TextBox runat="server" type="tel" maxlength="10" class="form-control" id="phone"
-                                                    title="10 digit phone number" pattern="[0-9]{10}" required="required">
-                                                </asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="Phone">Phone *</label>
+                                            <asp:TextBox runat="server" type="tel" maxlength="10" class="form-control" id="Phone"
+                                                title="10 digit phone number" pattern="[0-9]{10}" required="required">
+                                            </asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-group">
-                                                <label for="password">Password *</label>
-                                                <asp:TextBox runat="server" type="password" maxlenght="100" class="form-control" id="password"                                                    
-                                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,255}$" 
-                                                    title="Password must be at least 8 characters long and contain at least 1 uppercase, 1 lowercase, and 1 special character" 
-                                                    required="required">
-                                                </asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="Password">Password *</label>
+                                            <asp:TextBox runat="server" type="password" maxlenght="100" class="form-control" id="Password"                                                    
+                                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,255}$" 
+                                                title="Password must be at least 8 characters long and contain at least 1 uppercase, 1 lowercase, and 1 special character" 
+                                                required="required">
+                                            </asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-group">
-                                                <label for="password2">Confirm password *</label>
-                                                <asp:TextBox runat="server" type="password" maxlength="100" class="form-control" id="password2" required="required">
-                                                </asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="Password2">Confirm password *</label>
+                                            <asp:TextBox runat="server" type="password" maxlength="100" class="form-control" id="Password2" required="required">
+                                            </asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <span runat="server" id="pswdMismatchError" visible="false">Passwords don't match</span>
+                                        <span runat="server" id="PswdMismatchError" visible="false">Passwords don't match</span>
 
-                                            <div class="form-footer">
-                                                <asp:button runat="server" type="submit" class="btn btn-outline-primary-2" id="registerButton" Text="Register">
-                                                </asp:button>
+                                        <div class="form-footer">
+                                            <asp:button runat="server" type="submit" class="btn btn-outline-primary-2" id="RegisterButton" Text="Register" OnClick="RegisterButton_Click">
+                                            </asp:button>
 
-                                                <a href="Login.aspx" class="forgot-link">Or sign in</a>
-                                            </div><!-- End .form-footer -->
-                                        </form>
+                                            <a href="Login.aspx" class="forgot-link">Or sign in</a>
+                                        </div><!-- End .form-footer -->
                                     </div><!-- .End .tab-pane -->
                                 </div><!-- End .tab-content -->
                             </div><!-- End .form-tab -->
