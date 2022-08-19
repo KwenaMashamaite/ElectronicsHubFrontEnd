@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="ElectonicsHub.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="ElectronicsHub_FrontEnd.Main" %>
 
 <!DOCTYPE html>
 
@@ -15,8 +15,8 @@
         <link rel="manifest" href="assets/images/icons/site.html">
         <link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#666666">
         <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
-        <meta name="apple-mobile-web-app-title" content="ElectonicsHub">
-        <meta name="application-name" content="ElectonicsHub">
+        <meta name="apple-mobile-web-app-title" content="ElectronicsHub">
+        <meta name="application-name" content="ElectronicsHub">
         <meta name="msapplication-TileColor" content="#cc9966">
         <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">

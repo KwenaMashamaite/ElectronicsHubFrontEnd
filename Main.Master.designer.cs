@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ElectonicsHub
+namespace ElectronicsHub_FrontEnd
 {
 
 
-    public partial class Site1
+    public partial class Main
     {
 
         /// <summary>

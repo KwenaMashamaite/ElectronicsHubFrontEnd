@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ElectonicsHub
+namespace ElectronicsHub_FrontEnd
 {
 
 

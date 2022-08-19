@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ElectonicsHub
+namespace ElectronicsHub_FrontEnd
 {
     public partial class Index : System.Web.UI.Page
     {

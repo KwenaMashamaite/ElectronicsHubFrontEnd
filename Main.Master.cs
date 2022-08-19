@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ElectonicsHub
+namespace ElectronicsHub_FrontEnd
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class Main : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
