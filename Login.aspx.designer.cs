@@ -15,30 +15,30 @@ namespace ElectronicsHub_FrontEnd
     {
 
         /// <summary>
-        /// signInEmail control.
+        /// Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox signInEmail;
+        protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// signInPassword control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox signInPassword;
+        protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
-        /// btnSignIn control.
+        /// LoginButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignIn;
+        protected global::System.Web.UI.WebControls.Button LoginButton;
     }
 }

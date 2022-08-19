@@ -17,26 +17,23 @@
                                 </ul>
                                 <div class="tab-content" id="tab-content-5">
                                     <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-                                        <form runat="server" action="#">
-                                            <div class="form-group">
-                                                <label for="singin-email">Email address *</label>
-                                                <asp:TextBox runat="server" type="email" class="form-control" id="signInEmail" name="signin-email" required="required"></asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="Email">Email address *</label>
+                                            <asp:TextBox runat="server" type="email" class="form-control" ID="Email" required="required"></asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-group">
-                                                <label for="singin-password">Password *</label>
-                                                <asp:TextBox runat="server" type="password" class="form-control" id="signInPassword" name="singin-password" required="required"></asp:TextBox>
-                                            </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="password">Password *</label>
+                                            <asp:TextBox runat="server" type="password" class="form-control" id="Password" required="required"></asp:TextBox>
+                                        </div><!-- End .form-group -->
 
-                                            <div class="form-footer">
-                                                <asp:Button id="btnSignIn" runat="server" type="submit" class="btn btn-outline-primary-2" Text="LOG IN">
+                                        <div class="form-footer">
+                                            <asp:Button ID="LoginButton" runat="server" type="submit" class="btn btn-outline-primary-2" Text="LOG IN" OnClick="LoginButton_Click">
                                                   
-                                                </asp:Button>
+                                            </asp:Button>
 
-                                                <a href="Register.aspx" class="forgot-link">Or create an account</a>
-                                            </div><!-- End .form-footer -->
-                                        </form>
-                                    
+                                            <a href="Register.aspx" class="forgot-link">Or create an account</a>
+                                        </div><!-- End .form-footer -->
                                     </div><!-- .End .tab-pane -->
                                 </div><!-- End .tab-content -->
                             </div><!-- End .form-tab -->
