@@ -70,16 +70,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
-    <None Include="Connected Services\ServiceReference1\Service1.disco" />
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+    <Content Include="Account\Customer\Index.aspx" />
+    <Content Include="Account\Manager\Index.aspx" />
+    <None Include="Connected Services\ElectronicsHubBackendService\BackendService.disco" />
+    <None Include="Connected Services\ElectronicsHubBackendService\BackendService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ElectronicsHubBackendService\configuration91.svcinfo" />
+    <None Include="Connected Services\ElectronicsHubBackendService\configuration.svcinfo" />
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ElectronicsHubBackendService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Register.aspx" />
+    <Content Include="Account\Customer\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +98,21 @@
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+    <Compile Include="Account\Customer\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Customer\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manager\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manager\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ElectronicsHubBackendService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -109,35 +131,40 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MainNav.master.cs">
+      <DependentUpon>MainNav.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainNav.master.designer.cs">
+      <DependentUpon>MainNav.master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Main.Master.cs">
-      <DependentUpon>Main.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Main.Master.designer.cs">
-      <DependentUpon>Main.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Register.aspx.cs">
+    <Compile Include="Account\Customer\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.cs">
+    <Compile Include="Account\Customer\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TopNav.Master.cs">
+      <DependentUpon>TopNav.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TopNav.Master.designer.cs">
+      <DependentUpon>TopNav.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
-    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+    <Content Include="MainNav.master" />
+    <None Include="Connected Services\ElectronicsHubBackendService\BackendService.wsdl" />
+    <None Include="Connected Services\ElectronicsHubBackendService\BackendService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Service12.xsd">
+    <None Include="Connected Services\ElectronicsHubBackendService\BackendService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <Content Include="Main.Master" />
+    <Content Include="TopNav.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,7 +176,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ElectronicsHubBackendService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

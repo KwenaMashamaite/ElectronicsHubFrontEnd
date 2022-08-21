@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ElectronicsHub_FrontEnd.ServiceReference1;
+using ElectronicsHub_FrontEnd.ElectronicsHubBackendService;
 
 namespace ElectronicsHub_FrontEnd
 {
@@ -12,34 +12,33 @@ namespace ElectronicsHub_FrontEnd
     public partial class Login : System.Web.UI.Page
     {
 
-        Service1Client sr = new Service1Client();
+        BackendServiceClient sr = new BackendServiceClient();  
+
+        private void RedirectHome(string userRole)
+        {
+            Response.Redirect("~/Account/" + userRole + "/Index.aspx");
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!Session["UserRole"].Equals("Guest"))
+            {
+                RedirectHome(Session["UserRole"].ToString());
+            }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            var userInfo = sr.LoginUser(Email.Text, Password.Text);
-            int userId = userInfo.Item1;
+            int userId = sr.LoginUser(Email.Text, Password.Text);
 
             if (userId != -1)
             {
-                Session["LoggedInUserId"] = userId;
+                Session["UserId"] = userId;
 
-                string userType = userInfo.Item2;
+                string userRole = sr.GetUserRole(userId);
+                Session["UserRole"] = userRole;
 
-                if (userType.Equals("CUSTOMER"))
-                {
-                    //Response.Redirect("CustomerHomePage.aspx");
-                    Response.Write("<script>alert('Customer login successful')</script>");
-                }
-                else if (userInfo.Equals("MANAGER"))
-                {
-                    //Response.Redirect("ManagerHomePage.aspx");
-                    Response.Write("<script>alert('Manager login successful')</script>");
-                }
+                RedirectHome(userRole);
             } 
             else
             {

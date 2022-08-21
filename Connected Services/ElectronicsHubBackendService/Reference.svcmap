@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="812ba158-0ffb-406c-83b4-acc2f5396585" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54504/BackendService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BackendService.disco" MetadataType="Disco" ID="93a63979-e3a9-4e9a-8a12-e744068fb0c9" SourceId="1" SourceUrl="http://localhost:54504/BackendService.svc?disco" />
+    <MetadataFile FileName="BackendService.xsd" MetadataType="Schema" ID="33517357-8a7e-48e3-a31d-8d165731f8aa" SourceId="1" SourceUrl="http://localhost:54504/BackendService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BackendService2.xsd" MetadataType="Schema" ID="18ba41fe-c2bd-427e-9a75-56b9a1a37ccf" SourceId="1" SourceUrl="http://localhost:54504/BackendService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BackendService1.xsd" MetadataType="Schema" ID="309ab1b5-e34f-4fa1-995f-5332f65d20fd" SourceId="1" SourceUrl="http://localhost:54504/BackendService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BackendService.wsdl" MetadataType="Wsdl" ID="4a4a98cd-041f-49e6-98c8-e425468afafa" SourceId="1" SourceUrl="http://localhost:54504/BackendService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
