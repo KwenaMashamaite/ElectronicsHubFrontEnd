@@ -23,15 +23,8 @@
                     <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
                     <form action="#" method="get">
                         <div class="header-search-wrapper search-wrapper-wide">
-                            <div class="select-custom">
-                                <select id="cat" name="cat">
-                                    <option value="">All Departments</option>
-                                    <option value="1">Laptops & Computers</option>
-                                    <option value="2">Cell Phones</option>
-                                    <option value="3">Digital Cameras</</option>
-                                    <option value="4">TV & Video</option>
-                                    <option value="5">Audio</option>
-                                </select>
+                            <div runat="server" id="ProdCatSearch" class="select-custom">
+                                <!-- Placeholder for dynamic product categories-->
                             </div><!-- End .select-custom -->
                             <label for="q" class="sr-only">Search</label>
                             <input type="search" class="form-control" name="q" id="q" placeholder="Search product ..." required>
@@ -58,61 +51,8 @@
 
                         <div class="dropdown-menu">
                             <nav class="side-nav">
-                                <ul class="menu-vertical sf-arrows">
-                                    <li class="megamenu-container">
-                                        <a class="sf-with-ul" href="#">Laptops & Computers</a>
-
-                                        <ul>
-                                            <li><a href="#">Desktop Computers</a></li>
-                                            <li><a href="#">Monitors</a></li>
-                                            <li><a href="#">Laptops</a></li>
-                                            <li><a href="#">iPad & Tablets</a></li>
-                                            <li><a href="#">Hard Drives & Storage</a></li>
-                                            <li><a href="#">Printers & Supplies</a></li>
-                                            <li><a href="#">Computer Accessories</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="megamenu-container">
-                                        <a class="sf-with-ul" href="#">Cell Phones</a>
-                            
-                                        <ul>
-                                            <li><a href="#">Carrier Phones</a></li>
-                                            <li><a href="#">Unlocked Phones</a></li>
-                                            <li><a href="#">Phone & Cellphone Cases</a></li>
-                                            <li><a href="#">Cellphone Chargers </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="megamenu-container">
-                                        <a class="sf-with-ul" href="#">Digital Cameras</a>
-                                        
-                                        <ul>
-                                            <li><a href="#">Digital SLR Cameras</a></li>
-                                            <li><a href="#">Sports & Action Cameras</a></li>
-                                            <li><a href="#">Camcorders</a></li>
-                                            <li><a href="#">Camera Lenses</a></li>
-                                            <li><a href="#">Photo Printer</a></li>
-                                            <li><a href="#">Digital Memory Cards</a></li>
-                                            <li><a href="#">Camera Bags, Backpacks & Cases</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="megamenu-container">
-                                        <a class="sf-with-ul" href="#">TV & Video</a>
-
-                                        <ul>
-                                            <li><a href="#">TVs</a></li>
-                                            <li><a href="#">Projectors</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="megamenu-container">
-                                        <a class="sf-with-ul" href="#">Audio</a>
-
-                                        <ul>
-                                            <li><a href="#">Headphones and Headsets</a></li>
-                                            <li><a href="#">Home Audio</a></li>
-                                            <li><a href="#">Speakers</a></li>
-                                            <li><a href="#">Microphones</a></li>
-                                        </ul>
-                                    </li>
+                                <ul runat="server" id="ProdCategory" class="menu-vertical sf-arrows">
+                                    <!-- Placeholder for dynamic product categories-->                                    
                                 </ul><!-- End .menu-vertical -->
                             </nav><!-- End .side-nav -->
                         </div><!-- End .dropdown-menu -->
@@ -123,10 +63,10 @@
                     <nav class="main-nav">
                         <ul class="menu sf-arrows">
                             <li class="megamenu-container active">
-                                <a href="Index.aspx">Home</a>
+                                <a runat="server" href="~/Index.aspx">Home</a>
                             </li>
                             <li>
-                                <a href="category.html">Shop</a>
+                                <a runat="server" href="~/Shop/Index.aspx">Shop</a>
                             </li>
                         </ul><!-- End .menu -->
                     </nav><!-- End .main-nav -->

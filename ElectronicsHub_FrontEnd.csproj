@@ -81,6 +81,12 @@
     <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ElectronicsHubBackendService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -88,6 +94,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Customer\Register.aspx" />
+    <Content Include="Shop\Index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +152,13 @@
     </Compile>
     <Compile Include="Account\Customer\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="TopNav.Master.cs">
       <DependentUpon>TopNav.Master</DependentUpon>
