@@ -53,7 +53,81 @@
       <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="tns:ProductCategory" />
       <xs:element minOccurs="0" name="ProductCategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="ProductSubcategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductSubcategory" nillable="true" type="tns:ProductSubcategory" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductImages" nillable="true" type="tns:ArrayOfProductImage" />
+      <xs:element minOccurs="0" name="ProductReviews" nillable="true" type="tns:ArrayOfProductReview" />
+      <xs:element minOccurs="0" name="ProductSubcategory" nillable="true" type="tns:ProductSubcategory" />
+      <xs:element minOccurs="0" name="ProductSubcategoryId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfProductImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductImage" nillable="true" type="tns:ProductImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductImage" nillable="true" type="tns:ArrayOfProductImage" />
+  <xs:complexType name="ProductImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LargePhotoUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductImageExtras" nillable="true" type="tns:ArrayOfProductImageExtra" />
+      <xs:element minOccurs="0" name="ProductImageId" type="xs:int" />
+      <xs:element minOccurs="0" name="ThumbnailUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductImage" nillable="true" type="tns:ProductImage" />
+  <xs:complexType name="ArrayOfProductImageExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductImageExtra" nillable="true" type="tns:ProductImageExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductImageExtra" nillable="true" type="tns:ArrayOfProductImageExtra" />
+  <xs:complexType name="ProductImageExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductImage" nillable="true" type="tns:ProductImage" />
+      <xs:element minOccurs="0" name="ProductImageExtraId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductImageId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductImageExtra" nillable="true" type="tns:ProductImageExtra" />
+  <xs:complexType name="ArrayOfProductReview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductReview" nillable="true" type="tns:ProductReview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductReview" nillable="true" type="tns:ArrayOfProductReview" />
+  <xs:complexType name="ProductReview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductReviewId" type="xs:int" />
+      <xs:element minOccurs="0" name="Rating" type="xs:int" />
+      <xs:element minOccurs="0" name="ReviewDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReviewerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductReview" nillable="true" type="tns:ProductReview" />
 </xs:schema>

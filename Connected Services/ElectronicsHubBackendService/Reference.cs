@@ -345,6 +345,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ProductSubcategoryIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] ProductsField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -407,6 +410,599 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage[] ProductImagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview[] ProductReviewsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory ProductSubcategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProductSubcategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Brand {
+            get {
+                return this.BrandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandField, value) != true)) {
+                    this.BrandField = value;
+                    this.RaisePropertyChanged("Brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage[] ProductImages {
+            get {
+                return this.ProductImagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductImagesField, value) != true)) {
+                    this.ProductImagesField = value;
+                    this.RaisePropertyChanged("ProductImages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview[] ProductReviews {
+            get {
+                return this.ProductReviewsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductReviewsField, value) != true)) {
+                    this.ProductReviewsField = value;
+                    this.RaisePropertyChanged("ProductReviews");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory ProductSubcategory {
+            get {
+                return this.ProductSubcategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductSubcategoryField, value) != true)) {
+                    this.ProductSubcategoryField = value;
+                    this.RaisePropertyChanged("ProductSubcategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProductSubcategoryId {
+            get {
+                return this.ProductSubcategoryIdField;
+            }
+            set {
+                if ((this.ProductSubcategoryIdField.Equals(value) != true)) {
+                    this.ProductSubcategoryIdField = value;
+                    this.RaisePropertyChanged("ProductSubcategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductImage", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class ProductImage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LargePhotoUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[] ProductImageExtrasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductImageIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThumbnailUrlField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LargePhotoUrl {
+            get {
+                return this.LargePhotoUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LargePhotoUrlField, value) != true)) {
+                    this.LargePhotoUrlField = value;
+                    this.RaisePropertyChanged("LargePhotoUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[] ProductImageExtras {
+            get {
+                return this.ProductImageExtrasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductImageExtrasField, value) != true)) {
+                    this.ProductImageExtrasField = value;
+                    this.RaisePropertyChanged("ProductImageExtras");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductImageId {
+            get {
+                return this.ProductImageIdField;
+            }
+            set {
+                if ((this.ProductImageIdField.Equals(value) != true)) {
+                    this.ProductImageIdField = value;
+                    this.RaisePropertyChanged("ProductImageId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ThumbnailUrl {
+            get {
+                return this.ThumbnailUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThumbnailUrlField, value) != true)) {
+                    this.ThumbnailUrlField = value;
+                    this.RaisePropertyChanged("ThumbnailUrl");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductReview", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class ProductReview : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductReviewIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ReviewDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Comment {
+            get {
+                return this.CommentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductReviewId {
+            get {
+                return this.ProductReviewIdField;
+            }
+            set {
+                if ((this.ProductReviewIdField.Equals(value) != true)) {
+                    this.ProductReviewIdField = value;
+                    this.RaisePropertyChanged("ProductReviewId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rating {
+            get {
+                return this.RatingField;
+            }
+            set {
+                if ((this.RatingField.Equals(value) != true)) {
+                    this.RatingField = value;
+                    this.RaisePropertyChanged("Rating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ReviewDate {
+            get {
+                return this.ReviewDateField;
+            }
+            set {
+                if ((this.ReviewDateField.Equals(value) != true)) {
+                    this.ReviewDateField = value;
+                    this.RaisePropertyChanged("ReviewDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewerName {
+            get {
+                return this.ReviewerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewerNameField, value) != true)) {
+                    this.ReviewerNameField = value;
+                    this.RaisePropertyChanged("ReviewerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductImageExtra", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class ProductImageExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage ProductImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductImageExtraIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductImageIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ImageUrl {
+            get {
+                return this.ImageUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageUrlField, value) != true)) {
+                    this.ImageUrlField = value;
+                    this.RaisePropertyChanged("ImageUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage ProductImage {
+            get {
+                return this.ProductImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductImageField, value) != true)) {
+                    this.ProductImageField = value;
+                    this.RaisePropertyChanged("ProductImage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductImageExtraId {
+            get {
+                return this.ProductImageExtraIdField;
+            }
+            set {
+                if ((this.ProductImageExtraIdField.Equals(value) != true)) {
+                    this.ProductImageExtraIdField = value;
+                    this.RaisePropertyChanged("ProductImageExtraId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductImageId {
+            get {
+                return this.ProductImageIdField;
+            }
+            set {
+                if ((this.ProductImageIdField.Equals(value) != true)) {
+                    this.ProductImageIdField = value;
+                    this.RaisePropertyChanged("ProductImageId");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -433,12 +1029,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/LoginUser", ReplyAction="http://tempuri.org/IBackendService/LoginUserResponse")]
         System.Threading.Tasks.Task<int> LoginUserAsync(string userEmail, string userPassword);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetUserRole", ReplyAction="http://tempuri.org/IBackendService/GetUserRoleResponse")]
-        string GetUserRole(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetUserRole", ReplyAction="http://tempuri.org/IBackendService/GetUserRoleResponse")]
-        System.Threading.Tasks.Task<string> GetUserRoleAsync(int id);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetUser", ReplyAction="http://tempuri.org/IBackendService/GetUserResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User GetUser(int id);
         
@@ -452,10 +1042,52 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory[]> GetProductCategoriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductSubcategories", ReplyAction="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse")]
-        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] GetProductSubcategories(int productCategoryId);
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] GetProductSubcategories(int categoryId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductSubcategories", ReplyAction="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse")]
-        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int productCategoryId);
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAllProducts", ReplyAction="http://tempuri.org/IBackendService/GetAllProductsResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAllProducts", ReplyAction="http://tempuri.org/IBackendService/GetAllProductsResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductById", ReplyAction="http://tempuri.org/IBackendService/GetProductByIdResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product GetProductById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductById", ReplyAction="http://tempuri.org/IBackendService/GetProductByIdResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product> GetProductByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductsByCategory", ReplyAction="http://tempuri.org/IBackendService/GetProductsByCategoryResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetProductsByCategory(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductsByCategory", ReplyAction="http://tempuri.org/IBackendService/GetProductsByCategoryResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetProductsByCategoryAsync(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductsBySubcategory", ReplyAction="http://tempuri.org/IBackendService/GetProductsBySubcategoryResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetProductsBySubcategory(int subcategoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductsBySubcategory", ReplyAction="http://tempuri.org/IBackendService/GetProductsBySubcategoryResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetProductsBySubcategoryAsync(int subcategoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductReviews", ReplyAction="http://tempuri.org/IBackendService/GetProductReviewsResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview[] GetProductReviews(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductReviews", ReplyAction="http://tempuri.org/IBackendService/GetProductReviewsResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview[]> GetProductReviewsAsync(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductImage", ReplyAction="http://tempuri.org/IBackendService/GetProductImageResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage GetProductImage(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductImage", ReplyAction="http://tempuri.org/IBackendService/GetProductImageResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage> GetProductImageAsync(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAdditionalProductImages", ReplyAction="http://tempuri.org/IBackendService/GetAdditionalProductImagesResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[] GetAdditionalProductImages(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAdditionalProductImages", ReplyAction="http://tempuri.org/IBackendService/GetAdditionalProductImagesResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[]> GetAdditionalProductImagesAsync(int productId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -501,14 +1133,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.LoginUserAsync(userEmail, userPassword);
         }
         
-        public string GetUserRole(int id) {
-            return base.Channel.GetUserRole(id);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetUserRoleAsync(int id) {
-            return base.Channel.GetUserRoleAsync(id);
-        }
-        
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User GetUser(int id) {
             return base.Channel.GetUser(id);
         }
@@ -525,12 +1149,68 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.GetProductCategoriesAsync();
         }
         
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] GetProductSubcategories(int productCategoryId) {
-            return base.Channel.GetProductSubcategories(productCategoryId);
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] GetProductSubcategories(int categoryId) {
+            return base.Channel.GetProductSubcategories(categoryId);
         }
         
-        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int productCategoryId) {
-            return base.Channel.GetProductSubcategoriesAsync(productCategoryId);
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int categoryId) {
+            return base.Channel.GetProductSubcategoriesAsync(categoryId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts() {
+            return base.Channel.GetAllProducts();
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetAllProductsAsync() {
+            return base.Channel.GetAllProductsAsync();
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product GetProductById(int id) {
+            return base.Channel.GetProductById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product> GetProductByIdAsync(int id) {
+            return base.Channel.GetProductByIdAsync(id);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetProductsByCategory(int categoryId) {
+            return base.Channel.GetProductsByCategory(categoryId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetProductsByCategoryAsync(int categoryId) {
+            return base.Channel.GetProductsByCategoryAsync(categoryId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetProductsBySubcategory(int subcategoryId) {
+            return base.Channel.GetProductsBySubcategory(subcategoryId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetProductsBySubcategoryAsync(int subcategoryId) {
+            return base.Channel.GetProductsBySubcategoryAsync(subcategoryId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview[] GetProductReviews(int productId) {
+            return base.Channel.GetProductReviews(productId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview[]> GetProductReviewsAsync(int productId) {
+            return base.Channel.GetProductReviewsAsync(productId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage GetProductImage(int productId) {
+            return base.Channel.GetProductImage(productId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage> GetProductImageAsync(int productId) {
+            return base.Channel.GetProductImageAsync(productId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[] GetAdditionalProductImages(int productId) {
+            return base.Channel.GetAdditionalProductImages(productId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[]> GetAdditionalProductImagesAsync(int productId) {
+            return base.Channel.GetAdditionalProductImagesAsync(productId);
         }
     }
 }

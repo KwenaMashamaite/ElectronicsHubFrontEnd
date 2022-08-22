@@ -19,12 +19,6 @@
   <wsdl:message name="IBackendService_LoginUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_GetUserRole_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserRole" />
-  </wsdl:message>
-  <wsdl:message name="IBackendService_GetUserRole_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserRoleResponse" />
-  </wsdl:message>
   <wsdl:message name="IBackendService_GetUser_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUser" />
   </wsdl:message>
@@ -43,6 +37,48 @@
   <wsdl:message name="IBackendService_GetProductSubcategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductSubcategoriesResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_GetAllProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetAllProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductsBySubcategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsBySubcategory" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductsBySubcategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsBySubcategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductReviews" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductImage" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetAdditionalProductImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalProductImages" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetAdditionalProductImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalProductImagesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBackendService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RegisterUser" message="tns:IBackendService_RegisterUser_InputMessage" />
@@ -51,10 +87,6 @@
     <wsdl:operation name="LoginUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/LoginUser" message="tns:IBackendService_LoginUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/LoginUserResponse" message="tns:IBackendService_LoginUser_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetUserRole">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetUserRole" message="tns:IBackendService_GetUserRole_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetUserRoleResponse" message="tns:IBackendService_GetUserRole_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetUser" message="tns:IBackendService_GetUser_InputMessage" />
@@ -67,6 +99,34 @@
     <wsdl:operation name="GetProductSubcategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategories" message="tns:IBackendService_GetProductSubcategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse" message="tns:IBackendService_GetProductSubcategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetAllProducts" message="tns:IBackendService_GetAllProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetAllProductsResponse" message="tns:IBackendService_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductById" message="tns:IBackendService_GetProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductByIdResponse" message="tns:IBackendService_GetProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductsByCategory" message="tns:IBackendService_GetProductsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductsByCategoryResponse" message="tns:IBackendService_GetProductsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsBySubcategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductsBySubcategory" message="tns:IBackendService_GetProductsBySubcategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductsBySubcategoryResponse" message="tns:IBackendService_GetProductsBySubcategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductReviews" message="tns:IBackendService_GetProductReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductReviewsResponse" message="tns:IBackendService_GetProductReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductImage" message="tns:IBackendService_GetProductImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductImageResponse" message="tns:IBackendService_GetProductImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalProductImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetAdditionalProductImages" message="tns:IBackendService_GetAdditionalProductImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetAdditionalProductImagesResponse" message="tns:IBackendService_GetAdditionalProductImages_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBackendService" type="tns:IBackendService">
@@ -82,15 +142,6 @@
     </wsdl:operation>
     <wsdl:operation name="LoginUser">
       <soap:operation soapAction="http://tempuri.org/IBackendService/LoginUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetUserRole">
-      <soap:operation soapAction="http://tempuri.org/IBackendService/GetUserRole" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -118,6 +169,69 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductSubcategories">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductSubcategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsBySubcategory">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductsBySubcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductReviews">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalProductImages">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetAdditionalProductImages" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

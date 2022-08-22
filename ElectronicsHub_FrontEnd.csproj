@@ -87,6 +87,18 @@
     <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ElectronicsHubBackendService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

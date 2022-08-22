@@ -35,7 +35,7 @@ namespace ElectronicsHub_FrontEnd
             {
                 Session["UserId"] = userId;
 
-                string userRole = sr.GetUserRole(userId);
+                string userRole = sr.GetUser(userId).Role;
                 Session["UserRole"] = userRole;
 
                 RedirectHome(userRole);
