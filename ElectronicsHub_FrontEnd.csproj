@@ -106,6 +106,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Customer\Register.aspx" />
+    <Content Include="ProductInfo.aspx" />
     <Content Include="Shop\Index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -156,6 +157,13 @@
     </Compile>
     <Compile Include="MainNav.master.designer.cs">
       <DependentUpon>MainNav.master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInfo.aspx.cs">
+      <DependentUpon>ProductInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductInfo.aspx.designer.cs">
+      <DependentUpon>ProductInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account\Customer\Register.aspx.cs">
