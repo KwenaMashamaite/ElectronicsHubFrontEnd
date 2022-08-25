@@ -171,4 +171,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpvoteProductReview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="reviewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpvoteProductReviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpvoteProductReviewResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductReviewUpvoteCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="prodReviewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductReviewUpvoteCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProductReviewUpvoteCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

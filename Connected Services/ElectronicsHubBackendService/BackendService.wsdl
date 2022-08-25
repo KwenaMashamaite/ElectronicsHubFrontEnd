@@ -79,6 +79,18 @@
   <wsdl:message name="IBackendService_GetAdditionalProductImages_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAdditionalProductImagesResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_UpvoteProductReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpvoteProductReview" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpvoteProductReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpvoteProductReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductReviewUpvoteCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductReviewUpvoteCount" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductReviewUpvoteCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductReviewUpvoteCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBackendService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RegisterUser" message="tns:IBackendService_RegisterUser_InputMessage" />
@@ -127,6 +139,14 @@
     <wsdl:operation name="GetAdditionalProductImages">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetAdditionalProductImages" message="tns:IBackendService_GetAdditionalProductImages_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetAdditionalProductImagesResponse" message="tns:IBackendService_GetAdditionalProductImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpvoteProductReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpvoteProductReview" message="tns:IBackendService_UpvoteProductReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpvoteProductReviewResponse" message="tns:IBackendService_UpvoteProductReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductReviewUpvoteCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductReviewUpvoteCount" message="tns:IBackendService_GetProductReviewUpvoteCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductReviewUpvoteCountResponse" message="tns:IBackendService_GetProductReviewUpvoteCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBackendService" type="tns:IBackendService">
@@ -232,6 +252,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAdditionalProductImages">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetAdditionalProductImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpvoteProductReview">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpvoteProductReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductReviewUpvoteCount">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductReviewUpvoteCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

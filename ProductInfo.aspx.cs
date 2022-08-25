@@ -15,22 +15,28 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Page cannot be displayed without a product
+            if (Request.QueryString["ProdId"] == null)
+            {
+                Response.Redirect("~/404.aspx");
+            }
+            
             int prodId = Int32.Parse(Request.QueryString["ProdId"].ToString());
             Product prod = sr.GetProductById(prodId);
 
             if (prod == null)
             {
                 Response.Redirect("~/404.aspx");
-            } 
+            }
             else
             {
                 // Set up links
                 NextProdLink.HRef = (sr.GetProductById(prodId + 1) != null) ? Request.Url.AbsolutePath.ToString() + "?ProdId=" + (prodId + 1) : "#";
                 PrevProdLink.HRef = (sr.GetProductById(prodId - 1) != null) ? Request.Url.AbsolutePath.ToString() + "?ProdId=" + (prodId - 1) : "#";
             }
-
-            Debug.WriteLine(Request.Url.AbsolutePath);
-            Debug.WriteLine(Request.Url.AbsoluteUri);
+            
+            //Debug.WriteLine(Request.Url.AbsolutePath);
+            //Debug.WriteLine(Request.Url.AbsoluteUri);
 
             string display = "";
 
@@ -137,7 +143,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "</div>"; // End.review-content
 
                     display += "<div class='review-action'>";
-                    display += "<a href='#'><i class='icon-thumbs-up'></i>Helpful(2)</a>";
+                    display += "<a href='#'><i class='icon-thumbs-up'></i>Helpful (" + sr.GetProductReviewUpvoteCount(rev.ProductReviewId) + ")</a>";
                     display += "</div>"; // End.review-action
                     display += "</div>"; // End.col-auto
                     display += "</div>"; // End.row

@@ -183,6 +183,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private int CustomerIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReviewUpvote[] ProductReviewUpvotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User UserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -207,6 +210,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((this.CustomerIdField.Equals(value) != true)) {
                     this.CustomerIdField = value;
                     this.RaisePropertyChanged("CustomerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReviewUpvote[] ProductReviewUpvotes {
+            get {
+                return this.ProductReviewUpvotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductReviewUpvotesField, value) != true)) {
+                    this.ProductReviewUpvotesField = value;
+                    this.RaisePropertyChanged("ProductReviewUpvotes");
                 }
             }
         }
@@ -249,21 +265,27 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductCategory", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductReviewUpvote", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
     [System.SerializableAttribute()]
-    public partial class ProductCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ProductReviewUpvote : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Customer CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductCategoryIdField;
+        private int CustomerIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] ProductSubcategoriesField;
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview ProductReviewField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductReviewIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductReviewUpvoteIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -276,40 +298,66 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Customer Customer {
             get {
-                return this.NameField;
+                return this.CustomerField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductCategoryId {
+        public int CustomerId {
             get {
-                return this.ProductCategoryIdField;
+                return this.CustomerIdField;
             }
             set {
-                if ((this.ProductCategoryIdField.Equals(value) != true)) {
-                    this.ProductCategoryIdField = value;
-                    this.RaisePropertyChanged("ProductCategoryId");
+                if ((this.CustomerIdField.Equals(value) != true)) {
+                    this.CustomerIdField = value;
+                    this.RaisePropertyChanged("CustomerId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] ProductSubcategories {
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReview ProductReview {
             get {
-                return this.ProductSubcategoriesField;
+                return this.ProductReviewField;
             }
             set {
-                if ((object.ReferenceEquals(this.ProductSubcategoriesField, value) != true)) {
-                    this.ProductSubcategoriesField = value;
-                    this.RaisePropertyChanged("ProductSubcategories");
+                if ((object.ReferenceEquals(this.ProductReviewField, value) != true)) {
+                    this.ProductReviewField = value;
+                    this.RaisePropertyChanged("ProductReview");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductReviewId {
+            get {
+                return this.ProductReviewIdField;
+            }
+            set {
+                if ((this.ProductReviewIdField.Equals(value) != true)) {
+                    this.ProductReviewIdField = value;
+                    this.RaisePropertyChanged("ProductReviewId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductReviewUpvoteId {
+            get {
+                return this.ProductReviewUpvoteIdField;
+            }
+            set {
+                if ((this.ProductReviewUpvoteIdField.Equals(value) != true)) {
+                    this.ProductReviewUpvoteIdField = value;
+                    this.RaisePropertyChanged("ProductReviewUpvoteId");
                 }
             }
         }
@@ -326,27 +374,39 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductSubcategory", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductReview", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
     [System.SerializableAttribute()]
-    public partial class ProductSubcategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ProductReview : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private string CommentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory ProductCategoryField;
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product ProductField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductCategoryIdField;
+        private int ProductIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductSubcategoryIdField;
+        private int ProductReviewIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] ProductsField;
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReviewUpvote[] ProductReviewUpvotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ReviewDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -359,66 +419,118 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public string Comment {
             get {
-                return this.NameField;
+                return this.CommentField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory ProductCategory {
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product Product {
             get {
-                return this.ProductCategoryField;
+                return this.ProductField;
             }
             set {
-                if ((object.ReferenceEquals(this.ProductCategoryField, value) != true)) {
-                    this.ProductCategoryField = value;
-                    this.RaisePropertyChanged("ProductCategory");
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductCategoryId {
+        public int ProductId {
             get {
-                return this.ProductCategoryIdField;
+                return this.ProductIdField;
             }
             set {
-                if ((this.ProductCategoryIdField.Equals(value) != true)) {
-                    this.ProductCategoryIdField = value;
-                    this.RaisePropertyChanged("ProductCategoryId");
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductSubcategoryId {
+        public int ProductReviewId {
             get {
-                return this.ProductSubcategoryIdField;
+                return this.ProductReviewIdField;
             }
             set {
-                if ((this.ProductSubcategoryIdField.Equals(value) != true)) {
-                    this.ProductSubcategoryIdField = value;
-                    this.RaisePropertyChanged("ProductSubcategoryId");
+                if ((this.ProductReviewIdField.Equals(value) != true)) {
+                    this.ProductReviewIdField = value;
+                    this.RaisePropertyChanged("ProductReviewId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] Products {
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductReviewUpvote[] ProductReviewUpvotes {
             get {
-                return this.ProductsField;
+                return this.ProductReviewUpvotesField;
             }
             set {
-                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
-                    this.ProductsField = value;
-                    this.RaisePropertyChanged("Products");
+                if ((object.ReferenceEquals(this.ProductReviewUpvotesField, value) != true)) {
+                    this.ProductReviewUpvotesField = value;
+                    this.RaisePropertyChanged("ProductReviewUpvotes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rating {
+            get {
+                return this.RatingField;
+            }
+            set {
+                if ((this.RatingField.Equals(value) != true)) {
+                    this.RatingField = value;
+                    this.RaisePropertyChanged("Rating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ReviewDate {
+            get {
+                return this.ReviewDateField;
+            }
+            set {
+                if ((this.ReviewDateField.Equals(value) != true)) {
+                    this.ReviewDateField = value;
+                    this.RaisePropertyChanged("ReviewDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewerName {
+            get {
+                return this.ReviewerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewerNameField, value) != true)) {
+                    this.ReviewerNameField = value;
+                    this.RaisePropertyChanged("ReviewerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
                 }
             }
         }
@@ -640,6 +752,115 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductSubcategory", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class ProductSubcategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory ProductCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductCategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductSubcategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] ProductsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory ProductCategory {
+            get {
+                return this.ProductCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductCategoryField, value) != true)) {
+                    this.ProductCategoryField = value;
+                    this.RaisePropertyChanged("ProductCategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductCategoryId {
+            get {
+                return this.ProductCategoryIdField;
+            }
+            set {
+                if ((this.ProductCategoryIdField.Equals(value) != true)) {
+                    this.ProductCategoryIdField = value;
+                    this.RaisePropertyChanged("ProductCategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductSubcategoryId {
+            get {
+                return this.ProductSubcategoryIdField;
+            }
+            set {
+                if ((this.ProductSubcategoryIdField.Equals(value) != true)) {
+                    this.ProductSubcategoryIdField = value;
+                    this.RaisePropertyChanged("ProductSubcategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ProductImage", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
     [System.SerializableAttribute()]
     public partial class ProductImage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -765,163 +986,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductReview", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
-    [System.SerializableAttribute()]
-    public partial class ProductReview : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CommentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product ProductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductReviewIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RatingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ReviewDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReviewerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Comment {
-            get {
-                return this.CommentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
-                    this.CommentField = value;
-                    this.RaisePropertyChanged("Comment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product Product {
-            get {
-                return this.ProductField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
-                    this.ProductField = value;
-                    this.RaisePropertyChanged("Product");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductId {
-            get {
-                return this.ProductIdField;
-            }
-            set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductReviewId {
-            get {
-                return this.ProductReviewIdField;
-            }
-            set {
-                if ((this.ProductReviewIdField.Equals(value) != true)) {
-                    this.ProductReviewIdField = value;
-                    this.RaisePropertyChanged("ProductReviewId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Rating {
-            get {
-                return this.RatingField;
-            }
-            set {
-                if ((this.RatingField.Equals(value) != true)) {
-                    this.RatingField = value;
-                    this.RaisePropertyChanged("Rating");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ReviewDate {
-            get {
-                return this.ReviewDateField;
-            }
-            set {
-                if ((this.ReviewDateField.Equals(value) != true)) {
-                    this.ReviewDateField = value;
-                    this.RaisePropertyChanged("ReviewDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReviewerName {
-            get {
-                return this.ReviewerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReviewerNameField, value) != true)) {
-                    this.ReviewerNameField = value;
-                    this.RaisePropertyChanged("ReviewerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ProductImageExtra", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
     [System.SerializableAttribute()]
     public partial class ProductImageExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1013,6 +1077,83 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductCategory", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class ProductCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductCategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] ProductSubcategoriesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductCategoryId {
+            get {
+                return this.ProductCategoryIdField;
+            }
+            set {
+                if ((this.ProductCategoryIdField.Equals(value) != true)) {
+                    this.ProductCategoryIdField = value;
+                    this.RaisePropertyChanged("ProductCategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[] ProductSubcategories {
+            get {
+                return this.ProductSubcategoriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductSubcategoriesField, value) != true)) {
+                    this.ProductSubcategoriesField = value;
+                    this.RaisePropertyChanged("ProductSubcategories");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ElectronicsHubBackendService.IBackendService")]
     public interface IBackendService {
@@ -1088,6 +1229,18 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAdditionalProductImages", ReplyAction="http://tempuri.org/IBackendService/GetAdditionalProductImagesResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[]> GetAdditionalProductImagesAsync(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpvoteProductReview", ReplyAction="http://tempuri.org/IBackendService/UpvoteProductReviewResponse")]
+        bool UpvoteProductReview(int customerId, int reviewId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpvoteProductReview", ReplyAction="http://tempuri.org/IBackendService/UpvoteProductReviewResponse")]
+        System.Threading.Tasks.Task<bool> UpvoteProductReviewAsync(int customerId, int reviewId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductReviewUpvoteCount", ReplyAction="http://tempuri.org/IBackendService/GetProductReviewUpvoteCountResponse")]
+        int GetProductReviewUpvoteCount(int prodReviewId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductReviewUpvoteCount", ReplyAction="http://tempuri.org/IBackendService/GetProductReviewUpvoteCountResponse")]
+        System.Threading.Tasks.Task<int> GetProductReviewUpvoteCountAsync(int prodReviewId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1211,6 +1364,22 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductImageExtra[]> GetAdditionalProductImagesAsync(int productId) {
             return base.Channel.GetAdditionalProductImagesAsync(productId);
+        }
+        
+        public bool UpvoteProductReview(int customerId, int reviewId) {
+            return base.Channel.UpvoteProductReview(customerId, reviewId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpvoteProductReviewAsync(int customerId, int reviewId) {
+            return base.Channel.UpvoteProductReviewAsync(customerId, reviewId);
+        }
+        
+        public int GetProductReviewUpvoteCount(int prodReviewId) {
+            return base.Channel.GetProductReviewUpvoteCount(prodReviewId);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductReviewUpvoteCountAsync(int prodReviewId) {
+            return base.Channel.GetProductReviewUpvoteCountAsync(prodReviewId);
         }
     }
 }

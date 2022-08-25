@@ -212,7 +212,6 @@
 
                                             <div class="review-action">
                                                 <a href="#"><i class="icon-thumbs-up"></i>Helpful (2)</a>
-                                                <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
                                             </div><!-- End .review-action -->
                                         </div><!-- End .col-auto -->
                                     </div><!-- End .row -->
