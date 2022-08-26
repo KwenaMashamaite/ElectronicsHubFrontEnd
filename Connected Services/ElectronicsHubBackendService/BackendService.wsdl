@@ -91,6 +91,18 @@
   <wsdl:message name="IBackendService_GetProductReviewUpvoteCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductReviewUpvoteCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_GetCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCart" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartItems" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBackendService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RegisterUser" message="tns:IBackendService_RegisterUser_InputMessage" />
@@ -147,6 +159,14 @@
     <wsdl:operation name="GetProductReviewUpvoteCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductReviewUpvoteCount" message="tns:IBackendService_GetProductReviewUpvoteCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductReviewUpvoteCountResponse" message="tns:IBackendService_GetProductReviewUpvoteCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetCart" message="tns:IBackendService_GetCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetCartResponse" message="tns:IBackendService_GetCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetCartItems" message="tns:IBackendService_GetCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetCartItemsResponse" message="tns:IBackendService_GetCartItems_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBackendService" type="tns:IBackendService">
@@ -270,6 +290,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductReviewUpvoteCount">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductReviewUpvoteCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCart">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItems">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetCartItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
