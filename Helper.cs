@@ -8,6 +8,8 @@ namespace ElectronicsHub_FrontEnd
 {
     public class Helper
     {
+        private static BackendServiceClient sr = new BackendServiceClient();
+
         public static double GetReviewsAverage(List<ProductReview> prodReviews)
         {
             double sum = 0.0;
@@ -23,6 +25,18 @@ namespace ElectronicsHub_FrontEnd
         public static double ConvRatingToPercentage(double rating)
         {
             return (rating / 5.0) * 100.0;
+        }
+
+        public static double GetCartItemsTotal(List<CartItem> cartItems)
+        {
+            decimal total = 0;
+
+            foreach (CartItem cartItem in cartItems)
+            {
+                total += cartItem.Quantity * sr.GetProductById(cartItem.ProductId).Price;
+            }
+
+            return (double)total;
         }
     }
 }

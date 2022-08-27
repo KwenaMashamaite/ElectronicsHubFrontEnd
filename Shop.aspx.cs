@@ -117,7 +117,7 @@ namespace ElectronicsHub_FrontEnd
                     }
 
                     display += "<h3 class='product-title'><a href='/ProductInfo.aspx?ProdId=" + p.ProductId + "'>" + p.Name + "</a></h3>";
-                    display += "<div class='product-price'>R " + String.Format("{0:0.00}", p.Price) + "</div>";
+                    display += "<div class='product-price'><b>R " + String.Format("{0:N}", p.Price) + "</b></div>";
 
                     // Only display rating if product has reviews
                     var prodReviews = sr.GetProductReviews(p.ProductId).ToList();

@@ -51,7 +51,7 @@ namespace ElectronicsHub_FrontEnd
 
             if (numItems > 0)
             {
-                string display = "<div class='dropdown-cart-products'>"; 
+                string display = "<div class='dropdown-cart-products' style='overflow-y:auto; max-height: 50vh'>"; 
 
                 foreach(CartItem item in cartItems)
                 {
@@ -79,7 +79,7 @@ namespace ElectronicsHub_FrontEnd
                 display += "<div class='dropdown-cart-total'>";
                 display += "<span>Total</span>";
 
-                display += "<span class='cart-total-price'> R" + String.Format("{0:N}", GetCartTotal(cartItems)) + "</span>";
+                display += "<span class='cart-total-price'> R" + String.Format("{0:N}", Helper.GetCartItemsTotal(cartItems)) + "</span>";
                 display += "</div>"; // End.dropdown-cart-total
 
                 display += "<div class='dropdown-cart-action'>";
@@ -93,18 +93,6 @@ namespace ElectronicsHub_FrontEnd
             {
                 CartDropdownMenu.InnerHtml = "Cart is empty";
             }
-        }
-
-        private double GetCartTotal(List<CartItem> cartItems)
-        {
-            decimal total = 0;
-
-            foreach (CartItem cartItem in cartItems)
-            {
-                total += cartItem.Quantity * sr.GetProductById(cartItem.ProductId).Price;
-            }
-
-            return (double) total;
         }
 
         private void DisplayBrowseCategories(List<ProductCategory> prodCategories)

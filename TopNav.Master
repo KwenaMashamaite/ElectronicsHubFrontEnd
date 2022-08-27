@@ -34,6 +34,9 @@
     <link runat="server" rel="stylesheet" href="~/assets/css/style.css">
     <link runat="server" rel="stylesheet" href="~/assets/css/plugins/nouislider/nouislider.css">
 
+     <link runat="server" rel="stylesheet" href="~/assets/css/skins/skin-demo-4.css">
+    <link runat="server" rel="stylesheet" href="~/assets/css/demos/demo-4.css">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
