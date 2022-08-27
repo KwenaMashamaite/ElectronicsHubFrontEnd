@@ -33,10 +33,15 @@ namespace ElectronicsHub_FrontEnd
 
             if (userId != -1)
             {
-                Session["UserId"] = userId;
-
                 string userRole = sr.GetUser(userId).Role;
+                Session["UserId"] = userId;
                 Session["UserRole"] = userRole;
+
+                if (userRole.Equals("Customer"))
+                {
+                    // By default all registered customers have a cart associated with them
+                    Session["UserCartId"] = sr.GetCart(userId).CartId;
+                }
 
                 RedirectHome(userRole);
             } 

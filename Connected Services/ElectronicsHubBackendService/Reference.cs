@@ -766,6 +766,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem[] CartItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -836,6 +839,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.CartItemsField, value) != true)) {
                     this.CartItemsField = value;
                     this.RaisePropertyChanged("CartItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreationDate {
+            get {
+                return this.CreationDateField;
+            }
+            set {
+                if ((this.CreationDateField.Equals(value) != true)) {
+                    this.CreationDateField = value;
+                    this.RaisePropertyChanged("CreationDate");
                 }
             }
         }

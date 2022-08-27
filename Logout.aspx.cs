@@ -14,6 +14,7 @@ namespace ElectronicsHub_FrontEnd
             // Only logged in users can access this page
             if (Session["UserId"] != null) {
                 Session["UserId"] = null;
+                Session["UserCartId"] = null;
                 Session["UserRole"] = "Guest";
 
                 Response.Redirect("~/Login.aspx");

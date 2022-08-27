@@ -22,26 +22,95 @@ namespace ElectronicsHub_FrontEnd
                 logoAnchor.Visible = false;
             }
 
-            // Dynamically display categories
-            var prodCategories = sr.GetProductCategories();
-            string display = "";
-
-
-            // Dynamically display product categories in 'Search product' section
-            display = "<select id='cat' name = 'cat'>"
-                    + "<option value='all'> All Departments </option>";
-
-            foreach (ProductCategory pCat in prodCategories)
+            // Remove cart if user is not a customer
+            if (Session["UserRole"].Equals("Customer"))
             {
-                display += "<option value='" + pCat.ProductCategoryId + "'>" + pCat.Name + "</option>";
+                DisplayCartDetails(Int32.Parse(Session["UserCartId"].ToString()));
+            }
+            else
+            {
+                CartDropdown.Visible = false;
             }
 
-            display += "</select>";
+            // Dynamically display categories
+            var prodCategories = sr.GetProductCategories().ToList();
 
-            ProdCatSearch.InnerHtml = display;
-            display = String.Empty;
+            // Dynamically display product categories in 'Search product' section
+            DisplaySearchCategories(prodCategories);
 
             // Dynamically display categories in 'Browse Categories' section
+            DisplayBrowseCategories(prodCategories);
+        }
+
+        private void DisplayCartDetails(int cartId)
+        {
+            List<CartItem> cartItems = sr.GetCartItems(cartId).ToList();
+            int numItems = cartItems.Count();
+
+            CartCount.InnerHtml = numItems.ToString();
+
+            if (numItems > 0)
+            {
+                string display = "<div class='dropdown-cart-products'>"; 
+
+                foreach(CartItem item in cartItems)
+                {
+                    Product prod = sr.GetProductById(item.ProductId);
+
+                    display += "<div class='product'>";
+                    display += "<div class='product-cart-details'>";
+                    display += "<h4 class='product-title'>";
+                    display += "<a href='/ProductInfo.aspx?ProdId=" + prod.ProductId + "'>" + prod.Name + "</a></h4>";
+                    display += "<span class='cart-product-info'><span class='cart-product-qty'>" + item.Quantity + "</span>" + " x R " + String.Format("{0:N}", prod.Price) + "</span>";
+                    display += "</div>"; //<!-- End.product-cart-details -->
+
+                    // Product image
+                    ProductImage prodImg = sr.GetProductImage(prod.ProductId);
+
+                    display += "<figure class='product-image-container'>";
+                    display += "<a href='/ProductInfo.aspx?ProdId=" + prod.ProductId + "' class='product-image'>";
+                    display += "<img src='/" + prodImg.ThumbnailUrl + "' alt='product'></a></figure>";
+                    display += "<a href='#' class='btn-remove' title='Remove Product'><i class='icon-close'></i></a></div>";   
+                }
+                
+                display += "</div>"; //End.dropdown-cart-products
+
+                //Display view cart and checkout buttons
+                display += "<div class='dropdown-cart-total'>";
+                display += "<span>Total</span>";
+
+                display += "<span class='cart-total-price'> R" + String.Format("{0:N}", GetCartTotal(cartItems)) + "</span>";
+                display += "</div>"; // End.dropdown-cart-total
+
+                display += "<div class='dropdown-cart-action'>";
+                display += "<a href='/Cart.aspx?CartId=" + cartId + "' class='btn btn-primary'>View Cart</a>";
+                display += "<a href='/Checkout.aspx?CartId=" + cartId + "' class='btn btn-outline-primary-2'><span>Checkout</span><i class='icon-long-arrow-right'></i></a>";
+                display += "</div>"; // End.dropdown-cart-total
+
+                CartDropdownMenu.InnerHtml = display;
+            }
+            else
+            {
+                CartDropdownMenu.InnerHtml = "Cart is empty";
+            }
+        }
+
+        private double GetCartTotal(List<CartItem> cartItems)
+        {
+            decimal total = 0;
+
+            foreach (CartItem cartItem in cartItems)
+            {
+                total += cartItem.Quantity * sr.GetProductById(cartItem.ProductId).Price;
+            }
+
+            return (double) total;
+        }
+
+        private void DisplayBrowseCategories(List<ProductCategory> prodCategories)
+        {
+            string display = String.Empty;
+
             foreach (ProductCategory pCat in prodCategories)
             {
                 var productSubcategories = sr.GetProductSubcategories(pCat.ProductCategoryId).ToList();
@@ -69,6 +138,21 @@ namespace ElectronicsHub_FrontEnd
             }
 
             ProdCategory.InnerHtml = display;
+        }
+
+        private void DisplaySearchCategories(List<ProductCategory> prodCategories)
+        {
+            string display = "<select id='cat' name = 'cat'>"
+                    + "<option value='all'> All Departments </option>";
+
+            foreach (ProductCategory pCat in prodCategories)
+            {
+                display += "<option value='" + pCat.ProductCategoryId + "'>" + pCat.Name + "</option>";
+            }
+
+            display += "</select>";
+
+            ProdCatSearch.InnerHtml = display;
         }
     }
 }

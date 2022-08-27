@@ -25,7 +25,7 @@ namespace ElectronicsHub_FrontEnd
             products = PartitionProducts(products, curPageNum);
 
             // Dynamically display number of products displayed thus far
-            DisplayProductCountInfoForCurPage(curPageNum, prodCount);
+            DisplayProductCountInfo(curPageNum, prodCount);
 
             // Dynamically display products
             DisplayProducts(products);
@@ -71,7 +71,7 @@ namespace ElectronicsHub_FrontEnd
             return products.Skip(ITEMS_PER_PAGE * (pageNum - 1)).Take(ITEMS_PER_PAGE).ToList();
         }
 
-        private void DisplayProductCountInfoForCurPage(int curPageNum, int prodCount)
+        private void DisplayProductCountInfo(int curPageNum, int prodCount)
         {
             if (prodCount > ITEMS_PER_PAGE && curPageNum * ITEMS_PER_PAGE < prodCount)
             {
