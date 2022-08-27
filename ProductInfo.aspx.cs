@@ -88,9 +88,9 @@ namespace ElectronicsHub_FrontEnd
             {
                 display += "<div class='ratings-container'>";
                 display += "<div class='ratings'>";
-                display += "<div class='ratings-val' style='width: " + ConvRatingToPercentage(GetReviewsAverage(prodReviews)) + "%;'> </div>";
+                display += "<div class='ratings-val' style='width: " + Helper.ConvRatingToPercentage(Helper.GetReviewsAverage(prodReviews)) + "%;'> </div>";
                 display += "</div>"; //End.ratings
-                display += "<div> " + GetReviewsAverage(prodReviews);
+                display += "<div> " + Helper.GetReviewsAverage(prodReviews);
                 display += "<a class='ratings-text' href='#ProdReviewsLink' id='review-link'> ( " + prodReviews.Count() + " Reviews )</a></div>";
                 display += "</div>"; //End.rating-container
             }
@@ -131,7 +131,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "<h4>" + rev.ReviewerName + "</h4>";
                     display += "<div class='ratings-container'>";
                     display += "<div class='ratings'>";
-                    display += "<div class='ratings-val' style='width: " + ConvRatingToPercentage(rev.Rating) + "%;'></div>"; // End.ratings-val
+                    display += "<div class='ratings-val' style='width: " + Helper.ConvRatingToPercentage(rev.Rating) + "%;'></div>"; // End.ratings-val
                     display += "</div>"; // End.ratings
                     display += "</div>"; // End.rating-container
                     display += "<span class='review-date'>" + rev.ReviewDate.ToString().Split(' ')[0] + "</span>";
@@ -152,23 +152,6 @@ namespace ElectronicsHub_FrontEnd
 
                 ProdReviews.InnerHtml = display;
             }                
-        }
-
-        private double GetReviewsAverage(ProductReview[] prodReviews)
-        {
-            double sum = 0.0;
-
-            foreach(var pR in prodReviews.Where(r => r != null))
-            {
-                sum += pR.Rating;
-            }
-
-            return sum / prodReviews.Length;
-        }
-
-        private double ConvRatingToPercentage(double rating)
-        {
-            return (rating / 5.0) * 100.0;
         }
     }
 }

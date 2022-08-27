@@ -114,7 +114,7 @@
     <Content Include="Account\Customer\Register.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="ProductInfo.aspx" />
-    <Content Include="Shop\Index.aspx" />
+    <Content Include="Shop.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +144,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,12 +188,12 @@
     <Compile Include="Account\Customer\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Shop\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Shop\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
     </Compile>
     <Compile Include="TopNav.Master.cs">
       <DependentUpon>TopNav.Master</DependentUpon>

@@ -1445,6 +1445,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetUser", ReplyAction="http://tempuri.org/IBackendService/GetUserResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User> GetUserAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductCategory", ReplyAction="http://tempuri.org/IBackendService/GetProductCategoryResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory GetProductCategory(int prodCatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductCategory", ReplyAction="http://tempuri.org/IBackendService/GetProductCategoryResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory> GetProductCategoryAsync(int prodCatId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductCategories", ReplyAction="http://tempuri.org/IBackendService/GetProductCategoriesResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory[] GetProductCategories();
         
@@ -1573,6 +1579,14 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User> GetUserAsync(int id) {
             return base.Channel.GetUserAsync(id);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory GetProductCategory(int prodCatId) {
+            return base.Channel.GetProductCategory(prodCatId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory> GetProductCategoryAsync(int prodCatId) {
+            return base.Channel.GetProductCategoryAsync(prodCatId);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory[] GetProductCategories() {

@@ -48,18 +48,18 @@ namespace ElectronicsHub_FrontEnd
 
                 if (productSubcategories.Count == 0)
                 {
-                    display += "<li><a href='#'>" + pCat.Name + "</a>";
+                    display += "<li><a href='/Shop.aspx?ProdCatId=" + pCat.ProductCategoryId + "'>" + pCat.Name + "</a>";
                 }
                 else
                 {
                     display += "<li class='megamenu-container'>"
                          + "<a class='sf-with-ul' href='#'>" + pCat.Name + "</a>";
 
-                    display += "<ul>";
+                    display += "<ul><li><a  class='menu-title' href='/Shop.aspx?ProdCatId=" + pCat.ProductCategoryId + "'> All " + pCat.Name + "</a>";
 
                     foreach (ProductSubcategory prodSubcat in productSubcategories)
                     {
-                        display += "<li><a href='#'>" + prodSubcat.Name + "</a></li>";
+                        display += "<li><a href='/Shop.aspx?ProdSubcatId=" + prodSubcat.ProductSubcategoryId + "'>" + prodSubcat.Name + "</a></li>";
                     }
 
                     display += "</ul>";
