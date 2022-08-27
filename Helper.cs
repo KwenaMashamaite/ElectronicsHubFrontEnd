@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ElectronicsHub_FrontEnd.ElectronicsHubBackendService;
 
 namespace ElectronicsHub_FrontEnd
 {
     public class Helper
     {
-        public static double GetReviewsAverage(ElectronicsHubBackendService.ProductReview[] prodReviews)
+        public static double GetReviewsAverage(List<ProductReview> prodReviews)
         {
             double sum = 0.0;
 
@@ -16,7 +17,7 @@ namespace ElectronicsHub_FrontEnd
                 sum += pR.Rating;
             }
 
-            return sum / prodReviews.Length;
+            return sum / prodReviews.Count();
         }
 
         public static double ConvRatingToPercentage(double rating)

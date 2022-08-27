@@ -21,27 +21,35 @@ namespace ElectronicsHub_FrontEnd
                 Response.Redirect("~/404.aspx");
             }
             
-            int prodId = Int32.Parse(Request.QueryString["ProdId"].ToString());
-            Product prod = sr.GetProductById(prodId);
+            Product prod = sr.GetProductById(Int32.Parse(Request.QueryString["ProdId"].ToString()));
 
+            // Page cannot be displayed without a product
             if (prod == null)
             {
                 Response.Redirect("~/404.aspx");
             }
-            else
-            {
-                // Set up links
-                NextProdLink.HRef = (sr.GetProductById(prodId + 1) != null) ? Request.Url.AbsolutePath.ToString() + "?ProdId=" + (prodId + 1) : "#";
-                PrevProdLink.HRef = (sr.GetProductById(prodId - 1) != null) ? Request.Url.AbsolutePath.ToString() + "?ProdId=" + (prodId - 1) : "#";
-            }
             
-            //Debug.WriteLine(Request.Url.AbsolutePath);
-            //Debug.WriteLine(Request.Url.AbsoluteUri);
+            // Links to next and previous products
+            InitLinks(prod.ProductId);
 
-            string display = "";
+            // Dynamically display product images
+            DisplayProductImages(prod.ProductId);
 
-            // Display product image
+            // Dynamically display product details
+            List<ProductReview> prodReviews = sr.GetProductReviews(prod.ProductId).ToList();
+            DisplayProductDetails(prod, prodReviews);
+
+            // Dynamically display product description
+            ProdDesc.InnerHtml = prod.Description;
+
+            // Dynamically display product reviews
+            DisplayProductReviews(prodReviews);
+        }
+
+        private void DisplayProductImages(int prodId)
+        {
             ProductImage prodImg = sr.GetProductImage(prodId);
+            string display = "";
 
             display += "<div class='product-gallery product-gallery-vertical'>";
             display += "<div class='row'>";
@@ -55,7 +63,7 @@ namespace ElectronicsHub_FrontEnd
             var extraProdImgs = sr.GetAdditionalProductImages(prodId);
 
             display += "<div id='product-zoom-gallery' class='product-image-gallery'>";
-                
+
             // First image always main display image
             display += "<a class='product-gallery-item active' href='#' data-image='" + prodImg.LargePhotoUrl + "' data-zoom-image='" + prodImg.LargePhotoUrl + "'>";
             display += "<img src='" + prodImg.LargePhotoUrl + "' alt='product side'>";
@@ -76,15 +84,14 @@ namespace ElectronicsHub_FrontEnd
             display += "</div></div></div>";
 
             ProdImages.InnerHtml = display;
+        }
 
-            // Add product details
-            display = String.Empty;
-            var prodReviews = sr.GetProductReviews(prodId);
-
-            display += "<h1 class='product-title'>" + prod.Name + "</h1>";
-
+        private void DisplayProductDetails(Product prod, List<ProductReview> prodReviews)
+        {
+            string display = "<h1 class='product-title'>" + prod.Name + "</h1>";
+            
             // Only display product rating if it has been reviewed
-            if (prodReviews.Count() != 0)
+            if (prodReviews.Count() > 0)
             {
                 display += "<div class='ratings-container'>";
                 display += "<div class='ratings'>";
@@ -95,9 +102,9 @@ namespace ElectronicsHub_FrontEnd
                 display += "</div>"; //End.rating-container
             }
 
-            display += "<div class='product-price'>R " + String.Format("{0:0.00}", prod.Price) + "</div>";
+            display += "<div class='product-price'>R " + String.Format("{0:N}", prod.Price) + "</div>";
             display += "<div class='product-content'>";
-            display += "<p>Still deciding what to put here </p></div>";                                                                  
+            display += "<p>Still deciding what to put here </p></div>";
             display += "<div class='details-filter-row details-row-size'>";
             display += "<label>In Stock: " + prod.Quantity + "</label>";
             display += "</div>"; // End.details-filter-row
@@ -108,21 +115,28 @@ namespace ElectronicsHub_FrontEnd
             display += "</div>";//End.row
 
             ProdDetails.InnerHtml = display;
+        }
 
-            // Dynamically display product description
-            ProdDesc.InnerHtml = prod.Description;
+        private void InitLinks(int prodId)
+        {
+            NextProdLink.HRef = (sr.GetProductById(prodId + 1) != null) ? Request.Url.AbsolutePath.ToString() + "?ProdId=" + (prodId + 1) : "#";
+            PrevProdLink.HRef = (sr.GetProductById(prodId - 1) != null) ? Request.Url.AbsolutePath.ToString() + "?ProdId=" + (prodId - 1) : "#";
+        }
 
-            // Dynamically display product reviews
-            display = String.Empty;
-            int prodReviewsCount = prodReviews.Count();
-            ProdReviewsLink.InnerHtml = "Reviews( " + prodReviewsCount + " )";
+        private void DisplayProductReviews(List<ProductReview> prodReviews)
+        {
+            int numReviews = prodReviews.Count();
 
-            if (prodReviewsCount == 0)
+            ProdReviewsLink.InnerHtml = "Reviews( " + numReviews + " )";
+
+            if (numReviews == 0)
             {
                 ProdReviews.InnerHtml = "<p>This product has no reviews yet</p>";
             }
             else
             {
+                string display = "";
+
                 foreach (var rev in prodReviews)
                 {
                     display += "<div class='review'>";
@@ -151,7 +165,7 @@ namespace ElectronicsHub_FrontEnd
                 }
 
                 ProdReviews.InnerHtml = display;
-            }                
+            }
         }
     }
 }

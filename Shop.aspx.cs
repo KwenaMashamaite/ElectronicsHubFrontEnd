@@ -120,9 +120,9 @@ namespace ElectronicsHub_FrontEnd
                     display += "<div class='product-price'>R " + String.Format("{0:0.00}", p.Price) + "</div>";
 
                     // Only display rating if product has reviews
-                    var prodReviews = sr.GetProductReviews(p.ProductId);
+                    var prodReviews = sr.GetProductReviews(p.ProductId).ToList();
 
-                    if (prodReviews.Count() != 0)
+                    if (prodReviews.Count() > 0)
                     {
                         display += "<div class='ratings-container'>";
                         display += "<div class='ratings'>";
