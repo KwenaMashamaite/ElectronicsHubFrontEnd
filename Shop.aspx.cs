@@ -17,14 +17,38 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int pageNum = 1;
+            int curPageNum = GetCurrentPageNum();   
+            List<Product> products = GetProducts();
+            int prodCount = products.Count();
 
+            // Get products for current page only
+            products = PartitionProducts(products, curPageNum);
+
+            // Dynamically display number of products displayed thus far
+            DisplayProductCountInfoForCurPage(curPageNum, prodCount);
+
+            // Dynamically display products
+            DisplayProducts(products);
+                
+            // Dynamically display shopping page navigation
+            DisplayPageNavigation(curPageNum, prodCount);
+        }
+
+        private int GetCurrentPageNum()
+        {
             if (Request.QueryString["Page"] != null)
             {
-                pageNum = Int32.Parse(Request.QueryString["Page"].ToString());
+                return Int32.Parse(Request.QueryString["Page"].ToString());
             }
+            else
+            {
+                return 1;
+            }
+        }
 
-            List<Product> products = null;
+        private List<Product> GetProducts()
+        {
+            List<Product> products;
 
             if (Request.QueryString["ProdCatId"] != null)
             {
@@ -37,30 +61,36 @@ namespace ElectronicsHub_FrontEnd
             else
             {
                 products = sr.GetAllProducts().ToList();
-                //products = sr.GetAllProducts().OrderBy(p => random.Next()).ToList();
             }
 
-            int prodCount = products.Count();
+            return products;
+        }
 
-            if (prodCount > ITEMS_PER_PAGE && pageNum * ITEMS_PER_PAGE < prodCount)
+        private List<Product> PartitionProducts(List<Product> products, int pageNum)
+        {
+            return products.Skip(ITEMS_PER_PAGE * (pageNum - 1)).Take(ITEMS_PER_PAGE).ToList();
+        }
+
+        private void DisplayProductCountInfoForCurPage(int curPageNum, int prodCount)
+        {
+            if (prodCount > ITEMS_PER_PAGE && curPageNum * ITEMS_PER_PAGE < prodCount)
             {
-                ProdCount.InnerHtml = "Showing <span>" + (pageNum * ITEMS_PER_PAGE) + " of " + prodCount + "</span> Products";
+                ProdCount.InnerHtml = "Showing <span>" + (curPageNum * ITEMS_PER_PAGE) + " of " + prodCount + "</span> Products";
             }
             else
             {
                 ProdCount.InnerHtml = "Showing <span>" + prodCount + " of " + prodCount + "</span> Products";
             }
+        }
 
-            // Partition products page
-            double ratio = (double) prodCount / ITEMS_PER_PAGE;
-            int numPages = GetPageCount(prodCount);
+        private void DisplayProducts(List<Product> products)
+        {
+            int numProducts = products.Count();
 
-            products = products.Skip(ITEMS_PER_PAGE * (pageNum - 1)).Take(ITEMS_PER_PAGE).ToList();
-
-            string display = "";
-
-            if (prodCount != 0)
+            if (numProducts > 0)
             {
+                string display = "";
+
                 // Dynamically display products
                 foreach (Product p in products)
                 {
@@ -108,45 +138,64 @@ namespace ElectronicsHub_FrontEnd
 
                 ProdContainer.InnerHtml = display;
 
-                // Dynamically display shopping page navigation
-                string pageNavDisplay = "";
-
-                for (int i = 1; i <= numPages; i++)
-                {
-                    if (i == pageNum)
-                    {
-                        pageNavDisplay += "<li class='page-item active' aria-current='page'><a class='page-link' href='#'>" + i + "</a></li>";
-                    }
-                    else
-                    {
-                        pageNavDisplay += "<li class='page-item'><a class='page-link' href='" + Request.Url.AbsolutePath.ToString() + "?Page=" + i + "'>" + i + "</a></li>";
-                    }
-                }
-
-                pageNavDisplay += "<li class='page-item-total'>of " + numPages + "</li>";
-
-                PageNav.InnerHtml = pageNavDisplay;
-            } 
+            }
             else
             {
                 ProdContainer.InnerHtml = "<h5>No products to display</h5>";
+            }
+        }
+
+        private void DisplayPageNavigation(int curPageNum, int prodCount)
+        {
+            int numPages = GetPageCount(prodCount);
+
+            if (numPages != 0)
+            {
+                // Dynamically display shopping page navigation
+                string display = "";
+
+                for (int i = 1; i <= numPages; i++)
+                {
+                    if (i == curPageNum)
+                    {
+                        display += "<li class='page-item active' aria-current='page'><a class='page-link' href='#'>" + i + "</a></li>";
+                    }
+                    else
+                    {
+                        display += "<li class='page-item'><a class='page-link' href='" + Request.Url.AbsolutePath.ToString() + "?Page=" + i + "'>" + i + "</a></li>";
+                    }
+                }
+
+                display += "<li class='page-item-total'>of " + numPages + "</li>";
+
+                PageNav.InnerHtml = display;
+            }
+            else
+            {
                 PageNav.InnerHtml = "";
             }
         }
 
         private int GetPageCount(int numProducts)
         {
-            double ratio = (double) numProducts / ITEMS_PER_PAGE;
-
-            if (Math.Abs(ratio % 1) <= (Double.Epsilon * 100))
+            if (numProducts == 0)
             {
-                // Number is whole
-                return (int) ratio;
+                return 0;
             }
             else
             {
-                // We'll have x amount of pages with an additional page that has products < ITEMS_PER_PAGE
-                return ((int) Math.Truncate(ratio)) + 1;
+                double ratio = (double)numProducts / ITEMS_PER_PAGE;
+
+                if (Math.Abs(ratio % 1) <= (Double.Epsilon * 100))
+                {
+                    // Number is whole
+                    return (int)ratio;
+                }
+                else
+                {
+                    // We'll have x amount of pages with an additional page that has products < ITEMS_PER_PAGE
+                    return ((int)Math.Truncate(ratio)) + 1;
+                }
             }
         }
     }
