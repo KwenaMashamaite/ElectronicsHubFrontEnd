@@ -46,11 +46,6 @@ namespace ElectronicsHub_FrontEnd
             DisplayProductReviews(prodReviews);
         }
 
-        protected void AddToCart_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DisplayProductImages(int prodId)
         {
             ProductImage prodImg = sr.GetProductImage(prodId);
@@ -114,7 +109,7 @@ namespace ElectronicsHub_FrontEnd
             display += "<label>In Stock: " + prod.Quantity + "</label>";
             display += "</div>"; // End.details-filter-row
             display += "<div class='product-details-action'>";
-            display += "<asp:LinkButton href='#' runat='server' id='AddToCart' OnClick='AddToCart_Click' class='btn-product btn-cart'>add to cart</asp:LinkButton>";
+            display += "<a href='#' class='btn-product btn-cart'>add to cart</a>";
             display += "</div>"; // End.product-details
             display += "</div>"; // End.col-md-6
             display += "</div>";//End.row

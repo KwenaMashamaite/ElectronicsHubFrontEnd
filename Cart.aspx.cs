@@ -24,6 +24,12 @@ namespace ElectronicsHub_FrontEnd
                 if (Request.QueryString["RemCartItemId"] != null)
                 {
                     sr.RemoveCartItem(Int32.Parse(Request.QueryString["RemCartItemId"].ToString()));
+
+                    // Return to calling page
+                    if (Request.UrlReferrer != null)
+                    {
+                        Response.Redirect(Request.UrlReferrer.AbsoluteUri.ToString());
+                    }
                 }
 
                 DisplayCartItems(Int32.Parse(Session["UserCartId"].ToString()));
