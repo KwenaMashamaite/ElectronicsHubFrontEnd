@@ -109,7 +109,17 @@ namespace ElectronicsHub_FrontEnd
             display += "<label>In Stock: " + prod.Quantity + "</label>";
             display += "</div>"; // End.details-filter-row
             display += "<div class='product-details-action'>";
-            display += "<a href='#' class='btn-product btn-cart'>add to cart</a>";
+
+            // Only logged in users can add to cart
+            if (Session["UserId"] != null)
+            {
+                display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
+            }
+            else
+            {
+                display += "<a href='/Login.aspx' class='btn-product btn-cart'>add to cart</a>";
+            }
+
             display += "</div>"; // End.product-details
             display += "</div>"; // End.col-md-6
             display += "</div>";//End.row

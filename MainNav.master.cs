@@ -47,7 +47,7 @@ namespace ElectronicsHub_FrontEnd
             List<CartItem> cartItems = sr.GetCartItems(cartId).ToList();
             int numItems = cartItems.Count();
 
-            CartCount.InnerHtml = numItems.ToString();
+            CartCount.InnerHtml = cartItems.Sum(cI => cI.Quantity).ToString();
 
             if (numItems > 0)
             {

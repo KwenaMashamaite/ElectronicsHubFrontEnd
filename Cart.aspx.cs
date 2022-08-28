@@ -31,6 +31,18 @@ namespace ElectronicsHub_FrontEnd
                         Response.Redirect(Request.UrlReferrer.AbsoluteUri.ToString());
                     }
                 }
+                else if(Request.QueryString["AddProdId"] != null)
+                {
+                    int cartId = Int32.Parse(Session["UserCartId"].ToString());
+                    int prodId = Int32.Parse(Request.QueryString["AddProdId"].ToString());
+                    sr.CreateCartItem(cartId, prodId);
+
+                    // Return to calling page
+                    if (Request.UrlReferrer != null)
+                    {
+                        Response.Redirect(Request.UrlReferrer.AbsoluteUri.ToString());
+                    }
+                }
 
                 DisplayCartItems(Int32.Parse(Session["UserCartId"].ToString()));
             }

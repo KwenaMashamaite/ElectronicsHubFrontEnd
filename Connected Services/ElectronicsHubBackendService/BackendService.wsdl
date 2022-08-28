@@ -109,11 +109,11 @@
   <wsdl:message name="IBackendService_GetCartItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItemsResponse" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_AddCartItem_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddCartItem" />
+  <wsdl:message name="IBackendService_CreateCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCartItem" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_AddCartItem_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddCartItemResponse" />
+  <wsdl:message name="IBackendService_CreateCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCartItemResponse" />
   </wsdl:message>
   <wsdl:message name="IBackendService_RemoveCartItem_InputMessage">
     <wsdl:part name="parameters" element="tns:RemoveCartItem" />
@@ -196,9 +196,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetCartItems" message="tns:IBackendService_GetCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetCartItemsResponse" message="tns:IBackendService_GetCartItems_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddCartItem">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/AddCartItem" message="tns:IBackendService_AddCartItem_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/AddCartItemResponse" message="tns:IBackendService_AddCartItem_OutputMessage" />
+    <wsdl:operation name="CreateCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateCartItem" message="tns:IBackendService_CreateCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateCartItemResponse" message="tns:IBackendService_CreateCartItem_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RemoveCartItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RemoveCartItem" message="tns:IBackendService_RemoveCartItem_InputMessage" />
@@ -364,8 +364,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddCartItem">
-      <soap:operation soapAction="http://tempuri.org/IBackendService/AddCartItem" style="document" />
+    <wsdl:operation name="CreateCartItem">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreateCartItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

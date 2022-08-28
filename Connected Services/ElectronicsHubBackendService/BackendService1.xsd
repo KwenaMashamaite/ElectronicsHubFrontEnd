@@ -242,17 +242,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddCartItem">
+  <xs:element name="CreateCartItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="cartItem" nillable="true" type="q14:CartItem" />
+        <xs:element minOccurs="0" name="cartId" type="xs:int" />
+        <xs:element minOccurs="0" name="prodId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddCartItemResponse">
+  <xs:element name="CreateCartItemResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AddCartItemResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CreateCartItemResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -273,7 +274,8 @@
   <xs:element name="UpdateCartItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CartItem" nillable="true" type="q15:CartItem" />
+        <xs:element minOccurs="0" name="cartItemId" type="xs:int" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
