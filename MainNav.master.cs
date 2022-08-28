@@ -70,7 +70,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "<figure class='product-image-container'>";
                     display += "<a href='/ProductInfo.aspx?ProdId=" + prod.ProductId + "' class='product-image'>";
                     display += "<img src='/" + prodImg.ThumbnailUrl + "' alt='product'></a></figure>";
-                    display += "<a href='#' class='btn-remove' title='Remove Product'><i class='icon-close'></i></a></div>";   
+                    display += "<a href='/Cart.aspx?RemCartItemId=" + item.CartItemId + "' class='btn-remove' title='Remove Product'><i class='icon-close'></i></a></div>";   
                 }
                 
                 display += "</div>"; //End.dropdown-cart-products

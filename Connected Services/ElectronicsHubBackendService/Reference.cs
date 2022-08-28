@@ -1544,6 +1544,24 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetCartItems", ReplyAction="http://tempuri.org/IBackendService/GetCartItemsResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem[]> GetCartItemsAsync(int cardId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/AddCartItem", ReplyAction="http://tempuri.org/IBackendService/AddCartItemResponse")]
+        bool AddCartItem(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem cartItem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/AddCartItem", ReplyAction="http://tempuri.org/IBackendService/AddCartItemResponse")]
+        System.Threading.Tasks.Task<bool> AddCartItemAsync(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem cartItem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/RemoveCartItem", ReplyAction="http://tempuri.org/IBackendService/RemoveCartItemResponse")]
+        bool RemoveCartItem(int cartItemId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/RemoveCartItem", ReplyAction="http://tempuri.org/IBackendService/RemoveCartItemResponse")]
+        System.Threading.Tasks.Task<bool> RemoveCartItemAsync(int cartItemId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateCartItem", ReplyAction="http://tempuri.org/IBackendService/UpdateCartItemResponse")]
+        bool UpdateCartItem(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem CartItem);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateCartItem", ReplyAction="http://tempuri.org/IBackendService/UpdateCartItemResponse")]
+        System.Threading.Tasks.Task<bool> UpdateCartItemAsync(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem CartItem);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1707,6 +1725,30 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem[]> GetCartItemsAsync(int cardId) {
             return base.Channel.GetCartItemsAsync(cardId);
+        }
+        
+        public bool AddCartItem(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem cartItem) {
+            return base.Channel.AddCartItem(cartItem);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddCartItemAsync(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem cartItem) {
+            return base.Channel.AddCartItemAsync(cartItem);
+        }
+        
+        public bool RemoveCartItem(int cartItemId) {
+            return base.Channel.RemoveCartItem(cartItemId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveCartItemAsync(int cartItemId) {
+            return base.Channel.RemoveCartItemAsync(cartItemId);
+        }
+        
+        public bool UpdateCartItem(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem CartItem) {
+            return base.Channel.UpdateCartItem(CartItem);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateCartItemAsync(ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem CartItem) {
+            return base.Channel.UpdateCartItemAsync(CartItem);
         }
     }
 }

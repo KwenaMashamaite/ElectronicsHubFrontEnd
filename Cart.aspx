@@ -9,7 +9,7 @@
         <div class="cart">
 	        <div class="container">
 	            <div class="row">
-	                <div class="col-lg-9">
+	                <div runat="server" id="CartTable" class="col-lg-9">
 	                	<table class="table table-cart table-mobile">
 							<thead>
 								<tr>
@@ -74,7 +74,7 @@
 			            	<asp:LinkButton runat="server" id="UpdateCart" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></asp:LinkButton>
 		            	</div><!-- End .cart-bottom -->
 	                </div><!-- End .col-lg-9 -->
-	                <aside class="col-lg-3">
+	                <aside runat="server" id="CartTotalContainer" class="col-lg-3">
 	                	<div class="summary summary-cart">
 	                		<h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
 

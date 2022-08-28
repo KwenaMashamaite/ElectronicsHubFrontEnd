@@ -109,6 +109,24 @@
   <wsdl:message name="IBackendService_GetCartItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_AddCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCartItem" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_AddCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_RemoveCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCartItem" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_RemoveCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartItem" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBackendService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RegisterUser" message="tns:IBackendService_RegisterUser_InputMessage" />
@@ -177,6 +195,18 @@
     <wsdl:operation name="GetCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetCartItems" message="tns:IBackendService_GetCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetCartItemsResponse" message="tns:IBackendService_GetCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/AddCartItem" message="tns:IBackendService_AddCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/AddCartItemResponse" message="tns:IBackendService_AddCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RemoveCartItem" message="tns:IBackendService_RemoveCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/RemoveCartItemResponse" message="tns:IBackendService_RemoveCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateCartItem" message="tns:IBackendService_UpdateCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateCartItemResponse" message="tns:IBackendService_UpdateCartItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBackendService" type="tns:IBackendService">
@@ -327,6 +357,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetCartItems">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCartItem">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/AddCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCartItem">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/RemoveCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartItem">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateCartItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

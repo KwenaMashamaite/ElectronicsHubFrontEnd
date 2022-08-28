@@ -15,6 +15,15 @@ namespace ElectronicsHub_FrontEnd
     {
 
         /// <summary>
+        /// CartTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CartTable;
+
+        /// <summary>
         /// CartItems control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace ElectronicsHub_FrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton UpdateCart;
+
+        /// <summary>
+        /// CartTotalContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CartTotalContainer;
 
         /// <summary>
         /// CartSubtotal control.
