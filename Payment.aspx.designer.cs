@@ -33,22 +33,31 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlInputText LastName;
 
         /// <summary>
-        /// CardNum control.
+        /// CardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText CardNum;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText CardNumber;
 
         /// <summary>
-        /// ExpirationDate control.
+        /// ExpYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ExpirationDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ExpYear;
+
+        /// <summary>
+        /// ExpMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ExpMonth;
 
         /// <summary>
         /// SecurityCode control.

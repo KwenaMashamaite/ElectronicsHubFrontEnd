@@ -127,6 +127,60 @@
   <wsdl:message name="IBackendService_UpdateCartItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateCartItemResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateOrderDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateOrderDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateDeliveryAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateDeliveryAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetDeliveryAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetDeliveryAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateOrderItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderItem" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateOrderItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetOrderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetOrderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreatePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePayment" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreatePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreatePaymentCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaymentCard" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreatePaymentCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaymentCardResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBackendService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RegisterUser" message="tns:IBackendService_RegisterUser_InputMessage" />
@@ -207,6 +261,42 @@
     <wsdl:operation name="UpdateCartItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateCartItem" message="tns:IBackendService_UpdateCartItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateCartItemResponse" message="tns:IBackendService_UpdateCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateOrder" message="tns:IBackendService_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateOrderResponse" message="tns:IBackendService_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateOrderStatus" message="tns:IBackendService_UpdateOrderStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateOrderStatusResponse" message="tns:IBackendService_UpdateOrderStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateOrderDelivery" message="tns:IBackendService_CreateOrderDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateOrderDeliveryResponse" message="tns:IBackendService_CreateOrderDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeliveryAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateDeliveryAddress" message="tns:IBackendService_CreateDeliveryAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateDeliveryAddressResponse" message="tns:IBackendService_CreateDeliveryAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetDeliveryAddress" message="tns:IBackendService_GetDeliveryAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetDeliveryAddressResponse" message="tns:IBackendService_GetDeliveryAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateOrderItem" message="tns:IBackendService_CreateOrderItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateOrderItemResponse" message="tns:IBackendService_CreateOrderItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetOrderDetails" message="tns:IBackendService_GetOrderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetOrderDetailsResponse" message="tns:IBackendService_GetOrderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreatePayment" message="tns:IBackendService_CreatePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreatePaymentResponse" message="tns:IBackendService_CreatePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaymentCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreatePaymentCard" message="tns:IBackendService_CreatePaymentCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreatePaymentCardResponse" message="tns:IBackendService_CreatePaymentCard_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBackendService" type="tns:IBackendService">
@@ -384,6 +474,87 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateCartItem">
       <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderDelivery">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreateOrderDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeliveryAddress">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreateDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryAddress">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderItem">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreateOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePayment">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreatePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaymentCard">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreatePaymentCard" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -43,10 +43,35 @@ namespace ElectronicsHub_FrontEnd
 
         protected void ProceedToPaymentButton_Click(object sender, EventArgs e)
         {
+            var deliveryDetails = new OrderDelivery
+            {
+                RecipientFirstName = FirstName.Value,
+                RecipientLastName = LastName.Value,
+                RecipientPhone = Phone.Value,
+            };
+
+            // TODO - Give user option to choose delivery type
+            Session["DeliveryType"] = "Free";
+            Session["DeliveryDetails"] = deliveryDetails;
+
+            var deliveryAddress = new DeliveryAddress();
+            deliveryAddress.StreetAddress = StreetAddress.Value;
+            deliveryAddress.City = City.Value;
+            deliveryAddress.Province = Province.Value;
+            deliveryAddress.PostCode = PostCode.Value;
+
+            Session["DeliveryAddress"] = deliveryAddress;
+
             if (DebitRadioButton.Checked)
-                Response.Redirect("~/Payment.aspx?method=DebitCard");
+            {
+                Session["PaymentMethod"] = "DebitCard";
+            }
             else
-                Response.Redirect("~/Payment.aspx?method=Cash");
+            {
+                Session["PaymentMethod"] = "Cash";
+            }
+
+            Response.Redirect("~/Payment.aspx");
         }
 
         void PrefillDeliveryDetails()

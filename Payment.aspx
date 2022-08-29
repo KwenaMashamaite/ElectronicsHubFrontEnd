@@ -17,10 +17,13 @@
 		            	<input runat="server" id="LastName" type="text" class="form-control" required>
 
 		                <label>Card Number *</label>
-		                <input runat="server" id="CardNum" type="text" class="form-control" required>
+		                <input runat="server" id="CardNumber" type="text" class="form-control" required>
 
-	            		<label>Card Expiration Date *</label>
-	            		<input runat="server" id="ExpirationDate" type="date" class="form-control" required>
+	            		<label>Expiry Year *</label>
+	            		<input runat="server" id="ExpYear" type="text" class="form-control" required>
+
+						<label>Expiry Month *</label>
+	            		<input runat="server" id="ExpMonth" type="text" class="form-control" required>
 
 		                <label>Security Code (CVV) *</label>
 		                <input runat="server" id="SecurityCode" type="text" class="form-control" required>

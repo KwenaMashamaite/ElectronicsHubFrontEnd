@@ -35,6 +35,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private string LastNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order[] OrdersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -113,6 +116,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
                     this.LastNameField = value;
                     this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order[] Orders {
+            get {
+                return this.OrdersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrdersField, value) != true)) {
+                    this.OrdersField = value;
+                    this.RaisePropertyChanged("Orders");
                 }
             }
         }
@@ -271,6 +287,195 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.CartItemsField, value) != true)) {
                     this.CartItemsField = value;
                     this.RaisePropertyChanged("CartItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime OrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery[] OrderDeliveriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[] OrderItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment[] PaymentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubtotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User UserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime OrderDate {
+            get {
+                return this.OrderDateField;
+            }
+            set {
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery[] OrderDeliveries {
+            get {
+                return this.OrderDeliveriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderDeliveriesField, value) != true)) {
+                    this.OrderDeliveriesField = value;
+                    this.RaisePropertyChanged("OrderDeliveries");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderId {
+            get {
+                return this.OrderIdField;
+            }
+            set {
+                if ((this.OrderIdField.Equals(value) != true)) {
+                    this.OrderIdField = value;
+                    this.RaisePropertyChanged("OrderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[] OrderItems {
+            get {
+                return this.OrderItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderItemsField, value) != true)) {
+                    this.OrderItemsField = value;
+                    this.RaisePropertyChanged("OrderItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment[] Payments {
+            get {
+                return this.PaymentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentsField, value) != true)) {
+                    this.PaymentsField = value;
+                    this.RaisePropertyChanged("Payments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Subtotal {
+            get {
+                return this.SubtotalField;
+            }
+            set {
+                if ((this.SubtotalField.Equals(value) != true)) {
+                    this.SubtotalField = value;
+                    this.RaisePropertyChanged("Subtotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
                 }
             }
         }
@@ -775,6 +980,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[] OrderItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal PriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -878,6 +1086,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.NameField, value) != true)) {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[] OrderItems {
+            get {
+                return this.OrderItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderItemsField, value) != true)) {
+                    this.OrderItemsField = value;
+                    this.RaisePropertyChanged("OrderItems");
                 }
             }
         }
@@ -1239,6 +1460,147 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderItem", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class OrderItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderItemIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SalePriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order Order {
+            get {
+                return this.OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderField, value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderId {
+            get {
+                return this.OrderIdField;
+            }
+            set {
+                if ((this.OrderIdField.Equals(value) != true)) {
+                    this.OrderIdField = value;
+                    this.RaisePropertyChanged("OrderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderItemId {
+            get {
+                return this.OrderItemIdField;
+            }
+            set {
+                if ((this.OrderItemIdField.Equals(value) != true)) {
+                    this.OrderItemIdField = value;
+                    this.RaisePropertyChanged("OrderItemId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal SalePrice {
+            get {
+                return this.SalePriceField;
+            }
+            set {
+                if ((this.SalePriceField.Equals(value) != true)) {
+                    this.SalePriceField = value;
+                    this.RaisePropertyChanged("SalePrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ProductImageExtra", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
     [System.SerializableAttribute()]
     public partial class ProductImageExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1439,6 +1801,682 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderDelivery", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class OrderDelivery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress[] DeliveryAddressesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeliveryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DeliveryFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderDeliveryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecipientFirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecipientLastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecipientPhoneField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress[] DeliveryAddresses {
+            get {
+                return this.DeliveryAddressesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryAddressesField, value) != true)) {
+                    this.DeliveryAddressesField = value;
+                    this.RaisePropertyChanged("DeliveryAddresses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeliveryDate {
+            get {
+                return this.DeliveryDateField;
+            }
+            set {
+                if ((this.DeliveryDateField.Equals(value) != true)) {
+                    this.DeliveryDateField = value;
+                    this.RaisePropertyChanged("DeliveryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal DeliveryFee {
+            get {
+                return this.DeliveryFeeField;
+            }
+            set {
+                if ((this.DeliveryFeeField.Equals(value) != true)) {
+                    this.DeliveryFeeField = value;
+                    this.RaisePropertyChanged("DeliveryFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryType {
+            get {
+                return this.DeliveryTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryTypeField, value) != true)) {
+                    this.DeliveryTypeField = value;
+                    this.RaisePropertyChanged("DeliveryType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order Order {
+            get {
+                return this.OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderField, value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderDeliveryId {
+            get {
+                return this.OrderDeliveryIdField;
+            }
+            set {
+                if ((this.OrderDeliveryIdField.Equals(value) != true)) {
+                    this.OrderDeliveryIdField = value;
+                    this.RaisePropertyChanged("OrderDeliveryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderId {
+            get {
+                return this.OrderIdField;
+            }
+            set {
+                if ((this.OrderIdField.Equals(value) != true)) {
+                    this.OrderIdField = value;
+                    this.RaisePropertyChanged("OrderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecipientFirstName {
+            get {
+                return this.RecipientFirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecipientFirstNameField, value) != true)) {
+                    this.RecipientFirstNameField = value;
+                    this.RaisePropertyChanged("RecipientFirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecipientLastName {
+            get {
+                return this.RecipientLastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecipientLastNameField, value) != true)) {
+                    this.RecipientLastNameField = value;
+                    this.RaisePropertyChanged("RecipientLastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecipientPhone {
+            get {
+                return this.RecipientPhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecipientPhoneField, value) != true)) {
+                    this.RecipientPhoneField = value;
+                    this.RaisePropertyChanged("RecipientPhone");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class Payment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard[] PaymentCardsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaymentTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((this.AmountField.Equals(value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order Order {
+            get {
+                return this.OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderField, value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderId {
+            get {
+                return this.OrderIdField;
+            }
+            set {
+                if ((this.OrderIdField.Equals(value) != true)) {
+                    this.OrderIdField = value;
+                    this.RaisePropertyChanged("OrderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard[] PaymentCards {
+            get {
+                return this.PaymentCardsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentCardsField, value) != true)) {
+                    this.PaymentCardsField = value;
+                    this.RaisePropertyChanged("PaymentCards");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentId {
+            get {
+                return this.PaymentIdField;
+            }
+            set {
+                if ((this.PaymentIdField.Equals(value) != true)) {
+                    this.PaymentIdField = value;
+                    this.RaisePropertyChanged("PaymentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaymentType {
+            get {
+                return this.PaymentTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentTypeField, value) != true)) {
+                    this.PaymentTypeField = value;
+                    this.RaisePropertyChanged("PaymentType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeliveryAddress", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class DeliveryAddress : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DeliveryAddressIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery OrderDeliveryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderDeliveryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PostCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProvinceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetAddressField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DeliveryAddressId {
+            get {
+                return this.DeliveryAddressIdField;
+            }
+            set {
+                if ((this.DeliveryAddressIdField.Equals(value) != true)) {
+                    this.DeliveryAddressIdField = value;
+                    this.RaisePropertyChanged("DeliveryAddressId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery OrderDelivery {
+            get {
+                return this.OrderDeliveryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderDeliveryField, value) != true)) {
+                    this.OrderDeliveryField = value;
+                    this.RaisePropertyChanged("OrderDelivery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderDeliveryId {
+            get {
+                return this.OrderDeliveryIdField;
+            }
+            set {
+                if ((this.OrderDeliveryIdField.Equals(value) != true)) {
+                    this.OrderDeliveryIdField = value;
+                    this.RaisePropertyChanged("OrderDeliveryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PostCode {
+            get {
+                return this.PostCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PostCodeField, value) != true)) {
+                    this.PostCodeField = value;
+                    this.RaisePropertyChanged("PostCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Province {
+            get {
+                return this.ProvinceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProvinceField, value) != true)) {
+                    this.ProvinceField = value;
+                    this.RaisePropertyChanged("Province");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StreetAddress {
+            get {
+                return this.StreetAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetAddressField, value) != true)) {
+                    this.StreetAddressField = value;
+                    this.RaisePropertyChanged("StreetAddress");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentCard", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class PaymentCard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ExpiryMonthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ExpiryYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OwnerFirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OwnerLastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment PaymentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentCardIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecurityCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CardNumber {
+            get {
+                return this.CardNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardNumberField, value) != true)) {
+                    this.CardNumberField = value;
+                    this.RaisePropertyChanged("CardNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CardType {
+            get {
+                return this.CardTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardTypeField, value) != true)) {
+                    this.CardTypeField = value;
+                    this.RaisePropertyChanged("CardType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ExpiryMonth {
+            get {
+                return this.ExpiryMonthField;
+            }
+            set {
+                if ((this.ExpiryMonthField.Equals(value) != true)) {
+                    this.ExpiryMonthField = value;
+                    this.RaisePropertyChanged("ExpiryMonth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ExpiryYear {
+            get {
+                return this.ExpiryYearField;
+            }
+            set {
+                if ((this.ExpiryYearField.Equals(value) != true)) {
+                    this.ExpiryYearField = value;
+                    this.RaisePropertyChanged("ExpiryYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OwnerFirstName {
+            get {
+                return this.OwnerFirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OwnerFirstNameField, value) != true)) {
+                    this.OwnerFirstNameField = value;
+                    this.RaisePropertyChanged("OwnerFirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OwnerLastName {
+            get {
+                return this.OwnerLastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OwnerLastNameField, value) != true)) {
+                    this.OwnerLastNameField = value;
+                    this.RaisePropertyChanged("OwnerLastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment Payment {
+            get {
+                return this.PaymentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentField, value) != true)) {
+                    this.PaymentField = value;
+                    this.RaisePropertyChanged("Payment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentCardId {
+            get {
+                return this.PaymentCardIdField;
+            }
+            set {
+                if ((this.PaymentCardIdField.Equals(value) != true)) {
+                    this.PaymentCardIdField = value;
+                    this.RaisePropertyChanged("PaymentCardId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentId {
+            get {
+                return this.PaymentIdField;
+            }
+            set {
+                if ((this.PaymentIdField.Equals(value) != true)) {
+                    this.PaymentIdField = value;
+                    this.RaisePropertyChanged("PaymentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecurityCode {
+            get {
+                return this.SecurityCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecurityCodeField, value) != true)) {
+                    this.SecurityCodeField = value;
+                    this.RaisePropertyChanged("SecurityCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ElectronicsHubBackendService.IBackendService")]
     public interface IBackendService {
@@ -1562,6 +2600,60 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateCartItem", ReplyAction="http://tempuri.org/IBackendService/UpdateCartItemResponse")]
         System.Threading.Tasks.Task<bool> UpdateCartItemAsync(int cartItemId, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrder", ReplyAction="http://tempuri.org/IBackendService/CreateOrderResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order CreateOrder(int userId, decimal subtotal, decimal total, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrder", ReplyAction="http://tempuri.org/IBackendService/CreateOrderResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order> CreateOrderAsync(int userId, decimal subtotal, decimal total, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateOrderStatus", ReplyAction="http://tempuri.org/IBackendService/UpdateOrderStatusResponse")]
+        void UpdateOrderStatus(int orderId, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateOrderStatus", ReplyAction="http://tempuri.org/IBackendService/UpdateOrderStatusResponse")]
+        System.Threading.Tasks.Task UpdateOrderStatusAsync(int orderId, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrderDelivery", ReplyAction="http://tempuri.org/IBackendService/CreateOrderDeliveryResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery CreateOrderDelivery(int orderId, string deliveryType, decimal deliveryFee, string recFirstName, string recLastName, string recPhone, System.DateTime delDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrderDelivery", ReplyAction="http://tempuri.org/IBackendService/CreateOrderDeliveryResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery> CreateOrderDeliveryAsync(int orderId, string deliveryType, decimal deliveryFee, string recFirstName, string recLastName, string recPhone, System.DateTime delDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/CreateDeliveryAddressResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress CreateDeliveryAddress(int orderDeliveryId, string streetAddreess, string city, string province, string postCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/CreateDeliveryAddressResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> CreateDeliveryAddressAsync(int orderDeliveryId, string streetAddreess, string city, string province, string postCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/GetDeliveryAddressResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress GetDeliveryAddress(int deliveryAddressId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/GetDeliveryAddressResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> GetDeliveryAddressAsync(int deliveryAddressId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrderItem", ReplyAction="http://tempuri.org/IBackendService/CreateOrderItemResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem CreateOrderItem(int orderId, int prodId, int prodQuantity, decimal prodSalePrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrderItem", ReplyAction="http://tempuri.org/IBackendService/CreateOrderItemResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem> CreateOrderItemAsync(int orderId, int prodId, int prodQuantity, decimal prodSalePrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetOrderDetails", ReplyAction="http://tempuri.org/IBackendService/GetOrderDetailsResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[] GetOrderDetails(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetOrderDetails", ReplyAction="http://tempuri.org/IBackendService/GetOrderDetailsResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[]> GetOrderDetailsAsync(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePayment", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment CreatePayment(int orderId, string paymentType, decimal amount, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePayment", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> CreatePaymentAsync(int orderId, string paymentType, decimal amount, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePaymentCard", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentCardResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard CreatePaymentCard(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePaymentCard", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentCardResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard> CreatePaymentCardAsync(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1749,6 +2841,78 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<bool> UpdateCartItemAsync(int cartItemId, int quantity) {
             return base.Channel.UpdateCartItemAsync(cartItemId, quantity);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order CreateOrder(int userId, decimal subtotal, decimal total, string status) {
+            return base.Channel.CreateOrder(userId, subtotal, total, status);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order> CreateOrderAsync(int userId, decimal subtotal, decimal total, string status) {
+            return base.Channel.CreateOrderAsync(userId, subtotal, total, status);
+        }
+        
+        public void UpdateOrderStatus(int orderId, string status) {
+            base.Channel.UpdateOrderStatus(orderId, status);
+        }
+        
+        public System.Threading.Tasks.Task UpdateOrderStatusAsync(int orderId, string status) {
+            return base.Channel.UpdateOrderStatusAsync(orderId, status);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery CreateOrderDelivery(int orderId, string deliveryType, decimal deliveryFee, string recFirstName, string recLastName, string recPhone, System.DateTime delDate) {
+            return base.Channel.CreateOrderDelivery(orderId, deliveryType, deliveryFee, recFirstName, recLastName, recPhone, delDate);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery> CreateOrderDeliveryAsync(int orderId, string deliveryType, decimal deliveryFee, string recFirstName, string recLastName, string recPhone, System.DateTime delDate) {
+            return base.Channel.CreateOrderDeliveryAsync(orderId, deliveryType, deliveryFee, recFirstName, recLastName, recPhone, delDate);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress CreateDeliveryAddress(int orderDeliveryId, string streetAddreess, string city, string province, string postCode) {
+            return base.Channel.CreateDeliveryAddress(orderDeliveryId, streetAddreess, city, province, postCode);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> CreateDeliveryAddressAsync(int orderDeliveryId, string streetAddreess, string city, string province, string postCode) {
+            return base.Channel.CreateDeliveryAddressAsync(orderDeliveryId, streetAddreess, city, province, postCode);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress GetDeliveryAddress(int deliveryAddressId) {
+            return base.Channel.GetDeliveryAddress(deliveryAddressId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> GetDeliveryAddressAsync(int deliveryAddressId) {
+            return base.Channel.GetDeliveryAddressAsync(deliveryAddressId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem CreateOrderItem(int orderId, int prodId, int prodQuantity, decimal prodSalePrice) {
+            return base.Channel.CreateOrderItem(orderId, prodId, prodQuantity, prodSalePrice);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem> CreateOrderItemAsync(int orderId, int prodId, int prodQuantity, decimal prodSalePrice) {
+            return base.Channel.CreateOrderItemAsync(orderId, prodId, prodQuantity, prodSalePrice);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[] GetOrderDetails(int orderId) {
+            return base.Channel.GetOrderDetails(orderId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[]> GetOrderDetailsAsync(int orderId) {
+            return base.Channel.GetOrderDetailsAsync(orderId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment CreatePayment(int orderId, string paymentType, decimal amount, string status) {
+            return base.Channel.CreatePayment(orderId, paymentType, amount, status);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> CreatePaymentAsync(int orderId, string paymentType, decimal amount, string status) {
+            return base.Channel.CreatePaymentAsync(orderId, paymentType, amount, status);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard CreatePaymentCard(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode) {
+            return base.Channel.CreatePaymentCard(paymentId, cardType, ownerFirstName, ownerLastName, cardNumber, expMonth, expYear, securityCode);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard> CreatePaymentCardAsync(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode) {
+            return base.Channel.CreatePaymentCardAsync(paymentId, cardType, ownerFirstName, ownerLastName, cardNumber, expMonth, expYear, securityCode);
         }
     }
 }
