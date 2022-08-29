@@ -79,7 +79,7 @@ namespace ElectronicsHub_FrontEnd
                 display += "<div class='dropdown-cart-total'>";
                 display += "<span>Total</span>";
 
-                display += "<span class='cart-total-price'> R" + String.Format("{0:N}", Helper.GetCartItemsTotal(cartItems)) + "</span>";
+                display += "<span class='cart-total-price'> R " + String.Format("{0:N}", Helper.GetCartItemsTotal(cartItems)) + "</span>";
                 display += "</div>"; // End.dropdown-cart-total
 
                 display += "<div class='dropdown-cart-action'>";

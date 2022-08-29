@@ -87,7 +87,7 @@
 	                			</tbody>
 	                		</table><!-- End .table table-summary -->
 
-	                		<a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
+	                		<a href="/Checkout.aspx" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
 	                	</div><!-- End .summary -->
 	                </aside><!-- End .col-lg-3 -->
 	            </div><!-- End .row -->

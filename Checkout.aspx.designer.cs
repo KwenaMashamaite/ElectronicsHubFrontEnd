@@ -11,17 +11,8 @@ namespace ElectronicsHub_FrontEnd
 {
 
 
-    public partial class Register
+    public partial class Checkout
     {
-
-        /// <summary>
-        /// Error control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Error;
 
         /// <summary>
         /// FirstName control.
@@ -30,25 +21,16 @@ namespace ElectronicsHub_FrontEnd
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText FirstName;
 
         /// <summary>
-        /// Surname control.
+        /// LastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Surname;
-
-        /// <summary>
-        /// Email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText LastName;
 
         /// <summary>
         /// Phone control.
@@ -57,42 +39,78 @@ namespace ElectronicsHub_FrontEnd
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Phone;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Phone;
 
         /// <summary>
-        /// Password control.
+        /// StreetAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText StreetAddress;
 
         /// <summary>
-        /// Password2 control.
+        /// City control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText City;
 
         /// <summary>
-        /// PswdMismatchError control.
+        /// Province control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PswdMismatchError;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Province;
 
         /// <summary>
-        /// RegisterButton control.
+        /// PostCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RegisterButton;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText PostCode;
+
+        /// <summary>
+        /// OrderSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl OrderSummary;
+
+        /// <summary>
+        /// CashRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton CashRadioButton;
+
+        /// <summary>
+        /// DebitRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton DebitRadioButton;
+
+        /// <summary>
+        /// ProceedToPaymentButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ProceedToPaymentButton;
     }
 }

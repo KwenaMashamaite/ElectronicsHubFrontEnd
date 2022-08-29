@@ -32,12 +32,12 @@ namespace ElectronicsHub_FrontEnd
                 }
                 else
                 {
-                    Response.Write("<script>alert(\'" + Email.Text + " is already in use.')</script>");
+                    Error.InnerHtml = "Registration failed: Email address is already in use by another account";
                 }
             } 
             else
             {
-                Response.Write("<script>alert(\"Passwords don't match\")</script>");
+                Error.InnerHtml = "Registration failed: Passwords don't match";
             }
         }
     }

@@ -96,13 +96,7 @@ namespace ElectronicsHub_FrontEnd
 
         protected void UpdateCart_Click(object sender, EventArgs e)
         {
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox)
-                {
-                    ((TextBox)control).Text = String.Empty;
-                }
-            }
+            
         }
     }
 }

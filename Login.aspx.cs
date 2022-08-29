@@ -47,7 +47,7 @@ namespace ElectronicsHub_FrontEnd
             } 
             else
             {
-                Response.Write("<script>alert('Login failed: email or password is incorrect.')</script>");
+                Error.InnerHtml = "Login failed: email or password is incorrect.";
             }
         }
     }

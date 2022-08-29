@@ -79,6 +79,7 @@
     <None Include="Connected Services\ElectronicsHubBackendService\configuration91.svcinfo" />
     <None Include="Connected Services\ElectronicsHubBackendService\configuration.svcinfo" />
     <Content Include="Cart.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -114,6 +115,8 @@
     <Content Include="Login.aspx" />
     <Content Include="Account\Customer\Register.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="Order.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="ProductInfo.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="Web.config" />
@@ -146,6 +149,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ElectronicsHubBackendService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -180,6 +190,20 @@
     </Compile>
     <Compile Include="MainNav.master.designer.cs">
       <DependentUpon>MainNav.master</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductInfo.aspx.cs">
       <DependentUpon>ProductInfo.aspx</DependentUpon>

@@ -11,17 +11,8 @@ namespace ElectronicsHub_FrontEnd
 {
 
 
-    public partial class Register
+    public partial class Payment
     {
-
-        /// <summary>
-        /// Error control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Error;
 
         /// <summary>
         /// FirstName control.
@@ -30,69 +21,60 @@ namespace ElectronicsHub_FrontEnd
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText FirstName;
 
         /// <summary>
-        /// Surname control.
+        /// LastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Surname;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText LastName;
 
         /// <summary>
-        /// Email control.
+        /// CardNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText CardNum;
 
         /// <summary>
-        /// Phone control.
+        /// ExpirationDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Phone;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ExpirationDate;
 
         /// <summary>
-        /// Password control.
+        /// SecurityCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText SecurityCode;
 
         /// <summary>
-        /// Password2 control.
+        /// TotalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password2;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell TotalPrice;
 
         /// <summary>
-        /// PswdMismatchError control.
+        /// PlaceOrderBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PswdMismatchError;
-
-        /// <summary>
-        /// RegisterButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RegisterButton;
+        protected global::System.Web.UI.WebControls.Button PlaceOrderBtn;
     }
 }

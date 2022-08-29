@@ -13,6 +13,7 @@
                                 <div class="form-tab">
                                     <ul class="nav nav-pills nav-fill nav-border-anim" role="tablist">
                                         <li class="nav-item">
+                                            <label runat="server" id="Error" style="color: red;"></label>
                                             <h2 class="title text-center mb-4" id="register-tab" data-toggle="tab" role="tab" aria-controls="register" aria-selected="true">Create account</h2>                                        
                                         </li>
                                     </ul>
