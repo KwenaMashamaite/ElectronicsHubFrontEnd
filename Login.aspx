@@ -34,7 +34,7 @@
                                                   
                                                 </asp:Button>
 
-                                                <a runat="server" href="~/Account/Customer/Register.aspx" class="forgot-link">Or create an account</a>
+                                                <a runat="server" href="~/Register.aspx" class="forgot-link">Or create an account</a>
                                             </div><!-- End .form-footer -->
                                         </div><!-- .End .tab-pane -->
                                     </div><!-- End .tab-content -->

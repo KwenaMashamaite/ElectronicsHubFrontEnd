@@ -9,9 +9,13 @@
 		<div class="checkout">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-9">
+					<div runat="server" id="ProdInfo" class="col-lg-9">
+						<label runat="server" id="SuccessMsg" style="color: green;" visible="false"></label>
+						<label runat="server" id="ErrorMsg" style="color: red;" visible="false"></label>
+
 						<h2 class="checkout-title">Enter Product Details</h2><!-- End .checkout-title -->
-		                <label>Name *</label>
+		                
+						<label>Name *</label>
 		                <input runat="server" id="Name" type="text" class="form-control" required>
 
 		            	<label>Description *</label>

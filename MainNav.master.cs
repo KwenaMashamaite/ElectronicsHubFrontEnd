@@ -16,11 +16,7 @@ namespace ElectronicsHub_FrontEnd
         protected void Page_Load(object sender, EventArgs e)
         {
             // Remove logo from top nav bar
-            if (Session["UserRole"].Equals("Guest") || Session["UserRole"].Equals("Customer"))
-            {
-                HyperLink logoAnchor = (HyperLink) Master.FindControl("LgAnchor");
-                logoAnchor.Visible = false;
-            }
+            ((HyperLink) Master.FindControl("LgAnchor")).Visible = false;
 
             // Remove cart if user is not a customer
             if (Session["UserRole"].Equals("Customer"))
@@ -30,6 +26,12 @@ namespace ElectronicsHub_FrontEnd
             else
             {
                 CartDropdown.Visible = false;
+
+                if (Session["UserRole"].Equals("Manager"))
+                {
+                    ShopLink.InnerText = "View Products";
+                    AddProductLink.Visible = true;
+                }
             }
 
             // Dynamically display categories

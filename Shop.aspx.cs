@@ -63,7 +63,7 @@ namespace ElectronicsHub_FrontEnd
                 products = sr.GetAllProducts().ToList();
             }
 
-            return products;
+            return products.Where(p => !p.Status.Equals("Not Available")).ToList();
         }
 
         private List<Product> PartitionProducts(List<Product> products, int pageNum)

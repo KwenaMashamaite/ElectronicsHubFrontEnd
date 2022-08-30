@@ -128,7 +128,10 @@
                                 <a runat="server" href="~/Index.aspx">Home</a>
                             </li>
                             <li>
-                                <a runat="server" href="~/Shop.aspx">Shop</a>
+                                <a runat="server" id="ShopLink" href="~/Shop.aspx">Shop</a>
+                            </li>
+                            <li>
+                                <a runat="server" id="AddProductLink" href="~/AddProduct.aspx" visible="false">Add Product</a>
                             </li>
                         </ul><!-- End .menu -->
                     </nav><!-- End .main-nav -->

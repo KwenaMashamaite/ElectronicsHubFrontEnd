@@ -15,6 +15,15 @@ namespace ElectronicsHub_FrontEnd
     {
 
         /// <summary>
+        /// ProdDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProdDetails;
+
+        /// <summary>
         /// OutcomeMsg control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace ElectronicsHub_FrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl OutcomeMsg;
+
+        /// <summary>
+        /// ConfirmDelContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ConfirmDelContainer;
 
         /// <summary>
         /// Desc control.

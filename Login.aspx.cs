@@ -8,22 +8,15 @@ using ElectronicsHub_FrontEnd.ElectronicsHubBackendService;
 
 namespace ElectronicsHub_FrontEnd
 {
-    
     public partial class Login : System.Web.UI.Page
     {
-
         BackendServiceClient sr = new BackendServiceClient();  
-
-        private void RedirectHome(string userRole)
-        {
-            Response.Redirect("~/Account/" + userRole + "/Index.aspx");
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Session["UserRole"].Equals("Guest"))
             {
-                RedirectHome(Session["UserRole"].ToString());
+                Response.Redirect("~/Index.aspx");
             }
         }
 
@@ -43,7 +36,7 @@ namespace ElectronicsHub_FrontEnd
                     Session["UserCartId"] = sr.GetCart(userId).CartId;
                 }
 
-                RedirectHome(userRole);
+                Response.Redirect("~/Index.aspx");
             } 
             else
             {

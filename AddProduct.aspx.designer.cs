@@ -15,6 +15,33 @@ namespace ElectronicsHub_FrontEnd
     {
 
         /// <summary>
+        /// ProdInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProdInfo;
+
+        /// <summary>
+        /// SuccessMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SuccessMsg;
+
+        /// <summary>
+        /// ErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorMsg;
+
+        /// <summary>
         /// Name control.
         /// </summary>
         /// <remarks>

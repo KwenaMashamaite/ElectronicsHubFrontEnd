@@ -31,6 +31,12 @@
   <wsdl:message name="IBackendService_GetProductCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductSubcategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSubcategory" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductSubcategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSubcategoryResponse" />
+  </wsdl:message>
   <wsdl:message name="IBackendService_GetProductCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductCategories" />
   </wsdl:message>
@@ -42,6 +48,24 @@
   </wsdl:message>
   <wsdl:message name="IBackendService_GetProductSubcategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductSubcategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_CreateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateProductStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateProductStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
   </wsdl:message>
   <wsdl:message name="IBackendService_GetAllProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllProducts" />
@@ -198,6 +222,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductCategory" message="tns:IBackendService_GetProductCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductCategoryResponse" message="tns:IBackendService_GetProductCategory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetProductSubcategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategory" message="tns:IBackendService_GetProductSubcategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategoryResponse" message="tns:IBackendService_GetProductSubcategory_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetProductCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductCategories" message="tns:IBackendService_GetProductCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductCategoriesResponse" message="tns:IBackendService_GetProductCategories_OutputMessage" />
@@ -205,6 +233,18 @@
     <wsdl:operation name="GetProductSubcategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategories" message="tns:IBackendService_GetProductSubcategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse" message="tns:IBackendService_GetProductSubcategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateProduct" message="tns:IBackendService_CreateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateProductResponse" message="tns:IBackendService_CreateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateProductStatus" message="tns:IBackendService_UpdateProductStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateProductStatusResponse" message="tns:IBackendService_UpdateProductStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateProduct" message="tns:IBackendService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateProductResponse" message="tns:IBackendService_UpdateProduct_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetAllProducts" message="tns:IBackendService_GetAllProducts_InputMessage" />
@@ -337,6 +377,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetProductSubcategory">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductSubcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetProductCategories">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductCategories" style="document" />
       <wsdl:input>
@@ -348,6 +397,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductSubcategories">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductSubcategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProduct">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/CreateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductStatus">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateProductStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

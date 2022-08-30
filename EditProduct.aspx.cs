@@ -14,11 +14,15 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["ProdId"] == null)
+            if (Session["UserId"] == null || Session["UserRole"].Equals("Mananger"))
+            {
+                Response.Redirect("~/404.aspx");
+            }
+            else if (Request.QueryString["ProdId"] == null)
             {
                 ProdDetails.InnerHtml = "<h5>No product selected</h5>";
             }
-            else
+            else if (!IsPostBack)
             {
                 Product prod = sr.GetProductById(Int32.Parse(Request.QueryString["ProdId"].ToString()));
 
@@ -26,7 +30,12 @@ namespace ElectronicsHub_FrontEnd
                 Name.Value = prod.Name;
                 Description.Value = prod.Description;
                 Cat.Value = sr.GetProductCategory(prod.ProductCategoryId).Name;
-                //Subcat.Value = sr.GetProductSubcategory(prod.ProductSubcategoryId);
+
+                if (prod.ProductSubcategoryId != null)
+                {
+                    Subcat.Value = sr.GetProductSubcategory((int) prod.ProductSubcategoryId).Name;
+                }
+
                 Price.Value = prod.Price.ToString();
                 Quantity.Value = prod.Quantity.ToString();
                 Brand.Value = prod.Brand;
@@ -36,10 +45,20 @@ namespace ElectronicsHub_FrontEnd
 
         protected void UpdateProductButton_Click(object sender, EventArgs e)
         {
-            SuccessMsg.Visible = true;
-            SuccessMsg.InnerText = "Product details updated successfully";
-            //ErrorMsg.Visible = true;
-            //ErrorMsg.InnerText = "Failed to update product, unknown category";
+            int prodId = Int32.Parse(Request.QueryString["ProdId"].ToString());
+            bool updated = sr.UpdateProduct(prodId, Name.Value, Description.Value, Cat.Value, 
+                Subcat.Value, Decimal.Parse(Price.Value), Int32.Parse(Quantity.Value), Brand.Value, Status.Value);
+
+            if (updated)
+            {
+                SuccessMsg.Visible = true;
+                SuccessMsg.InnerText = "Product details updated successfully";
+            }
+            else
+            {
+                ErrorMsg.Visible = true;
+                ErrorMsg.InnerText = "Failed to update product, unknown category";
+            }
         }
     }
 }

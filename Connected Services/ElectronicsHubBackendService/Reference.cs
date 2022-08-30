@@ -2505,6 +2505,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductCategory", ReplyAction="http://tempuri.org/IBackendService/GetProductCategoryResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory> GetProductCategoryAsync(int prodCatId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductSubcategory", ReplyAction="http://tempuri.org/IBackendService/GetProductSubcategoryResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory GetProductSubcategory(int prodSubcatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductSubcategory", ReplyAction="http://tempuri.org/IBackendService/GetProductSubcategoryResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory> GetProductSubcategoryAsync(int prodSubcatId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductCategories", ReplyAction="http://tempuri.org/IBackendService/GetProductCategoriesResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory[] GetProductCategories();
         
@@ -2516,6 +2522,24 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductSubcategories", ReplyAction="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateProduct", ReplyAction="http://tempuri.org/IBackendService/CreateProductResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product CreateProduct(string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateProduct", ReplyAction="http://tempuri.org/IBackendService/CreateProductResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product> CreateProductAsync(string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProductStatus", ReplyAction="http://tempuri.org/IBackendService/UpdateProductStatusResponse")]
+        bool UpdateProductStatus(int prodId, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProductStatus", ReplyAction="http://tempuri.org/IBackendService/UpdateProductStatusResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductStatusAsync(int prodId, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProduct", ReplyAction="http://tempuri.org/IBackendService/UpdateProductResponse")]
+        bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProduct", ReplyAction="http://tempuri.org/IBackendService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAllProducts", ReplyAction="http://tempuri.org/IBackendService/GetAllProductsResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts();
@@ -2715,6 +2739,14 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.GetProductCategoryAsync(prodCatId);
         }
         
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory GetProductSubcategory(int prodSubcatId) {
+            return base.Channel.GetProductSubcategory(prodSubcatId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory> GetProductSubcategoryAsync(int prodSubcatId) {
+            return base.Channel.GetProductSubcategoryAsync(prodSubcatId);
+        }
+        
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductCategory[] GetProductCategories() {
             return base.Channel.GetProductCategories();
         }
@@ -2729,6 +2761,30 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int categoryId) {
             return base.Channel.GetProductSubcategoriesAsync(categoryId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product CreateProduct(string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
+            return base.Channel.CreateProduct(name, description, category, subcat, price, quantity, brand, status, imageUrl);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product> CreateProductAsync(string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
+            return base.Channel.CreateProductAsync(name, description, category, subcat, price, quantity, brand, status, imageUrl);
+        }
+        
+        public bool UpdateProductStatus(int prodId, string status) {
+            return base.Channel.UpdateProductStatus(prodId, status);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductStatusAsync(int prodId, string status) {
+            return base.Channel.UpdateProductStatusAsync(prodId, status);
+        }
+        
+        public bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status) {
+            return base.Channel.UpdateProduct(prodId, name, description, category, subcat, price, quantity, brand, status);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status) {
+            return base.Channel.UpdateProductAsync(prodId, name, description, category, subcat, price, quantity, brand, status);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts() {

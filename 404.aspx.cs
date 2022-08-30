@@ -11,16 +11,7 @@ namespace ElectronicsHub_FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userRole = Session["UserRole"].ToString();
-
-            if (userRole.Equals("Guest")) 
-            {
-                HomepageAnchor.NavigateUrl = "~/Index.aspx";
-            }
-            else
-            {
-                HomepageAnchor.NavigateUrl = "~/Account/" + userRole + "/Index.aspx"; ;
-            }
+            
         }
     }
 }

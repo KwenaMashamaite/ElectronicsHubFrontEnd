@@ -43,6 +43,9 @@
 							Text="Update Product Details" OnClick="UpdateProductButton_Click">
 						</asp:Button>
 					</div><!-- End .col-lg-9 -->
+					<aside>
+						<img runat="server" id="ProdImg" src="#" />
+					</aside>
 				</div><!-- End .row -->
 			</div><!-- End .container -->
         </div><!-- End .checkout -->

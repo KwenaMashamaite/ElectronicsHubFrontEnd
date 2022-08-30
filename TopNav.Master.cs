@@ -14,18 +14,21 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["UserRole"].Equals("Guest"))
+            if (Session["UserId"] != null)
             {
-                LgAnchor.NavigateUrl = "~/Account/" + Session["UserRole"] + "/Index.aspx";
-
                 string firstName = sr.GetUser((int) Session["UserId"]).FirstName;
 
-                LoginLinks.InnerHtml = "<li><a runat='server' id='LogoutButton' href='/Logout.aspx'>Logout</a></li>" +
-                                       "<li><a runat='server' href=#><i class='icon-user'></i>" + firstName + "</a></li>";
-            }
-            else
-            {
-                LgAnchor.NavigateUrl = "~/Index.aspx";
+                if (Session["UserRole"].Equals("Manager"))
+                {
+                    LoginLinks.InnerHtml = "<li><a runat='server' id='LogoutButton' href='/Logout.aspx'>Logout</a></li>" +
+                                           "<li><a runat='server' href='/Register.aspx'>Register Manager</a></li>" +
+                                           "<li><a runat='server' href=#><i class='icon-user'></i>" + firstName + "</a></li>";
+                }
+                else
+                {
+                    LoginLinks.InnerHtml = "<li><a runat='server' id='LogoutButton' href='/Logout.aspx'>Logout</a></li>" +
+                                           "<li><a runat='server' href=#><i class='icon-user'></i>" + firstName + "</a></li>";
+                }
             }
         }
     }

@@ -14,9 +14,15 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["UserRole"].Equals("Guest"))
+            // A signed in customer cannot access this page
+            if (Session["UserRole"].Equals("Customer"))
             {
                 Response.Redirect("~/Login.aspx");
+            } 
+            // A signed in manager has the power to create other manager accounts
+            else if (Session["UserRole"].Equals("Manager"))
+            {
+                RegisterTab.InnerText = "Create a manager account";
             }
         }
 
@@ -24,7 +30,10 @@ namespace ElectronicsHub_FrontEnd
         {
             if (Password.Text.Equals(Password2.Text))
             {
-                bool registered = sr.RegisterUser(FirstName.Text, Surname.Text, Email.Text, Phone.Text, Password.Text, "Customer");
+                // A manager can register other managers
+                string userType = Session["UserRole"].Equals("Manager") ? "Manager" : "Customer";
+
+                bool registered = sr.RegisterUser(FirstName.Text, Surname.Text, Email.Text, Phone.Text, Password.Text, userType);
 
                 if (registered)
                 {

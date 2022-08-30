@@ -113,7 +113,14 @@ namespace ElectronicsHub_FrontEnd
             // Only logged in users can add to cart
             if (Session["UserId"] != null)
             {
-                display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
+                if (Session["UserRole"].Equals("Manager"))
+                {
+                    display += "<a href='/EditProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Edit</a>";
+                }
+                else
+                {
+                    display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
+                }
             }
             else
             {
