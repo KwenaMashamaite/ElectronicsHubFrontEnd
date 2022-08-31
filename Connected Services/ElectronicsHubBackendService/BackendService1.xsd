@@ -103,6 +103,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetProductByStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductByStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductByStatusResult" nillable="true" type="q6:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CreateProduct">
     <xs:complexType>
       <xs:sequence>
@@ -121,7 +135,7 @@
   <xs:element name="CreateProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateProductResult" nillable="true" type="q6:Product" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateProductResult" nillable="true" type="q7:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -170,7 +184,7 @@
   <xs:element name="GetAllProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetAllProductsResult" nillable="true" type="q7:ArrayOfProduct" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetAllProductsResult" nillable="true" type="q8:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -184,7 +198,7 @@
   <xs:element name="GetProductByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductByIdResult" nillable="true" type="q8:Product" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductByIdResult" nillable="true" type="q9:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -198,7 +212,7 @@
   <xs:element name="GetProductsByCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductsByCategoryResult" nillable="true" type="q9:ArrayOfProduct" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductsByCategoryResult" nillable="true" type="q10:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -212,7 +226,7 @@
   <xs:element name="GetProductsBySubcategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductsBySubcategoryResult" nillable="true" type="q10:ArrayOfProduct" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductsBySubcategoryResult" nillable="true" type="q11:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -226,7 +240,7 @@
   <xs:element name="GetProductReviewsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductReviewsResult" nillable="true" type="q11:ArrayOfProductReview" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductReviewsResult" nillable="true" type="q12:ArrayOfProductReview" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -240,7 +254,7 @@
   <xs:element name="GetProductImageResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductImageResult" nillable="true" type="q12:ProductImage" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetProductImageResult" nillable="true" type="q13:ProductImage" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -254,7 +268,7 @@
   <xs:element name="GetAdditionalProductImagesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetAdditionalProductImagesResult" nillable="true" type="q13:ArrayOfProductImageExtra" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetAdditionalProductImagesResult" nillable="true" type="q14:ArrayOfProductImageExtra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -297,7 +311,7 @@
   <xs:element name="GetCartResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetCartResult" nillable="true" type="q14:Cart" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetCartResult" nillable="true" type="q15:Cart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -311,7 +325,7 @@
   <xs:element name="GetCartItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetCartItemsResult" nillable="true" type="q15:ArrayOfCartItem" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetCartItemsResult" nillable="true" type="q16:ArrayOfCartItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -372,7 +386,7 @@
   <xs:element name="CreateOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateOrderResult" nillable="true" type="q16:Order" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateOrderResult" nillable="true" type="q17:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -405,7 +419,7 @@
   <xs:element name="CreateOrderDeliveryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateOrderDeliveryResult" nillable="true" type="q17:OrderDelivery" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateOrderDeliveryResult" nillable="true" type="q18:OrderDelivery" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -423,7 +437,7 @@
   <xs:element name="CreateDeliveryAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateDeliveryAddressResult" nillable="true" type="q18:DeliveryAddress" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateDeliveryAddressResult" nillable="true" type="q19:DeliveryAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,7 +451,7 @@
   <xs:element name="GetDeliveryAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetDeliveryAddressResult" nillable="true" type="q19:DeliveryAddress" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetDeliveryAddressResult" nillable="true" type="q20:DeliveryAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -454,7 +468,7 @@
   <xs:element name="CreateOrderItemResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateOrderItemResult" nillable="true" type="q20:OrderItem" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateOrderItemResult" nillable="true" type="q21:OrderItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -468,7 +482,7 @@
   <xs:element name="GetOrderDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetOrderDetailsResult" nillable="true" type="q21:ArrayOfOrderItem" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetOrderDetailsResult" nillable="true" type="q22:ArrayOfOrderItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -485,7 +499,7 @@
   <xs:element name="CreatePaymentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentResult" nillable="true" type="q22:Payment" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentResult" nillable="true" type="q23:Payment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -506,7 +520,7 @@
   <xs:element name="CreatePaymentCardResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentCardResult" nillable="true" type="q23:PaymentCard" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentCardResult" nillable="true" type="q24:PaymentCard" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

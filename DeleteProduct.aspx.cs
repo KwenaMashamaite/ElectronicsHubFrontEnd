@@ -33,10 +33,19 @@ namespace ElectronicsHub_FrontEnd
 
             if (enteredProdId == prodId)
             {
-                sr.UpdateProductStatus(prodId, "Not Available");
-                OutcomeMsg.Style.Add("color", "green");
-                OutcomeMsg.InnerText = "Product removed successfully";
-                ConfirmDelContainer.Visible = false;
+                if (sr.GetProductById(prodId) != null)
+                {
+                    sr.UpdateProductStatus(prodId, "Not Available");
+                    OutcomeMsg.Style.Add("color", "green");
+                    OutcomeMsg.InnerText = "Product removed successfully";
+                    ConfirmDelContainer.Visible = false;
+                } 
+                else
+                {
+                    OutcomeMsg.Style.Add("color", "red");
+                    OutcomeMsg.InnerText = "Error removing product: it does not exist";
+                }
+                
             }
             else
             {

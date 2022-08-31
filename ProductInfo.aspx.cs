@@ -115,7 +115,8 @@ namespace ElectronicsHub_FrontEnd
             {
                 if (Session["UserRole"].Equals("Manager"))
                 {
-                    display += "<a href='/EditProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Edit</a>";
+                    display += "<a href='/EditProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Edit</a><br>";
+                    display += "<a href='/DeleteProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Remove</a>";
                 }
                 else
                 {

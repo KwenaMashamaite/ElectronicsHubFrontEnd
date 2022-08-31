@@ -49,6 +49,12 @@
   <wsdl:message name="IBackendService_GetProductSubcategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductSubcategoriesResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductByStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetProductByStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByStatusResponse" />
+  </wsdl:message>
   <wsdl:message name="IBackendService_CreateProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateProduct" />
   </wsdl:message>
@@ -234,6 +240,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategories" message="tns:IBackendService_GetProductSubcategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse" message="tns:IBackendService_GetProductSubcategories_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetProductByStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetProductByStatus" message="tns:IBackendService_GetProductByStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetProductByStatusResponse" message="tns:IBackendService_GetProductByStatus_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CreateProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreateProduct" message="tns:IBackendService_CreateProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreateProductResponse" message="tns:IBackendService_CreateProduct_OutputMessage" />
@@ -397,6 +407,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductSubcategories">
       <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductSubcategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByStatus">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetProductByStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

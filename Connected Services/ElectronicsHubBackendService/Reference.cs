@@ -2523,6 +2523,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductSubcategories", ReplyAction="http://tempuri.org/IBackendService/GetProductSubcategoriesResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int categoryId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductByStatus", ReplyAction="http://tempuri.org/IBackendService/GetProductByStatusResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetProductByStatus(string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetProductByStatus", ReplyAction="http://tempuri.org/IBackendService/GetProductByStatusResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetProductByStatusAsync(string status);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateProduct", ReplyAction="http://tempuri.org/IBackendService/CreateProductResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product CreateProduct(string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
         
@@ -2761,6 +2767,14 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.ProductSubcategory[]> GetProductSubcategoriesAsync(int categoryId) {
             return base.Channel.GetProductSubcategoriesAsync(categoryId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetProductByStatus(string status) {
+            return base.Channel.GetProductByStatus(status);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[]> GetProductByStatusAsync(string status) {
+            return base.Channel.GetProductByStatusAsync(status);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product CreateProduct(string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
