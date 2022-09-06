@@ -163,7 +163,7 @@
 	            		<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
 	            		<ul class="widget-list">
-	            			<li><a href="#">About ElectronicsHub</a></li>
+	            			<li><a href="/About.aspx">About ElectronicsHub</a></li>
 	            			<li><a href="#">Contact us</a></li>
 	            		</ul><!-- End .widget-list -->
 	            	</div><!-- End .widget -->
@@ -174,7 +174,7 @@
 	            		<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
 	            		<ul class="widget-list">
-	            			<li><a href="#">View Cart</a></li>
+	            			<li><a href="/Cart.aspx">View Cart</a></li>
 	            			<li><a href="#">Track My Order</a></li>
 	            		</ul><!-- End .widget-list -->
 	            	</div><!-- End .widget -->

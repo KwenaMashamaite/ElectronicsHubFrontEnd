@@ -14,6 +14,7 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // A user is already signed in
             if (!Session["UserRole"].Equals("Guest"))
             {
                 Response.Redirect("~/Index.aspx");
@@ -36,7 +37,15 @@ namespace ElectronicsHub_FrontEnd
                     Session["UserCartId"] = sr.GetCart(userId).CartId;
                 }
 
-                Response.Redirect("~/Index.aspx");
+                // Redirect to previous page after login
+                if (Request.QueryString["redi"] != null)
+                {
+                    Response.Redirect(Request.QueryString["redi"].ToString());
+                } 
+                else
+                {
+                    Response.Redirect("~/Index.aspx");
+                }
             } 
             else
             {

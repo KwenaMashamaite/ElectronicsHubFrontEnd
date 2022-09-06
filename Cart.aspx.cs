@@ -14,8 +14,11 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Only logged in users who are customers can access this page
-            if (Session["UserId"] == null || !Session["UserRole"].Equals("Customer"))
+            if (Session["UserId"] == null) // Only logged in users can accesss this page
+            {
+                Response.Redirect("~/Login.aspx?redi=~/Cart.aspx");
+            }
+            else if (!Session["UserRole"].Equals("Customer")) // Only logged users who are customers can access this page
             {
                 Response.Redirect("~/404.aspx");
             }

@@ -104,7 +104,7 @@ namespace ElectronicsHub_FrontEnd
 
             display += "<div class='product-price'><b>R " + String.Format("{0:N}", prod.Price) + "</b></div>";
             display += "<div class='product-content'>";
-            display += "<p>Still deciding what to put here </p></div>";
+            //display += "<p>Still deciding what to put here </p></div>";
             display += "<div class='details-filter-row details-row-size'>";
             display += "<label>In Stock: " + prod.Quantity + "</label>";
             display += "</div>"; // End.details-filter-row
@@ -120,12 +120,17 @@ namespace ElectronicsHub_FrontEnd
                 }
                 else
                 {
+                    display += "<asp:ScriptManager runat='server'></asp:ScriptMananger>";
+                    display += "<asp:UpdatePanel runat='server'>";
+                    display += "<asp:ContentTemplate>";
                     display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
+                    display += "</asp:ContenetTemplate>";
+                    display += "</asp:UpdatePanel>";
                 }
             }
             else
             {
-                display += "<a href='/Login.aspx' class='btn-product btn-cart'>add to cart</a>";
+                display += "<a href='/Login.aspx?redi=/ProductInfo.aspx?ProdId=" + Request.QueryString["ProdId"].ToString() + "' class='btn-product btn-cart'>add to cart</a>";
             }
 
             display += "</div>"; // End.product-details
