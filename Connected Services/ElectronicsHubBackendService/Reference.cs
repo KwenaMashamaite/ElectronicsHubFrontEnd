@@ -2012,9 +2012,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private int OrderIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard[] PaymentCardsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PaymentIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2081,19 +2078,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((this.OrderIdField.Equals(value) != true)) {
                     this.OrderIdField = value;
                     this.RaisePropertyChanged("OrderId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard[] PaymentCards {
-            get {
-                return this.PaymentCardsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaymentCardsField, value) != true)) {
-                    this.PaymentCardsField = value;
-                    this.RaisePropertyChanged("PaymentCards");
                 }
             }
         }
@@ -2274,195 +2258,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.StreetAddressField, value) != true)) {
                     this.StreetAddressField = value;
                     this.RaisePropertyChanged("StreetAddress");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentCard", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
-    [System.SerializableAttribute()]
-    public partial class PaymentCard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CardNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CardTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ExpiryMonthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ExpiryYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OwnerFirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OwnerLastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment PaymentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PaymentCardIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PaymentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SecurityCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CardNumber {
-            get {
-                return this.CardNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CardNumberField, value) != true)) {
-                    this.CardNumberField = value;
-                    this.RaisePropertyChanged("CardNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CardType {
-            get {
-                return this.CardTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CardTypeField, value) != true)) {
-                    this.CardTypeField = value;
-                    this.RaisePropertyChanged("CardType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ExpiryMonth {
-            get {
-                return this.ExpiryMonthField;
-            }
-            set {
-                if ((this.ExpiryMonthField.Equals(value) != true)) {
-                    this.ExpiryMonthField = value;
-                    this.RaisePropertyChanged("ExpiryMonth");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ExpiryYear {
-            get {
-                return this.ExpiryYearField;
-            }
-            set {
-                if ((this.ExpiryYearField.Equals(value) != true)) {
-                    this.ExpiryYearField = value;
-                    this.RaisePropertyChanged("ExpiryYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OwnerFirstName {
-            get {
-                return this.OwnerFirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OwnerFirstNameField, value) != true)) {
-                    this.OwnerFirstNameField = value;
-                    this.RaisePropertyChanged("OwnerFirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OwnerLastName {
-            get {
-                return this.OwnerLastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OwnerLastNameField, value) != true)) {
-                    this.OwnerLastNameField = value;
-                    this.RaisePropertyChanged("OwnerLastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment Payment {
-            get {
-                return this.PaymentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaymentField, value) != true)) {
-                    this.PaymentField = value;
-                    this.RaisePropertyChanged("Payment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PaymentCardId {
-            get {
-                return this.PaymentCardIdField;
-            }
-            set {
-                if ((this.PaymentCardIdField.Equals(value) != true)) {
-                    this.PaymentCardIdField = value;
-                    this.RaisePropertyChanged("PaymentCardId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PaymentId {
-            get {
-                return this.PaymentIdField;
-            }
-            set {
-                if ((this.PaymentIdField.Equals(value) != true)) {
-                    this.PaymentIdField = value;
-                    this.RaisePropertyChanged("PaymentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SecurityCode {
-            get {
-                return this.SecurityCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SecurityCodeField, value) != true)) {
-                    this.SecurityCodeField = value;
-                    this.RaisePropertyChanged("SecurityCode");
                 }
             }
         }
@@ -2678,12 +2473,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePayment", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> CreatePaymentAsync(int orderId, string paymentType, decimal amount, string status);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePaymentCard", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentCardResponse")]
-        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard CreatePaymentCard(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePaymentCard", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentCardResponse")]
-        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard> CreatePaymentCardAsync(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2975,14 +2764,6 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> CreatePaymentAsync(int orderId, string paymentType, decimal amount, string status) {
             return base.Channel.CreatePaymentAsync(orderId, paymentType, amount, status);
-        }
-        
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard CreatePaymentCard(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode) {
-            return base.Channel.CreatePaymentCard(paymentId, cardType, ownerFirstName, ownerLastName, cardNumber, expMonth, expYear, securityCode);
-        }
-        
-        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard> CreatePaymentCardAsync(int paymentId, string cardType, string ownerFirstName, string ownerLastName, string cardNumber, int expMonth, int expYear, string securityCode) {
-            return base.Channel.CreatePaymentCardAsync(paymentId, cardType, ownerFirstName, ownerLastName, cardNumber, expMonth, expYear, securityCode);
         }
     }
 }

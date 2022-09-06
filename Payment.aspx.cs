@@ -86,6 +86,7 @@ namespace ElectronicsHub_FrontEnd
             }
         }
 
+
         private void InsertPaymentDetails(int orderId, decimal amount)
         {
             // Populated by Checkout page
@@ -101,21 +102,6 @@ namespace ElectronicsHub_FrontEnd
                 // Since we can't actually charge the users account, we assume that all card payments go through successfully
                 payment = sr.CreatePayment(orderId, paymentMethod, amount, "Approved");
                 sr.UpdateOrderStatus(orderId, "Paid");
-
-                // Card details
-                string cardType = "Unknown";
-
-                // Supported cards
-                if (CardNumber.Value.StartsWith("4")) {
-                    cardType = "Visa";
-                } 
-                else if (CardNumber.Value.StartsWith("5"))
-                {
-                    cardType = "MasterCard";
-                }
-
-                sr.CreatePaymentCard(payment.PaymentId, cardType, FirstName.Value, LastName.Value, 
-                    CardNumber.Value, Int32.Parse(ExpMonth.Value), Int32.Parse(ExpYear.Value), SecurityCode.Value); 
             }
         }
 

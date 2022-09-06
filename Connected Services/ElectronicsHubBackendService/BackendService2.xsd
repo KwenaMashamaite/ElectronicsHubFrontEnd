@@ -155,34 +155,12 @@
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
       <xs:element minOccurs="0" name="OrderId" type="xs:int" />
-      <xs:element minOccurs="0" name="PaymentCards" nillable="true" type="tns:ArrayOfPaymentCard" />
       <xs:element minOccurs="0" name="PaymentId" type="xs:int" />
       <xs:element minOccurs="0" name="PaymentType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Payment" nillable="true" type="tns:Payment" />
-  <xs:complexType name="ArrayOfPaymentCard">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentCard" nillable="true" type="tns:PaymentCard" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPaymentCard" nillable="true" type="tns:ArrayOfPaymentCard" />
-  <xs:complexType name="PaymentCard">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CardType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ExpiryMonth" type="xs:int" />
-      <xs:element minOccurs="0" name="ExpiryYear" type="xs:int" />
-      <xs:element minOccurs="0" name="OwnerFirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OwnerLastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Payment" nillable="true" type="tns:Payment" />
-      <xs:element minOccurs="0" name="PaymentCardId" type="xs:int" />
-      <xs:element minOccurs="0" name="PaymentId" type="xs:int" />
-      <xs:element minOccurs="0" name="SecurityCode" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PaymentCard" nillable="true" type="tns:PaymentCard" />
   <xs:complexType name="ProductCategory">
     <xs:sequence>
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />

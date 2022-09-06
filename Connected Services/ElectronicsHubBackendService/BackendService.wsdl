@@ -205,12 +205,6 @@
   <wsdl:message name="IBackendService_CreatePayment_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreatePaymentResponse" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_CreatePaymentCard_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePaymentCard" />
-  </wsdl:message>
-  <wsdl:message name="IBackendService_CreatePaymentCard_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePaymentCardResponse" />
-  </wsdl:message>
   <wsdl:portType name="IBackendService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/RegisterUser" message="tns:IBackendService_RegisterUser_InputMessage" />
@@ -343,10 +337,6 @@
     <wsdl:operation name="CreatePayment">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreatePayment" message="tns:IBackendService_CreatePayment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreatePaymentResponse" message="tns:IBackendService_CreatePayment_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreatePaymentCard">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/CreatePaymentCard" message="tns:IBackendService_CreatePaymentCard_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/CreatePaymentCardResponse" message="tns:IBackendService_CreatePaymentCard_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBackendService" type="tns:IBackendService">
@@ -641,15 +631,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreatePayment">
       <soap:operation soapAction="http://tempuri.org/IBackendService/CreatePayment" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreatePaymentCard">
-      <soap:operation soapAction="http://tempuri.org/IBackendService/CreatePaymentCard" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

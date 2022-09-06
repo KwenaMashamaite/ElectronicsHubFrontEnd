@@ -503,25 +503,4 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreatePaymentCard">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="paymentId" type="xs:int" />
-        <xs:element minOccurs="0" name="cardType" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ownerFirstName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ownerLastName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="cardNumber" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="expMonth" type="xs:int" />
-        <xs:element minOccurs="0" name="expYear" type="xs:int" />
-        <xs:element minOccurs="0" name="securityCode" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreatePaymentCardResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentCardResult" nillable="true" type="q24:PaymentCard" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
 </xs:schema>
