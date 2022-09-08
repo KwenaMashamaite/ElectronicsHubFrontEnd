@@ -19,7 +19,7 @@
 
                                 <div class="input-group mb-5">
                                     <input runat="server" id="ProductId" type="text" class="form-control bg-transparent" placeholder="Enter product id" 
-                                        title="A single digit" pattern="[0-9]" required="required">
+                                        title="A numeric value" pattern="[0-9]+" required="required">
                                     <div class="input-group-append">
                                         <asp:Button runat="server" id="ConfirmButton" class="btn btn-outline-primary-2" type="submit" Text="CONFIRM" OnClick="ConfirmButton_Click">
                                         
