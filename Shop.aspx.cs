@@ -204,7 +204,7 @@ namespace ElectronicsHub_FrontEnd
                 {
                     if (i == curPageNum)
                     {
-                        display += "<li class='page-item active' aria-current='page'><a class='page-link' href='#'>" + i + "</a></li>";
+                        display += "<li class='page-item active' aria-current='page'><a class='page-link'>" + i + "</a></li>";
                     }
                     else
                     {
