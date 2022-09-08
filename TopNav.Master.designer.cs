@@ -51,6 +51,24 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl LoginLinks;
 
         /// <summary>
+        /// MyAccountDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MyAccountDiv;
+
+        /// <summary>
+        /// MyAccountDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MyAccountDropdown;
+
+        /// <summary>
         /// Header control.
         /// </summary>
         /// <remarks>

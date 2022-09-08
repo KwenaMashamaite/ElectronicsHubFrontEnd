@@ -16,20 +16,47 @@ namespace ElectronicsHub_FrontEnd
         {
             if (Session["UserId"] != null)
             {
-                string firstName = sr.GetUser((int) Session["UserId"]).FirstName;
+                ElectronicsHubBackendService.User user = sr.GetUser((int) Session["UserId"]);
 
-                if (Session["UserRole"].Equals("Manager"))
-                {
-                    LoginLinks.InnerHtml = "<li><a runat='server' id='LogoutButton' href='/Logout.aspx'>Logout</a></li>" +
-                                           "<li><a runat='server' href='/Register.aspx'>Register Manager</a></li>" +
-                                           "<li><a runat='server' href=#><i class='icon-user'></i>" + firstName + "</a></li>";
-                }
-                else
-                {
-                    LoginLinks.InnerHtml = "<li><a runat='server' id='LogoutButton' href='/Logout.aspx'>Logout</a></li>" +
-                                           "<li><a runat='server' href=#><i class='icon-user'></i>" + firstName + "</a></li>";
-                }
+                DisplayAuthenticationInfo(user.FirstName, user.Role);
+                DisplayMyAccountDropdown(user.Role);
             }
+            else
+            {
+                MyAccountDiv.Visible = false;
+            }
+        }
+
+        private void DisplayAuthenticationInfo(string userFirstName, string userType)
+        {
+            string display = "<li><i class='icon-user'></i>Hi " + userFirstName + "</li>"
+                           + "<li><a runat='server' id='LogoutButton' href='/Logout.aspx'>Logout</a></li>";
+
+            if (userType.Equals("Mananger"))
+            {
+                display += "<li><a runat='server' href='/Register.aspx'>Register Manager</a></li>";
+            }
+
+            LoginLinks.InnerHtml = display;
+        }
+
+        private void DisplayMyAccountDropdown(string userType)
+        {
+            string display = "<li><a href='#'>Personal details</a></li>";
+
+            if (userType.Equals("Manager"))
+            {
+                display += "<li><a href='/AddProduct.aspx'>Add new product</a></li>";
+                display += "<li><a href='/Register.aspx'>Register new manager</a></li>";
+                display += "<li><a href='#'>View Reports</a></li>";
+            } 
+            else if (userType.Equals("Customer"))
+            {
+                display += "<li><a href='#'>Invoices</a></li>";
+                display += "<li><a href='#'>Track order</a></li>";
+            }
+
+            MyAccountDropdown.InnerHtml = display;
         }
     }
 }

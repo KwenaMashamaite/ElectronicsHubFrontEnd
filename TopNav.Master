@@ -62,6 +62,18 @@
                                 </ul>
                             </li>
                         </ul><!-- End .top-menu -->
+
+                        <div runat="server" id="MyAccountDiv" class="header-dropdown">
+                            <a href="#">My Account</a>
+                            <div class="header-menu">
+                                <ul runat="server" id="MyAccountDropdown">
+                                    <li><a href="#">Personal Details</a></li>
+                                    <li><a href="#">Invoices</a></li>
+                                    <li><a href="#">Track Order</a></li>
+                                </ul>
+                            </div><!-- End .header-menu -->
+                        </div><!-- End .header-dropdown -->
+
                     </div><!-- End .header-right -->
                 </div><!-- End .container -->
             </div><!-- End .header-top -->
