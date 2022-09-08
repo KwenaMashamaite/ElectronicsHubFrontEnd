@@ -170,6 +170,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "<div class='ratings'>";
                     display += "<div class='ratings-val' style='width: " + Helper.ConvRatingToPercentage(rev.Rating) + "%;'></div>"; // End.ratings-val
                     display += "</div>"; // End.ratings
+                    display += "<div> " + rev.Rating + "</div>";
                     display += "</div>"; // End.rating-container
                     display += "<span class='review-date'>" + rev.ReviewDate.ToString().Split(' ')[0] + "</span>";
                     display += "</div>"; // End.col

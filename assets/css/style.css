@@ -662,7 +662,6 @@ blockquote.text-white cite span {
     padding-bottom: 0.2rem;
     padding-right: 2.2rem;
     align-items: center;
-    text-transform: uppercase;
 }
 .header-dropdown > a::after,
 .header-dropdown > span::after {
@@ -6628,7 +6627,7 @@ p {
 }
 .ratings:before,
 .ratings-val:before {
-    content: "\f318""\f318""\f318""\f318""\f318";
+    content: "\f318";
 }
 .ratings-val {
     position: absolute;
