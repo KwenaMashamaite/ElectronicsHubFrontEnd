@@ -24,6 +24,15 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProdCount;
 
         /// <summary>
+        /// SortBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SortBy;
+
+        /// <summary>
         /// ProdContainer control.
         /// </summary>
         /// <remarks>

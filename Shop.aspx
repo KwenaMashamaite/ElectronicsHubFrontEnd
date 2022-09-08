@@ -20,11 +20,15 @@
                 		    <div class="toolbox-sort">
                 			    <label for="sortby">Sort by:</label>
                 			    <div class="select-custom">
-								    <select name="sortby" id="sortby" class="form-control">
-									    <option value="popularity" selected="selected">Most Popular</option>
-									    <option value="rating">Most Rated</option>
-									    <option value="date">Date</option>
-								    </select>
+								    <asp:DropDownList runat="server" name="sortby" id="SortBy" class="form-control" 
+                                        AutoPostBack="True" OnSelectedIndexChanged="SortByDropDown_OnSelectedIndexChanged">
+									        <asp:ListItem value="relevant">Relevant</asp:ListItem>
+									        <asp:ListItem value="rating">Most Rated</asp:ListItem>
+									        <asp:ListItem value="date">Newest</asp:ListItem>
+									        <asp:ListItem value="name">Name</asp:ListItem>
+									        <asp:ListItem value="priceLowToHigh">Price: Lowest to Highest</asp:ListItem>
+									        <asp:ListItem value="priceHighToLow">Price: Highest to Lowest</asp:ListItem>
+								    </asp:DropDownList>
 							    </div>
                 		    </div><!-- End .toolbox-sort -->
                 	    </div><!-- End .toolbox-right -->
