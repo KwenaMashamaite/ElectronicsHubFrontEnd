@@ -16,7 +16,7 @@ namespace ElectronicsHub_FrontEnd
         {
             if (Session["UserId"] != null)
             {
-                ElectronicsHubBackendService.User user = sr.GetUser((int) Session["UserId"]);
+                User user = sr.GetUser((int) Session["UserId"]);
 
                 DisplayAuthenticationInfo(user.FirstName, user.Role);
                 DisplayMyAccountDropdown(user.Role);
@@ -42,7 +42,7 @@ namespace ElectronicsHub_FrontEnd
 
         private void DisplayMyAccountDropdown(string userType)
         {
-            string display = "<li><a href='#'>Personal details</a></li>";
+            string display = "<li><a href='/Account.aspx'>Personal details</a></li>";
 
             if (userType.Equals("Manager"))
             {

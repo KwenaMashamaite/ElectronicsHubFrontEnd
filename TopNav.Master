@@ -64,7 +64,7 @@
                         </ul><!-- End .top-menu -->
 
                         <div runat="server" id="MyAccountDiv" class="header-dropdown">
-                            <a href="#">My Account</a>
+                            <a href="/Account.aspx">My Account</a>
                             <div class="header-menu">
                                 <ul runat="server" id="MyAccountDropdown">
                                     <li><a href="#">Personal Details</a></li>

@@ -76,6 +76,8 @@
     </None>
     <None Include="Connected Services\ElectronicsHubBackendService\configuration91.svcinfo" />
     <None Include="Connected Services\ElectronicsHubBackendService\configuration.svcinfo" />
+    <Content Include="About.aspx" />
+    <Content Include="Account.aspx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -121,9 +123,6 @@
     <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ElectronicsHubBackendService\ElectronicsHub_FrontEnd.ElectronicsHubBackendService.PaymentCard.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\ElectronicsHubBackendService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -147,6 +146,20 @@
     </Compile>
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
