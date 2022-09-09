@@ -14,7 +14,7 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserId"] == null || Session["UserRole"].Equals("Mananger"))
+            if (Session["UserId"] == null || !Session["UserRole"].Equals("Manager"))
             {
                 Response.Redirect("~/404.aspx");
             }
@@ -26,20 +26,32 @@ namespace ElectronicsHub_FrontEnd
             {
                 Product prod = sr.GetProductById(Int32.Parse(Request.QueryString["ProdId"].ToString()));
 
-                PageTitle.InnerText = "Update Product " + prod.ProductId + " Details:";
-                Name.Value = prod.Name;
-                Description.Value = prod.Description;
-                Cat.Value = sr.GetProductCategory(prod.ProductCategoryId).Name;
-
-                if (prod.ProductSubcategoryId != null)
+                if (prod != null)
                 {
-                    Subcat.Value = sr.GetProductSubcategory((int) prod.ProductSubcategoryId).Name;
-                }
+                    PageTitle.InnerText = "Update Product " + prod.ProductId + " Details:";
+                    Name.Value = prod.Name;
+                    Description.Value = prod.Description;
+                    Cat.Value = sr.GetProductCategory(prod.ProductCategoryId).Name;
 
-                Price.Value = prod.Price.ToString();
-                Quantity.Value = prod.Quantity.ToString();
-                Brand.Value = prod.Brand;
-                Status.Value = prod.Status;
+                    if (prod.ProductSubcategoryId != null)
+                    {
+                        Subcat.Value = sr.GetProductSubcategory((int)prod.ProductSubcategoryId).Name;
+                    }
+
+                    Price.Value = prod.Price.ToString();
+                    Quantity.Value = prod.Quantity.ToString();
+                    Brand.Value = prod.Brand;
+                    Status.Value = prod.Status;
+
+                    ProductImage prodImg = sr.GetProductImage(prod.ProductId);
+                    ImgUrl.Value = prodImg.LargePhotoUrl;
+                    ProdImg.Src = prodImg.LargePhotoUrl;
+                }
+                else
+                {
+                    ProdDetails.InnerHtml = "<h5>Specified product does not exist</h5>";
+                    ProdImg.Visible = false;
+                }
             }
         }
 
@@ -47,7 +59,7 @@ namespace ElectronicsHub_FrontEnd
         {
             int prodId = Int32.Parse(Request.QueryString["ProdId"].ToString());
             bool updated = sr.UpdateProduct(prodId, Name.Value, Description.Value, Cat.Value, 
-                Subcat.Value, Decimal.Parse(Price.Value), Int32.Parse(Quantity.Value), Brand.Value, Status.Value);
+                Subcat.Value, Decimal.Parse(Price.Value), Int32.Parse(Quantity.Value), Brand.Value, Status.Value, ImgUrl.Value);
 
             if (updated)
             {

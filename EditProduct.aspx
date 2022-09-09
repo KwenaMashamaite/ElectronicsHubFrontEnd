@@ -37,13 +37,16 @@
 						
 						<label>Status *</label>
 		        		<input runat="server" id="Status" type="text" class="form-control" required>
+
+						<label>Image Url *</label>
+		        		<input runat="server" id="ImgUrl" type="text" class="form-control" required>
 						
 						<br>
 						<asp:Button runat="server" id="UpdateProductButton" type="submit" class="btn btn-outline-primary-2 btn-order btn-block" 
 							Text="Update Product Details" OnClick="UpdateProductButton_Click">
 						</asp:Button>
 					</div><!-- End .col-lg-9 -->
-					<aside>
+					<aside class="col-lg-3">
 						<img runat="server" id="ProdImg" src="#" />
 					</aside>
 				</div><!-- End .row -->

@@ -2337,10 +2337,10 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         System.Threading.Tasks.Task<bool> UpdateProductStatusAsync(int prodId, string status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProduct", ReplyAction="http://tempuri.org/IBackendService/UpdateProductResponse")]
-        bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status);
+        bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProduct", ReplyAction="http://tempuri.org/IBackendService/UpdateProductResponse")]
-        System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status);
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAllProducts", ReplyAction="http://tempuri.org/IBackendService/GetAllProductsResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts();
@@ -2582,12 +2582,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.UpdateProductStatusAsync(prodId, status);
         }
         
-        public bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status) {
-            return base.Channel.UpdateProduct(prodId, name, description, category, subcat, price, quantity, brand, status);
+        public bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
+            return base.Channel.UpdateProduct(prodId, name, description, category, subcat, price, quantity, brand, status, imageUrl);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status) {
-            return base.Channel.UpdateProductAsync(prodId, name, description, category, subcat, price, quantity, brand, status);
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
+            return base.Channel.UpdateProductAsync(prodId, name, description, category, subcat, price, quantity, brand, status, imageUrl);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts() {

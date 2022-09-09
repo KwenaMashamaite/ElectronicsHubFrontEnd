@@ -166,6 +166,7 @@
         <xs:element minOccurs="0" name="quantity" type="xs:int" />
         <xs:element minOccurs="0" name="brand" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imageUrl" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
