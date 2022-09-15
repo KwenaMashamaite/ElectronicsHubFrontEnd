@@ -10,6 +10,7 @@ namespace ElectronicsHub_FrontEnd
 {
     public partial class Index : System.Web.UI.Page
     {
+        private static Random random = new Random();
         private BackendServiceClient sr = new BackendServiceClient();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -109,7 +110,8 @@ namespace ElectronicsHub_FrontEnd
 
         private void DiplayTopRatedProducts()
         {
-            List<Product> products = GetProuctsByStatus("TopRated");
+            // Todo - Select and order by rating (min = 4)
+            List<Product> products = GetProuctsByStatus("Top Rated");
 
             string display = "";
 
@@ -146,7 +148,7 @@ namespace ElectronicsHub_FrontEnd
 
         List<Product> GetProuctsByStatus(string status)
         {
-            return sr.GetProductByStatus(status).Where(p => !p.Status.Equals("Not Available")).ToList();   
+            return sr.GetProductByStatus(status).OrderBy(p => random.Next()).ToList();   
         }
     }
 }

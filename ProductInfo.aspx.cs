@@ -106,7 +106,7 @@ namespace ElectronicsHub_FrontEnd
             display += "<div class='product-content'>";
             //display += "<p>Still deciding what to put here </p></div>";
             display += "<div class='details-filter-row details-row-size'>";
-            display += "<label>In Stock: " + prod.Quantity + "</label>";
+            display += "<p>In Stock: " + prod.Quantity + "</p>";
             display += "</div>"; // End.details-filter-row
             display += "<div class='product-details-action'>";
 

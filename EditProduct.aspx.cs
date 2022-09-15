@@ -58,6 +58,7 @@ namespace ElectronicsHub_FrontEnd
         protected void UpdateProductButton_Click(object sender, EventArgs e)
         {
             int prodId = Int32.Parse(Request.QueryString["ProdId"].ToString());
+
             bool updated = sr.UpdateProduct(prodId, Name.Value, Description.Value, Cat.Value, 
                 Subcat.Value, Decimal.Parse(Price.Value), Int32.Parse(Quantity.Value), Brand.Value, Status.Value, ImgUrl.Value);
 
