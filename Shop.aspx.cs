@@ -19,8 +19,39 @@ namespace ElectronicsHub_FrontEnd
         {
             if (!IsPostBack)
             {
-                int curPageNum = GetCurrentPageNum();
                 List<Product> products = GetProducts();
+
+                if (Session["SortCriteria"] == null)
+                {
+                    Session["SortCriteria"] = "relevant";
+                }
+                else
+                {
+                    SortBy.SelectedValue = Session["SortCriteria"].ToString();
+
+                    products = SortProducts(products, Session["SortCriteria"].ToString());
+                }
+
+                int curPageNum = GetCurrentPageNum();
+                int prodCount = products.Count();
+
+                // Get products for current page only
+                products = PartitionProducts(products, curPageNum);
+
+                // Dynamically display number of products displayed thus far
+                DisplayProductCountInfo(curPageNum, prodCount);
+
+                // Dynamically display products
+                DisplayProducts(products);
+
+                // Dynamically display shopping page navigation
+                DisplayPageNavigation(curPageNum, prodCount);
+            }
+            else
+            {
+                List<Product> products = SortProducts(GetProducts(), Session["SortCriteria"].ToString());
+
+                int curPageNum = GetCurrentPageNum();
                 int prodCount = products.Count();
 
                 // Get products for current page only
@@ -39,9 +70,29 @@ namespace ElectronicsHub_FrontEnd
 
         public void SortByDropDown_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            string sortCriteria = SortBy.SelectedItem.Value;
-            List<Product> products = GetProducts();
+            Session["SortCriteria"] = SortBy.SelectedItem.Value;
 
+            List<Product> products = SortProducts(GetProducts(), SortBy.SelectedItem.Value);
+
+            // Display products
+            int curPageNum = GetCurrentPageNum();
+            int prodCount = products.Count();
+
+            // Get products for current page only
+            products = PartitionProducts(products, curPageNum);
+
+            // Dynamically display number of products displayed thus far
+            DisplayProductCountInfo(curPageNum, prodCount);
+
+            // Dynamically display products
+            DisplayProducts(products);
+
+            // Dynamically display shopping page navigation
+            DisplayPageNavigation(curPageNum, prodCount);
+        }
+
+        private List<Product> SortProducts(List<Product> products, string sortCriteria)
+        {
             if (sortCriteria.Equals("rating"))
             {
                 products = products.OrderByDescending(p => Helper.GetReviewsAverage(sr.GetProductReviews(p.ProductId).ToList())).ToList();
@@ -63,21 +114,7 @@ namespace ElectronicsHub_FrontEnd
                 products = products.OrderByDescending(p => p.Price).ToList();
             }
 
-            // Display products
-            int curPageNum = GetCurrentPageNum();
-            int prodCount = products.Count();
-
-            // Get products for current page only
-            products = PartitionProducts(products, curPageNum);
-
-            // Dynamically display number of products displayed thus far
-            DisplayProductCountInfo(curPageNum, prodCount);
-
-            // Dynamically display products
-            DisplayProducts(products);
-
-            // Dynamically display shopping page navigation
-            DisplayPageNavigation(curPageNum, prodCount);
+            return products;
         }
 
         private int GetCurrentPageNum()
