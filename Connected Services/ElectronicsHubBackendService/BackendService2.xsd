@@ -91,6 +91,7 @@
   <xs:element name="OrderItem" nillable="true" type="tns:OrderItem" />
   <xs:complexType name="Order">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Invoices" nillable="true" type="tns:ArrayOfInvoice" />
       <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="OrderDeliveries" nillable="true" type="tns:ArrayOfOrderDelivery" />
       <xs:element minOccurs="0" name="OrderId" type="xs:int" />
@@ -104,6 +105,47 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Discount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiscoutRate" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItems" nillable="true" type="tns:ArrayOfInvoiceItem" />
+      <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VAT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VATRate" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="ArrayOfInvoiceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceItem" nillable="true" type="tns:InvoiceItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceItem" nillable="true" type="tns:ArrayOfInvoiceItem" />
+  <xs:complexType name="InvoiceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Invoice" nillable="true" type="tns:Invoice" />
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceItemId" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceItem" nillable="true" type="tns:InvoiceItem" />
   <xs:complexType name="ArrayOfOrderDelivery">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDelivery" nillable="true" type="tns:OrderDelivery" />

@@ -13250,6 +13250,13 @@ button:focus {
     height: 70px;
     border-bottom: 0.1rem solid #ebebeb;
 }
+
+.table.itable-summary tbody td {
+    padding: 0;
+    height: 40px;
+    border-bottom: 0.1rem solid #ebebeb;
+}
+
 .table.table-summary thead th,
 .table.table-summary tbody td {
     vertical-align: middle;
@@ -16296,4 +16303,34 @@ button:focus {
 .icon-yarn:before {
     content: "\f7e3";
 }
+
+.card {
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #c8ced3;
+    border-radius: .25rem;
+} 
+
+.card-header:first-child {
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #f0f3f5;
+    border-bottom: 1px solid #c8ced3;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -9,7 +9,7 @@
         <div class="cart">
 	        <div class="container">
 	            <div class="row">
-	                <div runat="server" id="CartTable" class="col-lg-9">
+	                <div runat="server" id="CartTable" >
 	                	<table class="table table-cart table-mobile">
 							<thead>
 								<tr>

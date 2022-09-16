@@ -120,10 +120,14 @@ namespace ElectronicsHub_FrontEnd
             // Display delivery fee
             double deliveryFee = 0; // TODO - Get value from db
             display += "<td>Delivery Fee:</td><td>R " + String.Format("{0:N}", deliveryFee) + "</td></tr>";
+
+            // Display tax
+            double vat = subtotal * (sr.GetVATRate() / 100.0);
+            display += "<td>VAT ("+ sr.GetVATRate() + "%) :</td><td>R " + String.Format("{0:N}", vat) + "</td></tr>";
             
             // Display total cost
             display += "<tr class='summary-total'>";
-            display += "<td>Total:</td><td>R " + String.Format("{0:N}", subtotal + deliveryFee) + "</td>";
+            display += "<td>Total:</td><td>R " + String.Format("{0:N}", subtotal + deliveryFee + vat) + "</td>";
             display += "</tr>";
 
             OrderSummary.InnerHtml = display;

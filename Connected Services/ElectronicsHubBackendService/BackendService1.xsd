@@ -445,7 +445,7 @@
   <xs:element name="GetDeliveryAddress">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="deliveryAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -487,6 +487,111 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CreateInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subtotal" type="xs:decimal" />
+        <xs:element minOccurs="0" name="discountRate" type="xs:int" />
+        <xs:element minOccurs="0" name="discount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="vatRate" type="xs:int" />
+        <xs:element minOccurs="0" name="vat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="total" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateInvoiceResult" nillable="true" type="q23:Invoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInvoiceItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceId" type="xs:int" />
+        <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="subtotal" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInvoiceItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreateInvoiceItemResult" nillable="true" type="q24:InvoiceItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoiceItemsResult" nillable="true" type="q25:ArrayOfInvoiceItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoicesResult" nillable="true" type="q26:ArrayOfInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoiceResult" nillable="true" type="q27:Invoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVATRate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVATRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVATRateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultDiscountRate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultDiscountRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDefaultDiscountRateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CreatePayment">
     <xs:complexType>
       <xs:sequence>
@@ -500,7 +605,21 @@
   <xs:element name="CreatePaymentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentResult" nillable="true" type="q23:Payment" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentResult" nillable="true" type="q28:Payment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetPaymentResult" nillable="true" type="q29:Payment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

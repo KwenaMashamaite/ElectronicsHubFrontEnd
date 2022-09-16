@@ -33,10 +33,10 @@ namespace ElectronicsHub_FrontEnd
 
                     if (paymentMethod.Equals("Cash"))
                     {
-                        PlaceOrder();
+                        int orderId = PlaceOrder();
 
                         // We don't collect payment info from user for cash payments
-                        Response.Redirect("~/Order.aspx");
+                        Response.Redirect("~/Order.aspx?Id=" + orderId);
                     }
 
                     TotalPrice.InnerHtml = "R " + String.Format("{0:N}", Helper.GetCartItemsTotal(cartItems));
@@ -52,11 +52,11 @@ namespace ElectronicsHub_FrontEnd
 
         protected void PlaceOrderBtn_Click(object sender, EventArgs e)
         {
-            PlaceOrder();
-            Response.Redirect("~/Order.aspx");
+            int orderId = PlaceOrder();
+            Response.Redirect("~/Order.aspx?Id=" + orderId);
         }
 
-        private void PlaceOrder()
+        private int PlaceOrder()
         {
             // Populated by Login page
             int userId = Int32.Parse(Session["UserId"].ToString());
@@ -68,12 +68,15 @@ namespace ElectronicsHub_FrontEnd
             decimal deliveryFee = GetDeliveryFee(deliveryType);
             decimal subtotal = (decimal) Helper.GetCartItemsTotal(sr.GetCartItems(cartId).ToList());
             decimal totalAmount = subtotal + deliveryFee;
-            int orderId = sr.CreateOrder(userId, subtotal, totalAmount, "Pending Payment").OrderId;
+            ElectronicsHubBackendService.Order order = sr.CreateOrder(userId, subtotal, totalAmount, "Pending Payment");
 
-            InsertOrderDetailsFromCart(orderId, cartId);
-            InsertPaymentDetails(orderId, totalAmount);
-            InsertOrderDeliveryDetails(orderId, deliveryType, deliveryFee);
+            InsertOrderDetailsFromCart(order.OrderId, cartId);
+            InsertPaymentDetails(order.OrderId, totalAmount);
+            InsertOrderDeliveryDetails(order.OrderId, deliveryType, deliveryFee);
             DeleteCartDetails(cartId);
+            GenerateInvoice(order);
+
+            return order.OrderId;
         }
 
         private void InsertOrderDetailsFromCart(int orderId, int cartId)
@@ -86,6 +89,31 @@ namespace ElectronicsHub_FrontEnd
             }
         }
 
+        private void GenerateInvoice(ElectronicsHubBackendService.Order order)
+        {
+            // Create Invoice
+            int discountRate = sr.GetDefaultDiscountRate();
+            int vatRate = sr.GetVATRate();
+            string status = (Session["PaymentMethod"].Equals("Cash")) ? "Pending" : "Paid";
+
+            decimal subtotal = order.Subtotal;
+            decimal discount = (discountRate / 100.0m) * order.Subtotal;
+            decimal vat = (vatRate / 100.0m) * subtotal;
+            decimal total = subtotal - discount + vat;
+
+            if (total < 0)
+                total = 0;
+
+            Invoice invoice = sr.CreateInvoice(order.OrderId, status, subtotal, discountRate, discount, vatRate, vat, total);
+
+            // Create invoice items
+            List<OrderItem> orderItems = sr.GetOrderDetails(order.OrderId).ToList();
+
+            foreach (OrderItem oI in orderItems)
+            {
+                sr.CreateInvoiceItem(invoice.InvoiceId, sr.GetProductById(oI.ProductId).Name, oI.Quantity, oI.SalePrice, oI.Quantity * oI.SalePrice);
+            }
+        }
 
         private void InsertPaymentDetails(int orderId, decimal amount)
         {

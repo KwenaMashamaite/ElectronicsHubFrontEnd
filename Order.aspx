@@ -12,6 +12,11 @@
      			<span>CONTINUE SHOPPING</span>
        			<i class="icon-long-arrow-right"></i>
       		</a>
+
+            <a runat="server" id="InvLink" href="#" class="btn btn-outline-primary-2 btn-minwidth-lg">
+     			<span>View Invoice</span>
+       			<i class="icon-long-arrow-right"></i>
+      		</a>
        	</div><!-- End .container -->
 	</div><!-- End .error-content text-center -->
 </asp:Content>

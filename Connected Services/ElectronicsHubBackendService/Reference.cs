@@ -337,6 +337,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] InvoicesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime OrderDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -373,6 +376,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] Invoices {
+            get {
+                return this.InvoicesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoicesField, value) != true)) {
+                    this.InvoicesField = value;
+                    this.RaisePropertyChanged("Invoices");
+                }
             }
         }
         
@@ -1803,6 +1819,227 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Invoice", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DiscoutRateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InvoiceIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[] InvoiceItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime IssueDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubtotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal VATField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VATRateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Discount {
+            get {
+                return this.DiscountField;
+            }
+            set {
+                if ((this.DiscountField.Equals(value) != true)) {
+                    this.DiscountField = value;
+                    this.RaisePropertyChanged("Discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DiscoutRate {
+            get {
+                return this.DiscoutRateField;
+            }
+            set {
+                if ((this.DiscoutRateField.Equals(value) != true)) {
+                    this.DiscoutRateField = value;
+                    this.RaisePropertyChanged("DiscoutRate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceId {
+            get {
+                return this.InvoiceIdField;
+            }
+            set {
+                if ((this.InvoiceIdField.Equals(value) != true)) {
+                    this.InvoiceIdField = value;
+                    this.RaisePropertyChanged("InvoiceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[] InvoiceItems {
+            get {
+                return this.InvoiceItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceItemsField, value) != true)) {
+                    this.InvoiceItemsField = value;
+                    this.RaisePropertyChanged("InvoiceItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime IssueDate {
+            get {
+                return this.IssueDateField;
+            }
+            set {
+                if ((this.IssueDateField.Equals(value) != true)) {
+                    this.IssueDateField = value;
+                    this.RaisePropertyChanged("IssueDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Order Order {
+            get {
+                return this.OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderField, value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderId {
+            get {
+                return this.OrderIdField;
+            }
+            set {
+                if ((this.OrderIdField.Equals(value) != true)) {
+                    this.OrderIdField = value;
+                    this.RaisePropertyChanged("OrderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Subtotal {
+            get {
+                return this.SubtotalField;
+            }
+            set {
+                if ((this.SubtotalField.Equals(value) != true)) {
+                    this.SubtotalField = value;
+                    this.RaisePropertyChanged("Subtotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal VAT {
+            get {
+                return this.VATField;
+            }
+            set {
+                if ((this.VATField.Equals(value) != true)) {
+                    this.VATField = value;
+                    this.RaisePropertyChanged("VAT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VATRate {
+            get {
+                return this.VATRateField;
+            }
+            set {
+                if ((this.VATRateField.Equals(value) != true)) {
+                    this.VATRateField = value;
+                    this.RaisePropertyChanged("VATRate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OrderDelivery", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
     [System.SerializableAttribute()]
     public partial class OrderDelivery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2117,6 +2354,147 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.StatusField, value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceItem", Namespace="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice InvoiceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InvoiceIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InvoiceItemIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubtotalField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice Invoice {
+            get {
+                return this.InvoiceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceField, value) != true)) {
+                    this.InvoiceField = value;
+                    this.RaisePropertyChanged("Invoice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceId {
+            get {
+                return this.InvoiceIdField;
+            }
+            set {
+                if ((this.InvoiceIdField.Equals(value) != true)) {
+                    this.InvoiceIdField = value;
+                    this.RaisePropertyChanged("InvoiceId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceItemId {
+            get {
+                return this.InvoiceItemIdField;
+            }
+            set {
+                if ((this.InvoiceItemIdField.Equals(value) != true)) {
+                    this.InvoiceItemIdField = value;
+                    this.RaisePropertyChanged("InvoiceItemId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Subtotal {
+            get {
+                return this.SubtotalField;
+            }
+            set {
+                if ((this.SubtotalField.Equals(value) != true)) {
+                    this.SubtotalField = value;
+                    this.RaisePropertyChanged("Subtotal");
                 }
             }
         }
@@ -2451,10 +2829,10 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> CreateDeliveryAddressAsync(int orderDeliveryId, string streetAddreess, string city, string province, string postCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/GetDeliveryAddressResponse")]
-        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress GetDeliveryAddress(int deliveryAddressId);
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress GetDeliveryAddress(int orderId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/GetDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> GetDeliveryAddressAsync(int deliveryAddressId);
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> GetDeliveryAddressAsync(int orderId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrderItem", ReplyAction="http://tempuri.org/IBackendService/CreateOrderItemResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem CreateOrderItem(int orderId, int prodId, int prodQuantity, decimal prodSalePrice);
@@ -2468,11 +2846,59 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetOrderDetails", ReplyAction="http://tempuri.org/IBackendService/GetOrderDetailsResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem[]> GetOrderDetailsAsync(int orderId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateInvoice", ReplyAction="http://tempuri.org/IBackendService/CreateInvoiceResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice CreateInvoice(int orderId, string status, decimal subtotal, int discountRate, decimal discount, int vatRate, decimal vat, decimal total);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateInvoice", ReplyAction="http://tempuri.org/IBackendService/CreateInvoiceResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> CreateInvoiceAsync(int orderId, string status, decimal subtotal, int discountRate, decimal discount, int vatRate, decimal vat, decimal total);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateInvoiceItem", ReplyAction="http://tempuri.org/IBackendService/CreateInvoiceItemResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem CreateInvoiceItem(int invoiceId, string desc, int quantity, decimal price, decimal subtotal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateInvoiceItem", ReplyAction="http://tempuri.org/IBackendService/CreateInvoiceItemResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem> CreateInvoiceItemAsync(int invoiceId, string desc, int quantity, decimal price, decimal subtotal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceItems", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceItemsResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[] GetInvoiceItems(int invoiceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceItems", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceItemsResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[]> GetInvoiceItemsAsync(int invoiceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoices", ReplyAction="http://tempuri.org/IBackendService/GetInvoicesResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] GetInvoices(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoices", ReplyAction="http://tempuri.org/IBackendService/GetInvoicesResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[]> GetInvoicesAsync(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoice", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoice(int invoiceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoice", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceAsync(int invoiceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetVATRate", ReplyAction="http://tempuri.org/IBackendService/GetVATRateResponse")]
+        int GetVATRate();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetVATRate", ReplyAction="http://tempuri.org/IBackendService/GetVATRateResponse")]
+        System.Threading.Tasks.Task<int> GetVATRateAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetDefaultDiscountRate", ReplyAction="http://tempuri.org/IBackendService/GetDefaultDiscountRateResponse")]
+        int GetDefaultDiscountRate();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetDefaultDiscountRate", ReplyAction="http://tempuri.org/IBackendService/GetDefaultDiscountRateResponse")]
+        System.Threading.Tasks.Task<int> GetDefaultDiscountRateAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePayment", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment CreatePayment(int orderId, string paymentType, decimal amount, string status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreatePayment", ReplyAction="http://tempuri.org/IBackendService/CreatePaymentResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> CreatePaymentAsync(int orderId, string paymentType, decimal amount, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetPayment", ReplyAction="http://tempuri.org/IBackendService/GetPaymentResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment GetPayment(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetPayment", ReplyAction="http://tempuri.org/IBackendService/GetPaymentResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> GetPaymentAsync(int orderId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2734,12 +3160,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.CreateDeliveryAddressAsync(orderDeliveryId, streetAddreess, city, province, postCode);
         }
         
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress GetDeliveryAddress(int deliveryAddressId) {
-            return base.Channel.GetDeliveryAddress(deliveryAddressId);
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress GetDeliveryAddress(int orderId) {
+            return base.Channel.GetDeliveryAddress(orderId);
         }
         
-        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> GetDeliveryAddressAsync(int deliveryAddressId) {
-            return base.Channel.GetDeliveryAddressAsync(deliveryAddressId);
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress> GetDeliveryAddressAsync(int orderId) {
+            return base.Channel.GetDeliveryAddressAsync(orderId);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderItem CreateOrderItem(int orderId, int prodId, int prodQuantity, decimal prodSalePrice) {
@@ -2758,12 +3184,76 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.GetOrderDetailsAsync(orderId);
         }
         
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice CreateInvoice(int orderId, string status, decimal subtotal, int discountRate, decimal discount, int vatRate, decimal vat, decimal total) {
+            return base.Channel.CreateInvoice(orderId, status, subtotal, discountRate, discount, vatRate, vat, total);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> CreateInvoiceAsync(int orderId, string status, decimal subtotal, int discountRate, decimal discount, int vatRate, decimal vat, decimal total) {
+            return base.Channel.CreateInvoiceAsync(orderId, status, subtotal, discountRate, discount, vatRate, vat, total);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem CreateInvoiceItem(int invoiceId, string desc, int quantity, decimal price, decimal subtotal) {
+            return base.Channel.CreateInvoiceItem(invoiceId, desc, quantity, price, subtotal);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem> CreateInvoiceItemAsync(int invoiceId, string desc, int quantity, decimal price, decimal subtotal) {
+            return base.Channel.CreateInvoiceItemAsync(invoiceId, desc, quantity, price, subtotal);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[] GetInvoiceItems(int invoiceId) {
+            return base.Channel.GetInvoiceItems(invoiceId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[]> GetInvoiceItemsAsync(int invoiceId) {
+            return base.Channel.GetInvoiceItemsAsync(invoiceId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] GetInvoices(int orderId) {
+            return base.Channel.GetInvoices(orderId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[]> GetInvoicesAsync(int orderId) {
+            return base.Channel.GetInvoicesAsync(orderId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoice(int invoiceId) {
+            return base.Channel.GetInvoice(invoiceId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceAsync(int invoiceId) {
+            return base.Channel.GetInvoiceAsync(invoiceId);
+        }
+        
+        public int GetVATRate() {
+            return base.Channel.GetVATRate();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetVATRateAsync() {
+            return base.Channel.GetVATRateAsync();
+        }
+        
+        public int GetDefaultDiscountRate() {
+            return base.Channel.GetDefaultDiscountRate();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDefaultDiscountRateAsync() {
+            return base.Channel.GetDefaultDiscountRateAsync();
+        }
+        
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment CreatePayment(int orderId, string paymentType, decimal amount, string status) {
             return base.Channel.CreatePayment(orderId, paymentType, amount, status);
         }
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> CreatePaymentAsync(int orderId, string paymentType, decimal amount, string status) {
             return base.Channel.CreatePaymentAsync(orderId, paymentType, amount, status);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment GetPayment(int orderId) {
+            return base.Channel.GetPayment(orderId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Payment> GetPaymentAsync(int orderId) {
+            return base.Channel.GetPaymentAsync(orderId);
         }
     }
 }

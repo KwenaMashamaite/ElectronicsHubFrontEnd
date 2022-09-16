@@ -81,7 +81,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "<td class='price-col'><b>R " + String.Format("{0:N}", prod.Price) + "</b></td>";
                     display += "<td class='quantity-col'";
                     display += "<div class='cart-product-quantity'>";
-                    display += "<input runat='server' type='number' size='1' value='" + item.Quantity + "' min='1' max='" + prod.Quantity + "' step='1' data-decimals='0' required>";
+                    display += "<input type='number' size='1' value='" + item.Quantity + "' min='1' max='" + prod.Quantity + "' step='1' data-decimals='0' required oninput='alert(this.value, " + item.CartItemId + ")'>";
                     display += "</div></td>"; // End.cart-product-quantity
 
                     display += "<td class='remove-col'><a href='/Cart.aspx?RemCartItemId=" + item.CartItemId + "' class='btn-remove'><i class='icon-close'></i></a></td>";
