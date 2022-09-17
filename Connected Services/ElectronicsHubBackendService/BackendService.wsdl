@@ -217,17 +217,23 @@
   <wsdl:message name="IBackendService_GetInvoiceItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetInvoiceItemsResponse" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_GetInvoices_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInvoices" />
+  <wsdl:message name="IBackendService_GetInvoiceByOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceByOrder" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_GetInvoices_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInvoicesResponse" />
+  <wsdl:message name="IBackendService_GetInvoiceByOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceByOrderResponse" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_GetInvoice_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInvoice" />
+  <wsdl:message name="IBackendService_GetInvoiceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceById" />
   </wsdl:message>
-  <wsdl:message name="IBackendService_GetInvoice_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInvoiceResponse" />
+  <wsdl:message name="IBackendService_GetInvoiceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetInvoicesByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesByUser" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_GetInvoicesByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesByUserResponse" />
   </wsdl:message>
   <wsdl:message name="IBackendService_GetVATRate_InputMessage">
     <wsdl:part name="parameters" element="tns:GetVATRate" />
@@ -394,13 +400,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceItems" message="tns:IBackendService_GetInvoiceItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceItemsResponse" message="tns:IBackendService_GetInvoiceItems_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInvoices">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetInvoices" message="tns:IBackendService_GetInvoices_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetInvoicesResponse" message="tns:IBackendService_GetInvoices_OutputMessage" />
+    <wsdl:operation name="GetInvoiceByOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceByOrder" message="tns:IBackendService_GetInvoiceByOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceByOrderResponse" message="tns:IBackendService_GetInvoiceByOrder_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetInvoice">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetInvoice" message="tns:IBackendService_GetInvoice_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceResponse" message="tns:IBackendService_GetInvoice_OutputMessage" />
+    <wsdl:operation name="GetInvoiceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceById" message="tns:IBackendService_GetInvoiceById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetInvoiceByIdResponse" message="tns:IBackendService_GetInvoiceById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetInvoicesByUser" message="tns:IBackendService_GetInvoicesByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetInvoicesByUserResponse" message="tns:IBackendService_GetInvoicesByUser_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetVATRate">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetVATRate" message="tns:IBackendService_GetVATRate_InputMessage" />
@@ -736,8 +746,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInvoices">
-      <soap:operation soapAction="http://tempuri.org/IBackendService/GetInvoices" style="document" />
+    <wsdl:operation name="GetInvoiceByOrder">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetInvoiceByOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -745,8 +755,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetInvoice">
-      <soap:operation soapAction="http://tempuri.org/IBackendService/GetInvoice" style="document" />
+    <wsdl:operation name="GetInvoiceById">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetInvoiceById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesByUser">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/GetInvoicesByUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

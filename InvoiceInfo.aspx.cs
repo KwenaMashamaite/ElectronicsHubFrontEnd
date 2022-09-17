@@ -28,7 +28,7 @@ namespace ElectronicsHub_FrontEnd
             }
             else
             {
-                Invoice invoice = sr.GetInvoice(Int32.Parse(Request.QueryString["Id"]));
+                Invoice invoice = sr.GetInvoiceById(Int32.Parse(Request.QueryString["Id"]));
                 DisplayBillFromDetails();
                 DisplayBillToDetails(invoice.OrderId);
                 DisplayInvoiceDetails(invoice);

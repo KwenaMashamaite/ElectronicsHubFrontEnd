@@ -540,31 +540,45 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInvoices">
+  <xs:element name="GetInvoiceByOrder">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="orderId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInvoicesResponse">
+  <xs:element name="GetInvoiceByOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoicesResult" nillable="true" type="q26:ArrayOfInvoice" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoiceByOrderResult" nillable="true" type="q26:Invoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInvoice">
+  <xs:element name="GetInvoiceById">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="invoiceId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetInvoiceResponse">
+  <xs:element name="GetInvoiceByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoiceResult" nillable="true" type="q27:Invoice" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoiceByIdResult" nillable="true" type="q27:Invoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicesByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoicesByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetInvoicesByUserResult" nillable="true" type="q28:ArrayOfInvoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -605,7 +619,7 @@
   <xs:element name="CreatePaymentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentResult" nillable="true" type="q28:Payment" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="CreatePaymentResult" nillable="true" type="q29:Payment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -619,7 +633,7 @@
   <xs:element name="GetPaymentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetPaymentResult" nillable="true" type="q29:Payment" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ElectronicsHub_Backend" minOccurs="0" name="GetPaymentResult" nillable="true" type="q30:Payment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

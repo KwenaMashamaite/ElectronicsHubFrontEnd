@@ -2864,17 +2864,23 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceItems", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceItemsResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.InvoiceItem[]> GetInvoiceItemsAsync(int invoiceId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoices", ReplyAction="http://tempuri.org/IBackendService/GetInvoicesResponse")]
-        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] GetInvoices(int orderId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceByOrder", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceByOrderResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoiceByOrder(int orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoices", ReplyAction="http://tempuri.org/IBackendService/GetInvoicesResponse")]
-        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[]> GetInvoicesAsync(int orderId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceByOrder", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceByOrderResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceByOrderAsync(int orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoice", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceResponse")]
-        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoice(int invoiceId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceById", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceByIdResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoiceById(int invoiceId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoice", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceResponse")]
-        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceAsync(int invoiceId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoiceById", ReplyAction="http://tempuri.org/IBackendService/GetInvoiceByIdResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceByIdAsync(int invoiceId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoicesByUser", ReplyAction="http://tempuri.org/IBackendService/GetInvoicesByUserResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] GetInvoicesByUser(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetInvoicesByUser", ReplyAction="http://tempuri.org/IBackendService/GetInvoicesByUserResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[]> GetInvoicesByUserAsync(int userId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetVATRate", ReplyAction="http://tempuri.org/IBackendService/GetVATRateResponse")]
         int GetVATRate();
@@ -3208,20 +3214,28 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.GetInvoiceItemsAsync(invoiceId);
         }
         
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] GetInvoices(int orderId) {
-            return base.Channel.GetInvoices(orderId);
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoiceByOrder(int orderId) {
+            return base.Channel.GetInvoiceByOrder(orderId);
         }
         
-        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[]> GetInvoicesAsync(int orderId) {
-            return base.Channel.GetInvoicesAsync(orderId);
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceByOrderAsync(int orderId) {
+            return base.Channel.GetInvoiceByOrderAsync(orderId);
         }
         
-        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoice(int invoiceId) {
-            return base.Channel.GetInvoice(invoiceId);
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice GetInvoiceById(int invoiceId) {
+            return base.Channel.GetInvoiceById(invoiceId);
         }
         
-        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceAsync(int invoiceId) {
-            return base.Channel.GetInvoiceAsync(invoiceId);
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice> GetInvoiceByIdAsync(int invoiceId) {
+            return base.Channel.GetInvoiceByIdAsync(invoiceId);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[] GetInvoicesByUser(int userId) {
+            return base.Channel.GetInvoicesByUser(userId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Invoice[]> GetInvoicesByUserAsync(int userId) {
+            return base.Channel.GetInvoicesByUserAsync(userId);
         }
         
         public int GetVATRate() {

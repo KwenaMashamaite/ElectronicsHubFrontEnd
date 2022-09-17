@@ -21,9 +21,7 @@ namespace ElectronicsHub_FrontEnd
             else
             {
                 int orderId = Int32.Parse(Request.QueryString["Id"]);
-
-                // Orders only have one invoice, consider changing the return type of function
-                Invoice inv = sr.GetInvoices(orderId).ToList()[0];
+                Invoice inv = sr.GetInvoiceByOrder(orderId);
                 
                 InvLink.HRef = "/InvoiceInfo.aspx?Id=" + inv.InvoiceId;
             }

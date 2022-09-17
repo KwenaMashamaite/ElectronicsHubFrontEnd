@@ -15,7 +15,7 @@
 								<a class="nav-link active" id="tab-account-link" data-toggle="tab" href="#tab-account" role="tab" aria-controls="tab-account" aria-selected="false">Personal Details</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="tab-orders-link" data-toggle="tab" href="#tab-orders" role="tab" aria-controls="tab-orders" aria-selected="false">Orders</a>
+								<a class="nav-link" id="tab-orders-link" data-toggle="tab" href="#tab-orders" role="tab" aria-controls="tab-orders" aria-selected="false">Invoices</a>
 							</li>
 						</ul>
 	                </aside><!-- End .col-lg-3 -->
@@ -23,7 +23,10 @@
 	                <div class="col-md-8 col-lg-9">
 	                	<div class="tab-content">
 							<div class="tab-pane fade show active" id="tab-account" role="tabpanel" aria-labelledby="tab-account-link">
-			                	<div class="row">
+			                	<br />
+								<h6> Personal Information </h6>
+								
+								<div class="row">
 			                		<div class="col-sm-6">
 			                			<label>First Name *</label>
 			                			<input runat="server" id="PersFirstName" type="text" class="form-control" required>
@@ -39,15 +42,57 @@
 		            			<input runat="server" id="PersPhone" type="text" class="form-control" required
 									title="10 digit phone number" pattern="[0-9]{10}">
 
+								<label>Email *</label>
+		            			<input runat="server" id="PersEmail" type="email" class="form-control" required>
 			                		
 		                		<asp:Button runat="server" id="SavePersonalDetButton" type="submit" class="btn btn-outline-primary-2" Text="SAVE CHANGES"
 									OnClick="SavePersonalDetButton_Click">
 			                	</asp:Button>
+
+								<div>
+									<hr />
+									<h6>Change Password</h6>
+
+									<label>Current Password *</label>
+		            				<input runat="server" id="Password" type="password" class="form-control" required>
+
+									<label>New Password *</label>
+		            				<input runat="server" id="Password2" type="password" class="form-control" required>
+
+									<asp:Button runat="server" id="ChangePassword" type="submit" class="btn btn-outline-primary-2" Text="Change Password"
+										OnClick="ChangePassword_Click">
+			                		</asp:Button>
+								</div>
 							</div><!-- .End .tab-pane -->
 
 							<div class="tab-pane fade" id="tab-orders" role="tabpanel" aria-labelledby="tab-orders-link">
-								<p>No order has been made yet.</p>
-								<a href="Shop.aspx" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
+								<div runat="server" id="Invoices" class="table-responsive-sm">
+									<table class="table table-striped itable-summary">
+										<thead>
+											<tr>
+												<th class="center">Invoice #</th>
+												<th class="centre">Order #</th>
+												<th class="center">Invoice Date</th>
+											</tr>
+										</thead>
+										<tbody runat="server" id="InvItems">
+											<tr>
+												<td class="left">1011</td>
+												<td class="center">125656</td>
+												<td class="right">2022-02-05</td>
+												<td class='centre'><a href='#' >View Details</a></td>
+											</tr>
+											<tr>
+												<td class="left">1041</td>
+												<td class="center">1256</td>
+												<td class="right">2021-02-05</td>
+												<td class='centre'><a href='#' >View Details</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								
 							</div><!-- .End .tab-pane -->
 
 							<div class="tab-pane fade" id="tab-address" role="tabpanel" aria-labelledby="tab-address-link">

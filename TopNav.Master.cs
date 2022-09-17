@@ -52,7 +52,7 @@ namespace ElectronicsHub_FrontEnd
             } 
             else if (userType.Equals("Customer"))
             {
-                display += "<li><a href='#'>Invoices</a></li>";
+                display += "<li><a href='/Account.aspx#tab-orders'>Invoices</a></li>";
                 display += "<li><a href='#'>Track order</a></li>";
             }
 
