@@ -24,40 +24,58 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl NavDashboardAside;
 
         /// <summary>
-        /// PersFirstName control.
+        /// PerDetailsSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PersFirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PerDetailsSuccess;
 
         /// <summary>
-        /// PersLastName control.
+        /// PerDetailsError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PersLastName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PerDetailsError;
 
         /// <summary>
-        /// PersPhone control.
+        /// UFName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PersPhone;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText UFName;
 
         /// <summary>
-        /// PersEmail control.
+        /// ULName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl PersEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ULName;
+
+        /// <summary>
+        /// UPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText UPhone;
+
+        /// <summary>
+        /// UEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl UEmail;
 
         /// <summary>
         /// SavePersonalDetButton control.
@@ -69,22 +87,40 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.WebControls.Button SavePersonalDetButton;
 
         /// <summary>
-        /// Password control.
+        /// PassError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PassError;
 
         /// <summary>
-        /// Password2 control.
+        /// PassSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PassSuccess;
+
+        /// <summary>
+        /// UPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword UPass;
+
+        /// <summary>
+        /// Upass2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Upass2;
 
         /// <summary>
         /// ChangePassword control.

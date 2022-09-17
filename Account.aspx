@@ -22,48 +22,77 @@
 
 	                <div class="col-md-8 col-lg-9">
 	                	<div class="tab-content">
+							<asp:ScriptManager runat="server"></asp:ScriptManager>
+
 							<div class="tab-pane fade show active" id="tab-account" role="tabpanel" aria-labelledby="tab-account-link">
-			                	<br />
-								<h6> Personal Information </h6>
+								<asp:UpdatePanel runat="server">
+									<Triggers>
+										<asp:AsyncPostBackTrigger ControlID="SavePersonalDetButton" EventName="Click" />
+									</Triggers>
+									<ContentTemplate>
+										<div>
+											<label runat="server" id="PerDetailsSuccess" style="color: green;" visible="false">Details updated successfully</label>
+			                				<label runat="server" id="PerDetailsError" style="color: red;" visible="false">Failed to update details: Email address is in use by another account</label>
+										</div>
+									
+										<br />
+										<h6> Personal Information </h6>
 								
-								<div class="row">
-			                		<div class="col-sm-6">
-			                			<label>First Name *</label>
-			                			<input runat="server" id="PersFirstName" type="text" class="form-control" required>
-			                		</div><!-- End .col-sm-6 -->
+										<div class="row">
+			                				<div class="col-sm-6">
+			                					<label>First Name *</label>
+			                					<input runat="server" id="UFName" type="text" class="form-control" required>
+			                				</div><!-- End .col-sm-6 -->
 
-			                		<div class="col-sm-6">
-			                			<label>Last Name *</label>
-			                			<input runat="server" id="PersLastName" type="text" class="form-control" required>
-			                		</div><!-- End .col-sm-6 -->
-			                	</div><!-- End .row -->
+			                				<div class="col-sm-6">
+			                					<label>Last Name *</label>
+			                					<input runat="server" id="ULName" type="text" class="form-control" required>
+			                				</div><!-- End .col-sm-6 -->
+			                			</div><!-- End .row -->
 
-		            			<label>Phone *</label>
-		            			<input runat="server" id="PersPhone" type="text" class="form-control" required
-									title="10 digit phone number" pattern="[0-9]{10}">
+		            					<label>Phone *</label>
+		            					<input runat="server" id="UPhone" type="text" class="form-control" required
+											title="10 digit phone number" pattern="[0-9]{10}">
 
-								<label>Email *</label>
-		            			<input runat="server" id="PersEmail" type="email" class="form-control" required>
+										<label>Email *</label>
+		            					<input runat="server" id="UEmail" type="email" class="form-control" required>
 			                		
-		                		<asp:Button runat="server" id="SavePersonalDetButton" type="submit" class="btn btn-outline-primary-2" Text="SAVE CHANGES"
-									OnClick="SavePersonalDetButton_Click">
-			                	</asp:Button>
+		                				<asp:Button runat="server" id="SavePersonalDetButton" type="submit" class="btn btn-outline-primary-2" Text="SAVE CHANGES"
+											OnClick="SavePersonalDetButton_Click">
+			                			</asp:Button>
+									</ContentTemplate>
+								</asp:UpdatePanel>
 
 								<div>
 									<hr />
 									<h6>Change Password</h6>
 
-									<label>Current Password *</label>
-		            				<input runat="server" id="Password" type="password" class="form-control" required>
+									<asp:UpdatePanel runat="server">
+										<Triggers>
+											<asp:AsyncPostBackTrigger ControlID="ChangePassword" EventName="Click" />
+										</Triggers>
+										<ContentTemplate>
+											<div>
+												<label runat="server" id="PassError" style="color: red;" visible="false">Failed to update password: incorrect current password</label>
+												<label runat="server" id="PassSuccess" style="color: green;" visible="false">Password updated successfully</label>
+											</div>
 
-									<label>New Password *</label>
-		            				<input runat="server" id="Password2" type="password" class="form-control" required>
+											<label>Current Password</label>
+		            						<input runat="server" id="UPass" type="password" class="form-control">
 
-									<asp:Button runat="server" id="ChangePassword" type="submit" class="btn btn-outline-primary-2" Text="Change Password"
-										OnClick="ChangePassword_Click">
-			                		</asp:Button>
+											<label>New Password</label>
+		            						<input runat="server" id="Upass2" type="password" class="form-control"
+												pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,255}$" 
+                                                title="Password must be at least 8 characters long and contain at least 1 uppercase, 1 lowercase, and 1 special character">
+
+											<asp:Button runat="server" id="ChangePassword" type="submit" class="btn btn-outline-primary-2" Text="Change Password"
+												OnClick="ChangePassword_Click">
+			                				</asp:Button>
+										</ContentTemplate>
+									</asp:UpdatePanel>
 								</div>
 							</div><!-- .End .tab-pane -->
+								
 
 							<div class="tab-pane fade" id="tab-orders" role="tabpanel" aria-labelledby="tab-orders-link">
 								<div runat="server" id="Invoices" class="table-responsive-sm">
@@ -91,8 +120,6 @@
 										</tbody>
 									</table>
 								</div>
-
-								
 							</div><!-- .End .tab-pane -->
 
 							<div class="tab-pane fade" id="tab-address" role="tabpanel" aria-labelledby="tab-address-link">

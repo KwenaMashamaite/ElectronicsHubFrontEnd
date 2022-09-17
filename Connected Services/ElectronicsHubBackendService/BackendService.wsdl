@@ -19,6 +19,18 @@
   <wsdl:message name="IBackendService_LoginUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IBackendService_UpdateUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserPasswordResponse" />
+  </wsdl:message>
   <wsdl:message name="IBackendService_GetUser_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUser" />
   </wsdl:message>
@@ -268,6 +280,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/LoginUser" message="tns:IBackendService_LoginUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/LoginUserResponse" message="tns:IBackendService_LoginUser_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateUserDetails" message="tns:IBackendService_UpdateUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateUserDetailsResponse" message="tns:IBackendService_UpdateUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/UpdateUserPassword" message="tns:IBackendService_UpdateUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/UpdateUserPasswordResponse" message="tns:IBackendService_UpdateUserPassword_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendService/GetUser" message="tns:IBackendService_GetUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendService/GetUserResponse" message="tns:IBackendService_GetUser_OutputMessage" />
@@ -442,6 +462,24 @@
     </wsdl:operation>
     <wsdl:operation name="LoginUser">
       <soap:operation soapAction="http://tempuri.org/IBackendService/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IBackendService/UpdateUserPassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

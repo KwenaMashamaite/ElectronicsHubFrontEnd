@@ -2666,6 +2666,18 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/LoginUser", ReplyAction="http://tempuri.org/IBackendService/LoginUserResponse")]
         System.Threading.Tasks.Task<int> LoginUserAsync(string userEmail, string userPassword);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateUserDetails", ReplyAction="http://tempuri.org/IBackendService/UpdateUserDetailsResponse")]
+        bool UpdateUserDetails(int userId, string fName, string lName, string phone, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateUserDetails", ReplyAction="http://tempuri.org/IBackendService/UpdateUserDetailsResponse")]
+        System.Threading.Tasks.Task<bool> UpdateUserDetailsAsync(int userId, string fName, string lName, string phone, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateUserPassword", ReplyAction="http://tempuri.org/IBackendService/UpdateUserPasswordResponse")]
+        bool UpdateUserPassword(int userId, string currentPsw, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateUserPassword", ReplyAction="http://tempuri.org/IBackendService/UpdateUserPasswordResponse")]
+        System.Threading.Tasks.Task<bool> UpdateUserPasswordAsync(int userId, string currentPsw, string newPassword);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetUser", ReplyAction="http://tempuri.org/IBackendService/GetUserResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User GetUser(int id);
         
@@ -2948,6 +2960,22 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<int> LoginUserAsync(string userEmail, string userPassword) {
             return base.Channel.LoginUserAsync(userEmail, userPassword);
+        }
+        
+        public bool UpdateUserDetails(int userId, string fName, string lName, string phone, string email) {
+            return base.Channel.UpdateUserDetails(userId, fName, lName, phone, email);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateUserDetailsAsync(int userId, string fName, string lName, string phone, string email) {
+            return base.Channel.UpdateUserDetailsAsync(userId, fName, lName, phone, email);
+        }
+        
+        public bool UpdateUserPassword(int userId, string currentPsw, string newPassword) {
+            return base.Channel.UpdateUserPassword(userId, currentPsw, newPassword);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateUserPasswordAsync(int userId, string currentPsw, string newPassword) {
+            return base.Channel.UpdateUserPasswordAsync(userId, currentPsw, newPassword);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.User GetUser(int id) {

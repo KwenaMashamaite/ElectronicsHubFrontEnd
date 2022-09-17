@@ -20,25 +20,68 @@ namespace ElectronicsHub_FrontEnd
             }
             else
             {
-                int userId = Convert.ToInt32(Session["UserId"]);
-
-                DisplayPersonalDetails(userId);
-                
-                if (Session["UserRole"].Equals("Customer")) 
+                if (!IsPostBack)
                 {
-                    DisplayInvoices(userId);
+                    int userId = Convert.ToInt32(Session["UserId"]);
+
+                    DisplayPersonalDetails(userId);
+
+                    if (Session["UserRole"].Equals("Customer"))
+                    {
+                        DisplayInvoices(userId);
+                    }
                 }
             }
         }
 
         protected void SavePersonalDetButton_Click(object sender, EventArgs e)
         {
-            // TODO - Update perosnal details
+            bool success = sr.UpdateUserDetails(Convert.ToInt32(Session["UserId"]), UFName.Value, ULName.Value, UPhone.Value, UEmail.Value);
+
+            if (success)
+            {
+                PerDetailsError.Visible = false;
+                PerDetailsSuccess.Visible = true;
+            }
+            else
+            {
+                PerDetailsSuccess.Visible = false;
+                PerDetailsError.Visible = true;
+            }
         }
 
         protected void ChangePassword_Click(object sender, EventArgs e)
         {
-            // TODO - Update password
+            if (UPass.Value.Equals("") || Upass2.Value.Equals(""))
+            {
+                PassSuccess.Visible = false;
+                PassError.Visible = true;
+                PassError.InnerText = "Failed to update password: At least one of the password inputs is empty";
+
+                return;
+            }
+            else if (UPass.Value.Equals(Upass2.Value))
+            {
+                PassSuccess.Visible = false;
+                PassError.Visible = true;
+                PassError.InnerText = "Failed to update password: Current password is the same as the new password";
+
+                return;
+            }
+
+            bool success = sr.UpdateUserPassword(Convert.ToInt32(Session["UserId"]), UPass.Value, Upass2.Value);
+
+            if (success)
+            {
+                PassError.Visible = false;
+                PassSuccess.Visible = true;
+            }
+            else
+            {
+                PassSuccess.Visible = false;
+                PassError.Visible = true;
+                PassError.InnerText = "Failed to update password: incorrect current password";
+            }
         }
 
         private void DisplayInvoices(int userId)
@@ -72,10 +115,10 @@ namespace ElectronicsHub_FrontEnd
         {
             User user = sr.GetUser(userId);
 
-            PersFirstName.Value = user.FirstName;
-            PersLastName.Value = user.LastName;
-            PersPhone.Value = user.Phone;
-            PersEmail.Value = user.Email;
+            UFName.Value = user.FirstName;
+            ULName.Value = user.LastName;
+            UPhone.Value = user.Phone;
+            UEmail.Value = user.Email;
         }
     }
 }
