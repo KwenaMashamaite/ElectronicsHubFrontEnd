@@ -104,8 +104,8 @@ namespace ElectronicsHub_FrontEnd
 
             display += "<div class='product-price'><b>R " + String.Format("{0:N}", prod.Price) + "</b></div>";
             display += "<div class='product-content'>";
-            //display += "<p>Still deciding what to put here </p></div>";
             display += "<div class='details-filter-row details-row-size'>";
+            display += "<p> Brand: " + prod.Brand + "</p></div>";
             display += "<p>In Stock: " + prod.Quantity + "</p>";
             display += "</div>"; // End.details-filter-row
             display += "<div class='product-details-action'>";

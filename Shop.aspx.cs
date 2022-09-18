@@ -232,6 +232,14 @@ namespace ElectronicsHub_FrontEnd
                         display += "</div>"; //End.rating-container
                     }
 
+                    if (!Session["UserRole"].Equals("Manager"))
+                    {
+                        // Add to cart button
+                        display += "<div >";
+                        display += "<a href='/Cart.aspx?AddProdId=" + p.ProductId + "' class='btn-product btn-cart' title='Add to cart'><span>add to cart</span></a>";
+                        display += "</div>";
+                    }
+
                     display += "</div></div></div>";
                 }
 
