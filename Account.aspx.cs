@@ -102,7 +102,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "<tr>";
                     display += "<td class='left'>" + inv.InvoiceId + "</td>";
                     display += "<td class='center'>" + inv.OrderId + "</td>";
-                    display += "<td class='right'>" + inv.IssueDate + "</td>";
+                    display += "<td class='right'>" + inv.IssueDate.ToString().Split(' ')[0] + "</td>";
                     display += "<td class='centre'><a href='/InvoiceInfo.aspx?Id=" + inv.InvoiceId + "'> View Details</a></td>";
                     display += "</tr>";
                 }

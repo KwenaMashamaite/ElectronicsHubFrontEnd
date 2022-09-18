@@ -42,7 +42,7 @@ namespace ElectronicsHub_FrontEnd
             string display = "<h6 class='mb-3'>Details:</h6>";
 
             display += "<div>Invoice number: " + invoice.InvoiceId + "</div>";
-            display += "<div>Invoice Date: " + invoice.IssueDate + "</div>";
+            display += "<div>Invoice Date: " + invoice.IssueDate.ToString().Split(' ')[0] + "</div>";
             display += "<div>Order number: " + invoice.OrderId + "</div>";
 
             ElectronicsHubBackendService.Payment payment = sr.GetPayment(invoice.OrderId);
