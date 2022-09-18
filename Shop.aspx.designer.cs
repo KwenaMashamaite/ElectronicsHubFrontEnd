@@ -15,6 +15,15 @@ namespace ElectronicsHub_FrontEnd
     {
 
         /// <summary>
+        /// ProdContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProdContent;
+
+        /// <summary>
         /// ProdCount control.
         /// </summary>
         /// <remarks>

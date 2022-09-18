@@ -135,7 +135,23 @@ namespace ElectronicsHub_FrontEnd
 
             if (Request.QueryString["ProdCatId"] != null)
             {
-                products = sr.GetProductsByCategory(Int32.Parse(Request.QueryString["ProdCatId"].ToString())).ToList();
+                // Products requested by search request in all categories
+                if (Request.QueryString["ProdCatId"].Equals("all"))
+                {
+                    products = sr.GetAllProducts().ToList();
+                }
+                else
+                {
+                    products = sr.GetProductsByCategory(Int32.Parse(Request.QueryString["ProdCatId"].ToString())).ToList();
+                }
+
+                // Products requested by search
+                if (Request.QueryString["SearchQuery"] != null)
+                {
+                    string searchQuery = Request.QueryString["SearchQuery"].ToLower();
+
+                    products = products.Where(p => p.Name.ToLower().Contains(searchQuery) || p.Brand.ToLower().Contains(searchQuery)).ToList();
+                }
             }
             else if (Request.QueryString["ProdSubcatId"] != null)
             {
@@ -220,11 +236,10 @@ namespace ElectronicsHub_FrontEnd
                 }
 
                 ProdContainer.InnerHtml = display;
-
             }
             else
             {
-                ProdContainer.InnerHtml = "<h5>No products to display</h5>";
+                ProdContent.InnerHtml = "<h6>No product(s) not found</h6>";
             }
         }
 

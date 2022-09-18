@@ -132,7 +132,7 @@ namespace ElectronicsHub_FrontEnd
 
         private void DisplaySearchCategories(List<ProductCategory> prodCategories)
         {
-            string display = "<select id='cat' name = 'cat'>"
+            string display = "<select id='ProdCatId' name ='ProdCatId'>"
                     + "<option value='all'> All Departments </option>";
 
             foreach (ProductCategory pCat in prodCategories)
