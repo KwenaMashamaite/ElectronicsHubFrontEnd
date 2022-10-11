@@ -57,11 +57,20 @@ namespace ElectronicsHub_FrontEnd
                 // Produc category
                 ProductCategory pCat = sr.GetProductCategory(p.ProductCategoryId);
 
-                // Display add t cart button
+                // Display add t* cart button
                 if (!Session["UserRole"].Equals("Manager"))
                 {
                     display += "<div >";
-                    display += "<a href='/Cart.aspx?AddProdId=" + p.ProductId + "' class='btn-product btn-cart' title='Add to cart'><span>add to cart</span></a>";
+
+                    if (p.Quantity > 0)
+                    {
+                        display += "<a href='/Cart.aspx?AddProdId=" + p.ProductId + "' class='btn-product btn-cart' title='Add to cart'><span>add to cart</span></a>";
+                    }
+                    else
+                    {
+                        display += "<a href='javascript: void(0)' style='outline-color: grey; text-color: grey; opacity: 0.4; pointer-events: none; cursor: default;' class='btn-product btn-cart' title='Out of stock'><span>Out of stock</span></a>";
+                    }
+
                     display += "</div>";
                 }
 

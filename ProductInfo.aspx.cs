@@ -140,14 +140,30 @@ namespace ElectronicsHub_FrontEnd
                     display += "<asp:ScriptManager runat='server'></asp:ScriptMananger>";
                     display += "<asp:UpdatePanel runat='server'>";
                     display += "<asp:ContentTemplate>";
-                    display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
+
+                    if (prod.Quantity > 0)
+                    {
+                        display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
+                    }
+                    else
+                    {
+                        display += "<a href='javascript: void(0)' style='outline-color: grey; text-color: grey; opacity: 0.4; pointer-events: none; cursor: default;' class='btn-product btn-cart' title='Out of stock'><span>Out of stock</span></a>";   
+                    }
+                    
                     display += "</asp:ContenetTemplate>";
                     display += "</asp:UpdatePanel>";
                 }
             }
             else
             {
-                display += "<a href='/Login.aspx?redi=/ProductInfo.aspx?ProdId=" + Request.QueryString["ProdId"].ToString() + "' class='btn-product btn-cart'>add to cart</a>";
+                if (prod.Quantity > 0)
+                {
+                    display += "<a href='/Login.aspx?redi=/ProductInfo.aspx?ProdId=" + Request.QueryString["ProdId"].ToString() + "' class='btn-product btn-cart'>add to cart</a>";
+                }
+                else
+                {
+                    display += "<a href='javascript: void(0)' style='outline-color: grey; text-color: grey; opacity: 0.4; pointer-events: none; cursor: default;' class='btn-product btn-cart' title='Out of stock'><span>Out of stock</span></a>";
+                }
             }
 
             display += "</div>"; // End.product-details
