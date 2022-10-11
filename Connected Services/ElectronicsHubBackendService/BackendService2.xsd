@@ -55,6 +55,7 @@
       <xs:element minOccurs="0" name="CartItems" nillable="true" type="tns:ArrayOfCartItem" />
       <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discount" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
@@ -205,6 +206,7 @@
   <xs:element name="Payment" nillable="true" type="tns:Payment" />
   <xs:complexType name="ProductCategory">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductCategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="ProductSubcategories" nillable="true" type="tns:ArrayOfProductSubcategory" />

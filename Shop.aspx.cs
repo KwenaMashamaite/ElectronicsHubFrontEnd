@@ -28,7 +28,6 @@ namespace ElectronicsHub_FrontEnd
                 else
                 {
                     SortBy.SelectedValue = Session["SortCriteria"].ToString();
-
                     products = SortProducts(products, Session["SortCriteria"].ToString());
                 }
 
@@ -199,6 +198,13 @@ namespace ElectronicsHub_FrontEnd
                     display += "<div class='col-6 col-md-4 col-lg-4 col-xl-3'>";
                     display += "<div class='product product-7 text-center'>";
                     display += "<figure class='product-media'>";
+
+                    // Display sale label
+                    if (p.Discount > 0)
+                    {
+                        display += "<span class='product-label label-sale'>" + p.Discount + "% OFF</span>";
+                    }
+
                     display += "<a href='/ProductInfo.aspx?ProdId=" + p.ProductId + "'>";
                     display += "<img src='" + pImg.ThumbnailUrl + "' alt='Product image' class='product-image'></a>";
                     display += "<div class='product-action-vertical'></figure>";
@@ -206,39 +212,50 @@ namespace ElectronicsHub_FrontEnd
                     // Product details
                     display += "<div class='product-body'>";
 
-                    // Only display category if random products are displayed
-                    if (Request.QueryString["ProdCatId"] == null && Request.QueryString["ProdSubcatId"] == null)
-                    {
-                        ProductCategory pCat = sr.GetProductCategory(p.ProductCategoryId);
-                        display += "<div class='product-cat'>";
-                        display += "<a href='/Shop.aspx?ProdCatId=" + pCat.ProductCategoryId + "'>" + pCat.Name + "</a>";
-                        display += "</div>";
-                    }
-
-                    display += "<h3 class='product-title'><a href='/ProductInfo.aspx?ProdId=" + p.ProductId + "'>" + p.Name + "</a></h3>";
-                    display += "<div class='product-price'><b>R " + String.Format("{0:N}", p.Price) + "</b></div>";
-
-                    // Only display rating if product has reviews
-                    var prodReviews = sr.GetProductReviews(p.ProductId).ToList();
-
-                    if (prodReviews.Count() > 0)
-                    {
-                        display += "<div class='ratings-container'>";
-                        display += "<div class='ratings'>";
-                        display += "<div class='ratings-val' style='width: " + Helper.ConvRatingToPercentage(Helper.GetReviewsAverage(prodReviews)) + "%;'> </div>";
-                        display += "</div>"; //End.ratings
-                        display += "<div> " + Helper.GetReviewsAverage(prodReviews);
-                        display += "<a class='ratings-text' href='/ProductInfo.aspx?ProdId='" + p.ProductId + "#ProdReviewsLink' id='review-link'> ( " + prodReviews.Count() + " Reviews )</a></div>";
-                        display += "</div>"; //End.rating-container
-                    }
-
+                    // Add to cart button
                     if (!Session["UserRole"].Equals("Manager"))
                     {
-                        // Add to cart button
                         display += "<div >";
                         display += "<a href='/Cart.aspx?AddProdId=" + p.ProductId + "' class='btn-product btn-cart' title='Add to cart'><span>add to cart</span></a>";
                         display += "</div>";
                     }
+                    
+                    ProductCategory pCat = sr.GetProductCategory(p.ProductCategoryId);
+                    display += "<br>";
+                    display += "<div class='product-cat'>";
+                    display += "<a href='/Shop.aspx?ProdCatId=" + pCat.ProductCategoryId + "'>" + pCat.Name + "</a>";
+                    display += "</div>";
+                    
+
+                    display += "<h3 class='product-title'><a href='/ProductInfo.aspx?ProdId=" + p.ProductId + "'>" + p.Name + "</a></h3>";
+
+                    // Display discount information
+                    if (p.Discount > 0)
+                    {            
+                        display += "<div class='product-price'>";
+                        display += "<span class='new-price'> R " + String.Format("{0:N}", p.Price - p.Price * (p.Discount / 100.0M)) + "</span>";
+                        display += "<span class='old-price'>Was R " + String.Format("{0:N}", p.Price) + "</span>";
+                        display += "</div>"; //<!-- End.product-price -->
+                    }
+                    else
+                    {
+                        display += "<div class='product-price'><b>R " + String.Format("{0:N}", p.Price) + "</b></div>";
+                    }
+
+                    // Display product rating
+                    var prodReviews = sr.GetProductReviews(p.ProductId).ToList();
+
+                    int prodReviewCount = prodReviews.Count();
+                    double prodReviewAverage = Helper.GetReviewsAverage(prodReviews);
+                    
+                    display += "<div class='ratings-container'>";
+                    display += "<div class='ratings'>";
+                    display += "<div class='ratings-val' style='width: " + Helper.ConvRatingToPercentage(prodReviewAverage) + "%;'> </div>";
+                    display += "</div>"; //End.ratings
+                    display += "<div> " + prodReviewAverage;
+                    display += "<a class='ratings-text' href='/ProductInfo.aspx?ProdId=" + p.ProductId + "' id='review-link'> ( " + prodReviewCount + " Reviews )</a></div>";
+                    display += "</div>"; //End.rating-container
+                    
 
                     display += "</div></div></div>";
                 }

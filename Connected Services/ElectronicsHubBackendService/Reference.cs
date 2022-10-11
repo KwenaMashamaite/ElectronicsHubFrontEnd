@@ -993,6 +993,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1089,6 +1092,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
                 if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
                     this.DescriptionField = value;
                     this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Discount {
+            get {
+                return this.DiscountField;
+            }
+            set {
+                if ((this.DiscountField.Equals(value) != true)) {
+                    this.DiscountField = value;
+                    this.RaisePropertyChanged("Discount");
                 }
             }
         }
@@ -1282,6 +1298,9 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1300,6 +1319,19 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ImageUrl {
+            get {
+                return this.ImageUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageUrlField, value) != true)) {
+                    this.ImageUrlField = value;
+                    this.RaisePropertyChanged("ImageUrl");
+                }
             }
         }
         
@@ -2727,10 +2759,10 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         System.Threading.Tasks.Task<bool> UpdateProductStatusAsync(int prodId, string status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProduct", ReplyAction="http://tempuri.org/IBackendService/UpdateProductResponse")]
-        bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
+        bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int discount, int quantity, string brand, string status, string imageUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/UpdateProduct", ReplyAction="http://tempuri.org/IBackendService/UpdateProductResponse")]
-        System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl);
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int discount, int quantity, string brand, string status, string imageUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetAllProducts", ReplyAction="http://tempuri.org/IBackendService/GetAllProductsResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts();
@@ -2833,6 +2865,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateOrderDelivery", ReplyAction="http://tempuri.org/IBackendService/CreateOrderDeliveryResponse")]
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery> CreateOrderDeliveryAsync(int orderId, string deliveryType, decimal deliveryFee, string recFirstName, string recLastName, string recPhone, System.DateTime delDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetOrderDeliveryDetails", ReplyAction="http://tempuri.org/IBackendService/GetOrderDeliveryDetailsResponse")]
+        ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery GetOrderDeliveryDetails(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/GetOrderDeliveryDetails", ReplyAction="http://tempuri.org/IBackendService/GetOrderDeliveryDetailsResponse")]
+        System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery> GetOrderDeliveryDetailsAsync(int orderId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateDeliveryAddress", ReplyAction="http://tempuri.org/IBackendService/CreateDeliveryAddressResponse")]
         ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress CreateDeliveryAddress(int orderDeliveryId, string streetAddreess, string city, string province, string postCode);
@@ -3042,12 +3080,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.UpdateProductStatusAsync(prodId, status);
         }
         
-        public bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
-            return base.Channel.UpdateProduct(prodId, name, description, category, subcat, price, quantity, brand, status, imageUrl);
+        public bool UpdateProduct(int prodId, string name, string description, string category, string subcat, decimal price, int discount, int quantity, string brand, string status, string imageUrl) {
+            return base.Channel.UpdateProduct(prodId, name, description, category, subcat, price, discount, quantity, brand, status, imageUrl);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int quantity, string brand, string status, string imageUrl) {
-            return base.Channel.UpdateProductAsync(prodId, name, description, category, subcat, price, quantity, brand, status, imageUrl);
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(int prodId, string name, string description, string category, string subcat, decimal price, int discount, int quantity, string brand, string status, string imageUrl) {
+            return base.Channel.UpdateProductAsync(prodId, name, description, category, subcat, price, discount, quantity, brand, status, imageUrl);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.Product[] GetAllProducts() {
@@ -3184,6 +3222,14 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         
         public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery> CreateOrderDeliveryAsync(int orderId, string deliveryType, decimal deliveryFee, string recFirstName, string recLastName, string recPhone, System.DateTime delDate) {
             return base.Channel.CreateOrderDeliveryAsync(orderId, deliveryType, deliveryFee, recFirstName, recLastName, recPhone, delDate);
+        }
+        
+        public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery GetOrderDeliveryDetails(int orderId) {
+            return base.Channel.GetOrderDeliveryDetails(orderId);
+        }
+        
+        public System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.OrderDelivery> GetOrderDeliveryDetailsAsync(int orderId) {
+            return base.Channel.GetOrderDeliveryDetailsAsync(orderId);
         }
         
         public ElectronicsHub_FrontEnd.ElectronicsHubBackendService.DeliveryAddress CreateDeliveryAddress(int orderDeliveryId, string streetAddreess, string city, string province, string postCode) {

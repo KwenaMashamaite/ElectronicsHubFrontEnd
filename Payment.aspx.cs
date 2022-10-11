@@ -14,7 +14,7 @@ namespace ElectronicsHub_FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserId"] == null || !Session["UserRole"].Equals("Customer") || Session["PaymentMethod"] == null)
+            if (Session["UserId"] == null || !Session["UserRole"].Equals("Customer") || Session["DeliveryType"] == null)
             {
                 Response.Redirect("~/404.aspx");
             }
@@ -29,17 +29,8 @@ namespace ElectronicsHub_FrontEnd
                 }
                 else
                 {
-                    string paymentMethod = Session["PaymentMethod"].ToString();
-
-                    if (paymentMethod.Equals("Cash"))
-                    {
-                        int orderId = PlaceOrder();
-
-                        // We don't collect payment info from user for cash payments
-                        Response.Redirect("~/Order.aspx?Id=" + orderId);
-                    }
-
-                    TotalPrice.InnerHtml = "R " + String.Format("{0:N}", Helper.GetCartItemsTotal(cartItems));
+                    int orderId = PlaceOrder();
+                    Response.Redirect("~/Order.aspx?Id=" + orderId);
                 }
             }
         }
@@ -67,7 +58,8 @@ namespace ElectronicsHub_FrontEnd
             
             decimal deliveryFee = GetDeliveryFee(deliveryType);
             decimal subtotal = (decimal) Helper.GetCartItemsTotal(sr.GetCartItems(cartId).ToList());
-            decimal totalAmount = subtotal + deliveryFee;
+            decimal vat = subtotal * (sr.GetVATRate() / 100.0M);
+            decimal totalAmount = subtotal + vat + deliveryFee;
             ElectronicsHubBackendService.Order order = sr.CreateOrder(userId, subtotal, totalAmount, "Pending Payment");
 
             InsertOrderDetailsFromCart(order.OrderId, cartId);
@@ -85,7 +77,8 @@ namespace ElectronicsHub_FrontEnd
 
             foreach (CartItem item in cartItems)
             {
-                sr.CreateOrderItem(orderId, item.ProductId, item.Quantity, sr.GetProductById(item.ProductId).Price);
+                Product prod = sr.GetProductById(item.ProductId);
+                sr.CreateOrderItem(orderId, item.ProductId, item.Quantity, prod.Price - prod.Price * (prod.Discount / 100M));
             }
         }
 
@@ -94,17 +87,16 @@ namespace ElectronicsHub_FrontEnd
             // Create Invoice
             int discountRate = sr.GetDefaultDiscountRate();
             int vatRate = sr.GetVATRate();
-            string status = (Session["PaymentMethod"].Equals("Cash")) ? "Pending" : "Paid";
+            string status = "Paid";
 
             decimal subtotal = order.Subtotal;
-            decimal discount = (discountRate / 100.0m) * order.Subtotal;
             decimal vat = (vatRate / 100.0m) * subtotal;
-            decimal total = subtotal - discount + vat;
+            decimal total = order.Total;
 
             if (total < 0)
                 total = 0;
 
-            Invoice invoice = sr.CreateInvoice(order.OrderId, status, subtotal, discountRate, discount, vatRate, vat, total);
+            Invoice invoice = sr.CreateInvoice(order.OrderId, status, subtotal, discountRate, 0, vatRate, vat, total);
 
             // Create invoice items
             List<OrderItem> orderItems = sr.GetOrderDetails(order.OrderId).ToList();
@@ -117,20 +109,9 @@ namespace ElectronicsHub_FrontEnd
 
         private void InsertPaymentDetails(int orderId, decimal amount)
         {
-            // Populated by Checkout page
-            string paymentMethod = Session["PaymentMethod"].ToString();
-            ElectronicsHubBackendService.Payment payment;
-
-            if (paymentMethod.Equals("Cash"))
-            {
-                payment = sr.CreatePayment(orderId, paymentMethod, amount, "COD");
-            }
-            else // Card payment
-            {
-                // Since we can't actually charge the users account, we assume that all card payments go through successfully
-                payment = sr.CreatePayment(orderId, paymentMethod, amount, "Approved");
-                sr.UpdateOrderStatus(orderId, "Paid");
-            }
+            // Since we can't actually charge the users account, we assume that all card payments go through successfully
+            sr.CreatePayment(orderId, "DebitCard", amount, "Approved");
+            sr.UpdateOrderStatus(orderId, "Paid");
         }
 
         private void DeleteCartDetails(int cartId)
@@ -169,7 +150,7 @@ namespace ElectronicsHub_FrontEnd
             }
             else if (deliveryType.Equals("Express"))
             {
-                return 150;
+                return 200;
             }
             else
             {
@@ -181,13 +162,9 @@ namespace ElectronicsHub_FrontEnd
         {
             if (deliveryType.Equals("Express"))
             {
-                return DateTime.Today.AddDays(1);
+                return DateTime.Today.AddDays(2);
             }
-            else if (deliveryType.Equals("Standard"))
-            {
-                return DateTime.Today.AddDays(4);
-            }
-            else // Free delivery
+            else
             {
                 return DateTime.Today.AddDays(7);
             }

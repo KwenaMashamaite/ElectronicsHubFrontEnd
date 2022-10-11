@@ -6350,11 +6350,15 @@ p {
 }
 .product-media > a {
     display: block;
+    background-color: white;
 }
 .product-image {
     display: block;
-    width: 100%;
-    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 265px;
+    height: 150px;
+    object-fit: scale-down;
 }
 .product-image-hover {
     position: absolute;
@@ -10181,7 +10185,7 @@ button:focus {
     width: 100%;
 }
 .product {
-    overflow: hidden;
+    overflow: none;
 }
 .carousel-equal-height .owl-stage,
 .carousel-equal-height .owl-item {

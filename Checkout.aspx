@@ -71,39 +71,48 @@
 							</table><!-- End .table table-summary -->
 
 							<div>
-								<p>Payment Options:</p>
+								<p>Delivery Options:</p>
 							</div>
 							<br>
 
-							<div class="accordion-summary" id="accordion-payment">
-								<div class="card">
-									<div class="card-header" id="heading-3">
-										<h2 class="card-title">
-											<asp:RadioButton runat="server" id="CashRadioButton" groupname="PaymentOptions" Text="Cash on delivery" class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3" required="required">
-											</asp:RadioButton>
-										</h2>
-									</div><!-- End .card-header -->
-									<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
-										<div class="card-body">Drivers don't carry change, have the exact amount as displayed above ready.
-										</div><!-- End .card-body -->
-									</div><!-- End .collapse -->
-								</div><!-- End .card -->
+							<asp:ScriptManager runat="server"></asp:ScriptManager>
+							<asp:UpdatePanel runat="server">
+								<ContentTemplate>
+									<div class="accordion-summary" id="accordion-payment">
+										<div class="card">
+											<div class="card-header" id="heading-3">
+												<h2 class="card-title">
+													<asp:RadioButton runat="server" id="StandardRadioButton" groupname="PaymentOptions" Text="Standard (R 100.00)" class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3" required="required" AutoPostBack="true" OnCheckedChanged="StandardRadioButton_CheckedChanged" Checked="true">
+													</asp:RadioButton>
+												</h2>
+											</div><!-- End .card-header -->
+											<div id="collapse-3" class="collapse" aria-labelledby="heading-3" data-parent="#accordion-payment">
+												<div class="card-body">Delivery in 7 days.
+												</div><!-- End .card-body -->
+											</div><!-- End .collapse -->
+										</div><!-- End .card -->
 
-								<br>
+										
 
-								<div class="card">
-									<div class="card-header" id="heading-5">
-										<h2 class="card-title">
-											<asp:RadioButton runat="server" id="DebitRadioButton" Text="Debit Card" groupname="PaymentOptions" class="collapsed" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5" required="required">
-											</asp:RadioButton>
-										</h2>
-									</div><!-- End .card-header -->
-									<div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion-payment">
-										<div class="card-body"> Currently we only take visa and mastercard (support for other payment options is in the works).
-										</div><!-- End .card-body -->
-									</div><!-- End .collapse -->
-								</div><!-- End .card -->
-							</div><!-- End .accordion -->
+										<div class="card">
+											<div class="card-header" id="heading-5">
+												<h2 class="card-title">
+													<asp:RadioButton runat="server" id="ExpressRadioButton" Text="Express (R 200.00)" groupname="PaymentOptions" class="collapsed" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5" required="required" AutoPostBack="true" OnCheckedChanged="ExpressRadioButton_CheckedChanged">
+													</asp:RadioButton>
+												</h2>
+											</div><!-- End .card-header -->
+											<div id="collapse-5" class="collapse" aria-labelledby="heading-5" data-parent="#accordion-payment">
+												<div class="card-body">Delivery in 2 days.
+												</div><!-- End .card-body -->
+											</div><!-- End .collapse -->
+										</div><!-- End .card -->
+									</div><!-- End .accordion -->
+
+									<label runat="server" id="Total" class="summary-title">Total: R 40 0000.00</label>
+								</ContentTemplate>
+							</asp:UpdatePanel>
+		
+							<br />
 
 							<asp:Button runat="server" id="ProceedToPaymentButton" type="submit" class="btn btn-outline-primary-2 btn-order btn-block" 
 								Text="Proceed to Payment" onclick="ProceedToPaymentButton_Click">

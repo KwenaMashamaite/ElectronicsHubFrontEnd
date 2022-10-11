@@ -12,6 +12,8 @@ namespace ElectronicsHub_FrontEnd
     public partial class Checkout : System.Web.UI.Page
     {
         private BackendServiceClient sr = new BackendServiceClient();
+        private double subtotal = 0;
+        private double vat = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,7 +53,6 @@ namespace ElectronicsHub_FrontEnd
             };
 
             // TODO - Give user option to choose delivery type
-            Session["DeliveryType"] = "Free";
             Session["DeliveryDetails"] = deliveryDetails;
 
             var deliveryAddress = new DeliveryAddress();
@@ -62,13 +63,13 @@ namespace ElectronicsHub_FrontEnd
 
             Session["DeliveryAddress"] = deliveryAddress;
 
-            if (DebitRadioButton.Checked)
+            if (ExpressRadioButton.Checked)
             {
-                Session["PaymentMethod"] = "DebitCard";
+                Session["DeliveryType"] = "Express";
             }
             else
             {
-                Session["PaymentMethod"] = "Cash";
+                Session["DeliveryType"] = "Standard";
             }
 
             Response.Redirect("~/Payment.aspx");
@@ -93,23 +94,12 @@ namespace ElectronicsHub_FrontEnd
 
                 display += "<tr>";
                 display += "<td><a href='/ProductInfo.aspx?ProdId=" + prod.ProductId + "'>" + cItem.Quantity + " x " + prod.Name + "</a></td>";
-                display += "<td>R " + String.Format("{0:N}", prod.Price * cItem.Quantity) + "</td>";
+                display += "<td>R " + String.Format("{0:N}", cItem.Quantity * (prod.Price - (prod.Price * (prod.Discount / 100M)))) + "</td>";
                 display += "</tr>";
             }
 
             // Display products total price
-            double subtotal = Helper.GetCartItemsTotal(cartItems);
-            const double MAX_CASH_ON_DELIVERY_AMOUNT = 5000;
-
-            if (subtotal > MAX_CASH_ON_DELIVERY_AMOUNT)
-            {
-                CashRadioButton.Visible = false;
-                DebitRadioButton.Checked = true;
-            }
-            else
-            {
-                CashRadioButton.Checked = true;
-            }
+            subtotal = Helper.GetCartItemsTotal(cartItems);
 
             display += "<tr class='summary-subtotal'>";
             display += "<td>Subtotal:</td>";
@@ -117,20 +107,28 @@ namespace ElectronicsHub_FrontEnd
             display += "</tr>"; //<!-- End.summary-subtotal -->
             display += "<tr>";
 
-            // Display delivery fee
-            double deliveryFee = 0; // TODO - Get value from db
-            display += "<td>Delivery Fee:</td><td>R " + String.Format("{0:N}", deliveryFee) + "</td></tr>";
-
             // Display tax
-            double vat = subtotal * (sr.GetVATRate() / 100.0);
+            vat = subtotal * (sr.GetVATRate() / 100.0);
             display += "<td>VAT ("+ sr.GetVATRate() + "%) :</td><td>R " + String.Format("{0:N}", vat) + "</td></tr>";
             
             // Display total cost
             display += "<tr class='summary-total'>";
-            display += "<td>Total:</td><td>R " + String.Format("{0:N}", subtotal + deliveryFee + vat) + "</td>";
             display += "</tr>";
 
             OrderSummary.InnerHtml = display;
+
+            // By default standard delivery is checked
+            Total.InnerHtml = "Total: R " + String.Format("{0:N}", subtotal + vat + 100);
+        }
+
+        protected void StandardRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            Total.InnerHtml = "Total: R " + String.Format("{0:N}", subtotal + vat + 100);
+        }
+
+        protected void ExpressRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            Total.InnerHtml = "Total: R " + String.Format("{0:N}", subtotal + vat + 200);
         }
     }
 }

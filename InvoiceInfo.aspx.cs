@@ -47,6 +47,7 @@ namespace ElectronicsHub_FrontEnd
 
             ElectronicsHubBackendService.Payment payment = sr.GetPayment(invoice.OrderId);
             display += "<div>Payment Method: " + payment.PaymentType + "</div>";
+            display += "<div><strong>Delivery Date: </strong>" + sr.GetOrderDeliveryDetails(invoice.OrderId).DeliveryDate.ToString().Split(' ')[0] + "</div>";
 
             InvDetails.InnerHtml = display;
         }
@@ -106,10 +107,13 @@ namespace ElectronicsHub_FrontEnd
         private void DisplayPricing(Invoice inv)
         {
             Subtotal.InnerHtml = "R " + String.Format("{0:N}", inv.Subtotal);
-            DiscountRate.InnerHtml = "Discount (" + inv.DiscoutRate + "%)";
-            Discount.InnerHtml = "R " + String.Format("{0:N}", (inv.DiscoutRate / 100.0m) * inv.Subtotal);
+
+            OrderDelivery delDetails = sr.GetOrderDeliveryDetails(inv.OrderId);
+            DelType.InnerHtml = "Delivery (" + delDetails.DeliveryType + ")";
+            DelFee.InnerHtml = "R " + String.Format("{0:N}", delDetails.DeliveryFee);
+
             VATRate.InnerHtml = "VAT (" + inv.VATRate + "%)";
-            VAT.InnerHtml = "R " + String.Format("{0:N}", (inv.VATRate / 100.0m) * inv.Total);
+            VAT.InnerHtml = "R " + String.Format("{0:N}", (inv.VATRate / 100.0m) * inv.Subtotal);
             Total.InnerHtml = "R " + String.Format("{0:N}", inv.Total);
         }
     }

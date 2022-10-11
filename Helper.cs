@@ -12,6 +12,11 @@ namespace ElectronicsHub_FrontEnd
 
         public static double GetReviewsAverage(List<ProductReview> prodReviews)
         {
+            if (prodReviews.Count == 0)
+            {
+                return 0;
+            }
+
             double sum = 0.0;
 
             foreach (var pR in prodReviews.Where(r => r != null))
@@ -33,7 +38,8 @@ namespace ElectronicsHub_FrontEnd
 
             foreach (CartItem cartItem in cartItems)
             {
-                total += cartItem.Quantity * sr.GetProductById(cartItem.ProductId).Price;
+                Product product = sr.GetProductById(cartItem.ProductId);
+                total += cartItem.Quantity * (product.Price - product.Price * (product.Discount / 100M));
             }
 
             return (double)total;

@@ -39,6 +39,7 @@ namespace ElectronicsHub_FrontEnd
                     }
 
                     Price.Value = prod.Price.ToString();
+                    Discount.Value = prod.Discount.ToString();
                     Quantity.Value = prod.Quantity.ToString();
                     Brand.Value = prod.Brand;
                     Status.Value = prod.Status;
@@ -60,7 +61,7 @@ namespace ElectronicsHub_FrontEnd
             int prodId = Int32.Parse(Request.QueryString["ProdId"].ToString());
 
             bool updated = sr.UpdateProduct(prodId, Name.Value, Description.Value, Cat.Value, 
-                Subcat.Value, Decimal.Parse(Price.Value), Int32.Parse(Quantity.Value), Brand.Value, Status.Value, ImgUrl.Value);
+                Subcat.Value, Decimal.Parse(Price.Value), Int32.Parse(Discount.Value), Int32.Parse(Quantity.Value), Brand.Value, Status.Value, ImgUrl.Value);
 
             if (updated)
             {

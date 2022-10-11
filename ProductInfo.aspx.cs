@@ -33,7 +33,7 @@ namespace ElectronicsHub_FrontEnd
             InitLinks(prod.ProductId);
 
             // Dynamically display product images
-            DisplayProductImages(prod.ProductId);
+            DisplayProductImages(prod);
 
             // Dynamically display product details
             List<ProductReview> prodReviews = sr.GetProductReviews(prod.ProductId).ToList();
@@ -46,21 +46,27 @@ namespace ElectronicsHub_FrontEnd
             DisplayProductReviews(prodReviews);
         }
 
-        private void DisplayProductImages(int prodId)
+        private void DisplayProductImages(Product prod)
         {
-            ProductImage prodImg = sr.GetProductImage(prodId);
+            ProductImage prodImg = sr.GetProductImage(prod.ProductId);
             string display = "";
 
             display += "<div class='product-gallery product-gallery-vertical'>";
             display += "<div class='row'>";
             display += "<figure class='product-main-image'>";
+
+            if (prod.Discount > 0)
+            {
+                display += "<span class='product-label label-sale'>" + prod.Discount + "% OFF</span>";
+            }
+
             display += "<img id='product-zoom' src='" + prodImg.LargePhotoUrl + "' data-zoom-image='" + prodImg.LargePhotoUrl + "' alt='product image'>";
             display += "<a href='#' id='btn-product-gallery' class='btn-product-gallery'>";
             display += "<i class='icon-arrows'></i>";
             display += "</a></figure>";
 
             // Display additional product images
-            var extraProdImgs = sr.GetAdditionalProductImages(prodId);
+            var extraProdImgs = sr.GetAdditionalProductImages(prod.ProductId);
 
             display += "<div id='product-zoom-gallery' class='product-image-gallery'>";
 
@@ -102,7 +108,18 @@ namespace ElectronicsHub_FrontEnd
                 display += "</div>"; //End.rating-container
             }
 
-            display += "<div class='product-price'><b>R " + String.Format("{0:N}", prod.Price) + "</b></div>";
+            if (prod.Discount > 0)
+            {
+                display += "<div class='product-price'>";
+                display += "<span class='new-price'> R " + String.Format("{0:N}", prod.Price - prod.Price * (prod.Discount / 100.0M)) + "</span>";
+                display += "<span class='old-price'>Was R " + String.Format("{0:N}", prod.Price) + "</span>";
+                display += "</div>"; //<!-- End.product-price -->
+            }
+            else
+            {
+                display += "<div class='product-price'><b>R " + String.Format("{0:N}", prod.Price) + "</b></div>";
+            }
+
             display += "<div class='product-content'>";
             display += "<div class='details-filter-row details-row-size'>";
             display += "<p> Brand: " + prod.Brand + "</p></div>";

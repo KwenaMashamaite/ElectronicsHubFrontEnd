@@ -69,10 +69,6 @@
 								</tr>
 							</tbody>
 						</table><!-- End .table table-wishlist -->
-
-	                	<div class="cart-bottom">
-			            	<asp:LinkButton runat="server" id="UpdateCart" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></asp:LinkButton>
-		            	</div><!-- End .cart-bottom -->
 	                </div><!-- End .col-lg-9 -->
 	                <aside runat="server" id="CartTotalContainer" class="col-lg-3">
 	                	<div class="summary summary-cart">

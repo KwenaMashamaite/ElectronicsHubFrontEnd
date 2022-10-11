@@ -87,22 +87,31 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl OrderSummary;
 
         /// <summary>
-        /// CashRadioButton control.
+        /// StandardRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton CashRadioButton;
+        protected global::System.Web.UI.WebControls.RadioButton StandardRadioButton;
 
         /// <summary>
-        /// DebitRadioButton control.
+        /// ExpressRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton DebitRadioButton;
+        protected global::System.Web.UI.WebControls.RadioButton ExpressRadioButton;
+
+        /// <summary>
+        /// Total control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Total;
 
         /// <summary>
         /// ProceedToPaymentButton control.

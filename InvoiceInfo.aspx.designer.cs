@@ -60,22 +60,22 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlTableCell Subtotal;
 
         /// <summary>
-        /// DiscountRate control.
+        /// DelType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DiscountRate;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DelType;
 
         /// <summary>
-        /// Discount control.
+        /// DelFee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell Discount;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell DelFee;
 
         /// <summary>
         /// VATRate control.

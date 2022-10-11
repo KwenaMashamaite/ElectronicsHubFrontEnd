@@ -28,9 +28,16 @@
 
 		                <label>Price *</label>
 		                <input runat="server" id="Price" type="text" class="form-control" required>
+
+						<label>Discount (%) *</label>
+		                <input runat="server" id="Discount" type="number" min="0" max="100" class="form-control" required>
+
+						<br />
 							
-		            	<label>Quantity *</label>
-		                <input runat="server" id="Quantity" type="text" class="form-control" required>
+		            	<label>In Stock *</label>
+		                <input runat="server" id="Quantity" type="number" min="1" class="form-control" required>
+
+						<br />
 		                
 		        		<label>Brand *</label>
 		        		<input runat="server" id="Brand" type="text" class="form-control" required>

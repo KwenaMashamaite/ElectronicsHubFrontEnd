@@ -85,9 +85,9 @@
                                 </tr>
                                 <tr>
                                     <td class="left">
-                                        <strong runat="server" id="DiscountRate">Discount (20%)</strong>
+                                        <strong runat="server" id="DelType">Delivery (Standard)</strong>
                                     </td>
-                                    <td runat="server" id="Discount" class="right">$1,699,40</td>
+                                    <td runat="server" id="DelFee" class="right">R 679,76</td>
                                 </tr>
                                 <tr>
                                     <td class="left">

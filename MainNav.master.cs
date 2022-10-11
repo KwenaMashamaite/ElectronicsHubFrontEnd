@@ -63,7 +63,7 @@ namespace ElectronicsHub_FrontEnd
                     display += "<div class='product-cart-details'>";
                     display += "<h4 class='product-title'>";
                     display += "<a href='/ProductInfo.aspx?ProdId=" + prod.ProductId + "'>" + prod.Name + "</a></h4>";
-                    display += "<span class='cart-product-info'><span class='cart-product-qty'>" + item.Quantity + "</span>" + " x R " + String.Format("{0:N}", prod.Price) + "</span>";
+                    display += "<span class='cart-product-info'><span class='cart-product-qty'>" + item.Quantity + "</span>" + " x R " + String.Format("{0:N}", prod.Price - (prod.Price * (prod.Discount / 100M))) + "</span>";
                     display += "</div>"; //<!-- End.product-cart-details -->
 
                     // Product image
