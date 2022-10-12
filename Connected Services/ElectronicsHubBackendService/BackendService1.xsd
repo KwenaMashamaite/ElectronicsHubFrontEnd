@@ -370,6 +370,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="cartId" type="xs:int" />
         <xs:element minOccurs="0" name="prodId" type="xs:int" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

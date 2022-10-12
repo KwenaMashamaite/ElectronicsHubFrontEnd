@@ -2831,10 +2831,10 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
         System.Threading.Tasks.Task<ElectronicsHub_FrontEnd.ElectronicsHubBackendService.CartItem[]> GetCartItemsAsync(int cardId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateCartItem", ReplyAction="http://tempuri.org/IBackendService/CreateCartItemResponse")]
-        int CreateCartItem(int cartId, int prodId);
+        int CreateCartItem(int cartId, int prodId, int quantity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/CreateCartItem", ReplyAction="http://tempuri.org/IBackendService/CreateCartItemResponse")]
-        System.Threading.Tasks.Task<int> CreateCartItemAsync(int cartId, int prodId);
+        System.Threading.Tasks.Task<int> CreateCartItemAsync(int cartId, int prodId, int quantity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendService/RemoveCartItem", ReplyAction="http://tempuri.org/IBackendService/RemoveCartItemResponse")]
         bool RemoveCartItem(int cartItemId);
@@ -3176,12 +3176,12 @@ namespace ElectronicsHub_FrontEnd.ElectronicsHubBackendService {
             return base.Channel.GetCartItemsAsync(cardId);
         }
         
-        public int CreateCartItem(int cartId, int prodId) {
-            return base.Channel.CreateCartItem(cartId, prodId);
+        public int CreateCartItem(int cartId, int prodId, int quantity) {
+            return base.Channel.CreateCartItem(cartId, prodId, quantity);
         }
         
-        public System.Threading.Tasks.Task<int> CreateCartItemAsync(int cartId, int prodId) {
-            return base.Channel.CreateCartItemAsync(cartId, prodId);
+        public System.Threading.Tasks.Task<int> CreateCartItemAsync(int cartId, int prodId, int quantity) {
+            return base.Channel.CreateCartItemAsync(cartId, prodId, quantity);
         }
         
         public bool RemoveCartItem(int cartItemId) {

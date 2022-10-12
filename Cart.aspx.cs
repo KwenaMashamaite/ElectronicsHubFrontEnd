@@ -38,7 +38,17 @@ namespace ElectronicsHub_FrontEnd
                 {
                     int cartId = Int32.Parse(Session["UserCartId"].ToString());
                     int prodId = Int32.Parse(Request.QueryString["AddProdId"].ToString());
-                    sr.CreateCartItem(cartId, prodId);
+
+                    if (Session["Quantity"] != null)
+                    {
+                        int quantity = Int32.Parse(Session["Quantity"].ToString());
+                        sr.CreateCartItem(cartId, prodId, quantity);
+                        Session["Quantity"] = null;
+                    }
+                    else
+                    {
+                        sr.CreateCartItem(cartId, prodId, 1);
+                    }
 
                     // Return to calling page
                     if (Request.UrlReferrer != null)

@@ -51,6 +51,33 @@ namespace ElectronicsHub_FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProdDetails;
 
         /// <summary>
+        /// AddToCartContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AddToCartContent;
+
+        /// <summary>
+        /// ProdQuant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProdQuant;
+
+        /// <summary>
+        /// AddToCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddToCart;
+
+        /// <summary>
         /// ProdReviewsLink control.
         /// </summary>
         /// <remarks>

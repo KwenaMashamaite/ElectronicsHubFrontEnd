@@ -11,7 +11,8 @@ namespace ElectronicsHub_FrontEnd
 {
     public partial class ProductInfo : System.Web.UI.Page
     {
-        BackendServiceClient sr = new BackendServiceClient();
+        private BackendServiceClient sr = new BackendServiceClient();
+        private int prodQuantity = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,8 @@ namespace ElectronicsHub_FrontEnd
             {
                 Response.Redirect("~/404.aspx");
             }
+
+            prodQuantity = prod.Quantity;
             
             // Links to next and previous products
             InitLinks(prod.ProductId);
@@ -128,46 +131,26 @@ namespace ElectronicsHub_FrontEnd
             display += "<div class='product-details-action'>";
 
             // Only logged in users can add to cart
-            if (Session["UserId"] != null)
+            if (Session["UserRole"].Equals("Manager"))
             {
-                if (Session["UserRole"].Equals("Manager"))
-                {
-                    display += "<a href='/EditProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Edit</a><br>";
-                    display += "<a href='/DeleteProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Remove</a>";
-                }
-                else
-                {
-                    display += "<asp:ScriptManager runat='server'></asp:ScriptMananger>";
-                    display += "<asp:UpdatePanel runat='server'>";
-                    display += "<asp:ContentTemplate>";
+                AddToCartContent.Visible = false;
 
-                    if (prod.Quantity > 0)
-                    {
-                        display += "<a href='/Cart.aspx?AddProdId=" + prod.ProductId + "' class='btn-product btn-cart'>add to cart</a>";
-                    }
-                    else
-                    {
-                        display += "<a href='javascript: void(0)' style='outline-color: grey; text-color: grey; opacity: 0.4; pointer-events: none; cursor: default;' class='btn-product btn-cart' title='Out of stock'><span>Out of stock</span></a>";   
-                    }
-                    
-                    display += "</asp:ContenetTemplate>";
-                    display += "</asp:UpdatePanel>";
-                }
+                display += "<a href='/EditProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Edit</a><br>";
+                display += "<a href='/DeleteProduct.aspx?ProdId=" + prod.ProductId + "' class='btn-product btn-cart'>Remove</a>";
             }
             else
             {
-                if (prod.Quantity > 0)
+                AddToCartContent.Visible = true;
+
+                if (prod.Quantity <= 0)
                 {
-                    display += "<a href='/Login.aspx?redi=/ProductInfo.aspx?ProdId=" + Request.QueryString["ProdId"].ToString() + "' class='btn-product btn-cart'>add to cart</a>";
-                }
-                else
-                {
-                    display += "<a href='javascript: void(0)' style='outline-color: grey; text-color: grey; opacity: 0.4; pointer-events: none; cursor: default;' class='btn-product btn-cart' title='Out of stock'><span>Out of stock</span></a>";
+                    AddToCart.Enabled = false;
+                    AddToCart.Text = "Out of stock";
+                    ProdQuant.Enabled = false;
                 }
             }
+            
 
-            display += "</div>"; // End.product-details
-            display += "</div>"; // End.col-md-6
             display += "</div>";//End.row
 
             ProdDetails.InnerHtml = display;
@@ -222,6 +205,32 @@ namespace ElectronicsHub_FrontEnd
                 }
 
                 ProdReviews.InnerHtml = display;
+            }
+        }
+
+        protected void AddToCart_Click(object sender, EventArgs e)
+        {
+            if (Session["UserId"] != null)
+            {
+                Session["Quantity"] = ProdQuant.Text;
+
+                Response.Redirect("~/Cart.aspx?AddProdId=" + Request.QueryString["ProdId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("Login.aspx?redi=/ProductInfo.aspx?ProdId=" + Request.QueryString["ProdId"]);
+            }
+        }
+
+        protected void ProdQuant_TextChanged(object sender, EventArgs e)
+        {
+            if (Int32.Parse(ProdQuant.Text) > prodQuantity)
+            {
+                AddToCart.Enabled = false;
+            }
+            else
+            {
+                AddToCart.Enabled = true;
             }
         }
     }
